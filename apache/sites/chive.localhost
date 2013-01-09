@@ -1,0 +1,15 @@
+<VirtualHost *:80>
+	ServerAdmin webmaster@localhost
+	ServerName chive.localhost
+
+	DocumentRoot /home/talus/dev/chive
+
+	<Directory /home/talus/dev/chive/>
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride None
+		Order allow,deny
+		allow from all
+	</Directory>
+
+	ErrorLog ${APACHE_LOG_DIR}/errors/chive.log
+</VirtualHost>

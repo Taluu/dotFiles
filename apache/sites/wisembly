@@ -1,0 +1,19 @@
+<VirtualHost *:80>
+	ServerAdmin webmaster@localhost
+	ServerName balloon5.wisembly.localhost
+
+	DocumentRoot /home/talus/dev/web/Wisembly/Balloon5/web
+	DirectoryIndex app_dev.php
+
+	<Directory /home/talus/dev/web/Wisembly/Balloon5/web/>
+		Options Indexes FollowSymLinks MultiViews
+		php_flag apc.cache_by_default Off
+		AllowOverride All
+		Order allow,deny
+		allow from all
+	</Directory>
+
+	CustomLog ${APACHE_LOG_DIR}/access/wisembly.log combined
+	ErrorLog ${APACHE_LOG_DIR}/errors/wisembly.log
+</VirtualHost>
+
