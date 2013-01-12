@@ -1,0 +1,13 @@
+[alias]
+	st           = status
+	co           = checkout
+    cam          = commit -a -m
+
+    diff-word    = diff --word-diff
+    log-graph    = log --graph --decorate --pretty=oneline --abbrev-commit
+    log-decorate = log --oneline --decorate
+[user]
+	name = Baptiste \"Talus\" Clavié
+	email = clavie.b@gmail.com
+[color]
+    ui = true
