@@ -1,0 +1,45 @@
+" Vim Bundles
+filetype off
+
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+" Utils {
+    Bundle 'MarcWeber/vim-addon-mw-utils'
+    Bundle 'tomtom/tlib_vim'
+    Bundle 'mileszs/ack.vim'
+
+" } General {
+    Bundle 'scrooloose/nerdtree'
+    Bundle 'altercation/vim-colors-solarized'
+    Bundle 'kien/ctrlp.vim'
+    Bundle 'Lokaltog/powerline'
+    Bundle 'jistr/vim-nerdtree-tabs'
+    Bundle 'mbbill/undotree'
+    "Bundle 'nathanaelkane/vim-indent-guides'
+    Bundle 'tpope/vim-abolish'
+
+" } Prog {
+    "Bundle 'scrooloose/syntastic'
+    Bundle 'mattn/gist-vim'
+    Bundle 'scrooloose/nerdcommenter'
+    Bundle 'godlygeek/tabular'
+    Bundle 'majutsushi/tagbar'
+    "Bundle 'Shougo/neocomplcache'
+    Bundle 'stephenmckinney/vim-autotag'
+
+    " PHP {
+        Bundle 'spf13/PIV'
+
+    " } Misc {
+        Bundle 'tpope/vim-markdown'
+        Bundle 'tpope/vim-cucumber'
+        Bundle 'quentindecock/vim-cucumber-align-pipes'
+        Bundle 'beyondwords/vim-twig'
+    " }
+" }
+
+filetype plugin indent on
+
