@@ -3,12 +3,18 @@
 " General configuration {
     set nocompatible " fuck off vi !
 
+    let mapleader = ','
+    let g:mapleader = ','
+
     " Misc {
         set virtualedit=onemore
-        set history=1000
-        set spell
-        set hidden
         set whichwrap=<,>,[,]
+        set history=1000
+        set hidden
+        set spell
+
+        set backupdir=~/.vim/backups
+        set directory=~/.vim/backups
 
     " } Encoding {
         set encoding=utf-8
@@ -16,9 +22,9 @@
 
     " undo {
         set undofile
-        set undodir=~/.vim/undo
         set undolevels=1000
         set undoreload=10000
+        set undodir=~/.vim/undo
 
     " } ui {
         set number
@@ -39,13 +45,25 @@
         set shiftwidth=4
         set softtabstop=4
 
-        autocmd FileType cucumber setlocal shiftwidth=2 tabstop=2
+        autocmd FileType cucumber setlocal shiftwidth=2 tabstop=2 softtabstop=2
+        autocmd FileType less     setlocal shiftwidth=2 tabstop=2 softtabstop=2
+        autocmd FileType css      setlocal shiftwidth=2 tabstop=2 softtabstop=2
     " } Formating {
         set pastetoggle=<F12>
         set nowrap
         set textwidth=0
 
-        autocmd FileType php,javascript,twig,html.twig,python,yml,xml,cucumber,vim autocmd BufWritePre <buffer> call TrimSpaces()
+        autocmd FileType php        autocmd BufWritePre <buffer> call TrimSpaces()
+        autocmd FileType javascript autocmd BufWritePre <buffer> call TrimSpaces()
+        autocmd FileType twig       autocmd BufWritePre <buffer> call TrimSpaces()
+        autocmd FileType html.twig  autocmd BufWritePre <buffer> call TrimSpaces()
+        autocmd FileType python     autocmd BufWritePre <buffer> call TrimSpaces()
+        autocmd FileType yml        autocmd BufWritePre <buffer> call TrimSpaces()
+        autocmd FileType xml        autocmd BufWritePre <buffer> call TrimSpaces()
+        autocmd FileType cucumber   autocmd BufWritePre <buffer> call TrimSpaces()
+        autocmd FileType vim        autocmd BufWritePre <buffer> call TrimSpaces()
+        autocmd FileType yaml       autocmd BufWritePre <buffer> call TrimSpaces()
+        autocmd FileType less       autocmd BufWritePre <buffer> call TrimSpaces()
 
         function! TrimSpaces()
             " backup current position and last search
@@ -85,35 +103,20 @@
         augroup END
 
     " } NerdTree {
-        map <C-n> :NERDTreeToggle<CR>
-        map <leader>e :NERDTreeFind<CR>
-        map <leader>nt :NERDTreeFind<CR>
+        noremap <C-n> :NERDTreeMirrorToggle<CR>
+        noremap <leader>e :NERDTreeFind<CR>
+        noremap <leader>nt :NERDTreeFind<CR>
 
         let NERDTreeShowBookmarks=1
-        let NERDTreeIgnore=['\.pyc', '\~$', '\.git']
+        let NERDTreeIgnore=['\.pyc', '\~$', '\.git$', 'node_modules$']
         let NERDTreeChDirMode=0
         let NERDTreeQuitOnOpen=1
         let NERDTreeCasadeOpenSingleChildDir=1
         let NERDTreeShowLineNumbers=0
+        let NERDTreeShowHidden=1
 
-    " } Indentguide {
-        hi IndentGuidesOdd  ctermbg=10
-        hi IndentGuidesEven ctermbg=black
-
-        let g:indent_guides_start_level=2
-        let g:indent_guides_guide_size=1
-    " } SPF-13 PIV {
-        let g:DisableAutoPHPFolding=1
     " } Ctags {
         set tags=./tags;/,~/.vimtags
-
-    " } Tabularize {
-        nmap <Leader>a& :Tabularize /&<CR>
-        vmap <Leader>a& :Tabularize /&<CR>
-
-        nmap <Leader>a= :Tabularize /=<CR>
-        vmap <Leader>a= :Tabularize /=<CR>
-
     " } ctrlp {
         let g:ctrlp_working_path_mode = 2
         nnoremap <silent> <D-t> :CtrlP<CR>
@@ -133,30 +136,28 @@
         nnoremap <silent> <leader>tt :TagbarToggle<CR>
 
     " } UndoTree {
-        nnoremap <Leader>u :UndotreeToggle<CR>
+        nnoremap <silent> <Leader>u :UndotreeToggle<CR>
         " If undotree is opened, it is likely one wants to interact with it.
         let g:undotree_SetFocusWhenToggle=1
     " }
 " } Map {
-    let mapleader = ','
-
     " shift+tab = unindent
     inoremap <S-TAB> <C-D>
 
     " Moving in files and between tabs & buffers {
         " between buffers
-        map <C-J> <C-W>j<C-W>_
-        map <C-K> <C-W>k<C-W>_
-        map <C-L> <C-W>l<C-W>_
-        map <C-H> <C-W>h<C-W>_
+        nnoremap <C-J> <C-W>j<C-W>_
+        nnoremap <C-K> <C-W>k<C-W>_
+        nnoremap <C-L> <C-W>l<C-W>_
+        nnoremap <C-H> <C-W>h<C-W>_
 
         " between lines
         nnoremap j gj
         nnoremap k gk
 
         " between tabs
-        map <S-H> gT
-        map <S-L> gt
+        nnoremap <S-H> gT
+        nnoremap <S-L> gt
     " }
 
     nnoremap Y y$
@@ -165,11 +166,9 @@
 
     " helpers
     cnoremap %% <C-R>=expand('%:h').'/'<CR>
-    map <leader>ew :edit %%
-    map <leader>es :split %%
-    map <leader>ev :vsplit %%
-    map <leader>et :tabedit %%
-    map <leader>tc :tabclose
+    nnoremap <leader>ew :edit %%
+    nnoremap <leader>et :tabedit %%
+    nnoremap <silent> <leader>tc :tabclose<CR>
 
     " ???
     map [F $
@@ -177,6 +176,6 @@
     map [H g0
     imap [H g0
 
-    nmap <Del> <NOP>
+    nnoremap <Del> <NOP>
 " }
 
