@@ -29,15 +29,18 @@ Bundle 'gmarik/vundle'
     Bundle 'majutsushi/tagbar'
     "Bundle 'Shougo/neocomplcache'
     Bundle 'stephenmckinney/vim-autotag'
+    Bundle 'airblade/vim-gitgutter'
 
     " PHP {
-        Bundle 'spf13/PIV'
+        "Bundle 'spf13/PIV'
+        Bundle 'StanAngeloff/php.vim'
 
     " } Misc {
         Bundle 'tpope/vim-markdown'
         Bundle 'tpope/vim-cucumber'
         Bundle 'quentindecock/vim-cucumber-align-pipes'
         Bundle 'beyondwords/vim-twig'
+        Bundle 'groenewege/vim-less'
     " }
 " }
 
