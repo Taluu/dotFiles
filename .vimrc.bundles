@@ -22,7 +22,7 @@ Bundle 'gmarik/vundle'
     Bundle 'tpope/vim-abolish'
 
 " } Prog {
-    "Bundle 'scrooloose/syntastic'
+    Bundle 'scrooloose/syntastic'
     Bundle 'mattn/gist-vim'
     Bundle 'scrooloose/nerdcommenter'
     Bundle 'godlygeek/tabular'
@@ -30,6 +30,7 @@ Bundle 'gmarik/vundle'
     "Bundle 'Shougo/neocomplcache'
     Bundle 'stephenmckinney/vim-autotag'
     Bundle 'airblade/vim-gitgutter'
+    Bundle 'joonty/vdebug'
 
     " PHP {
         "Bundle 'spf13/PIV'
@@ -39,7 +40,7 @@ Bundle 'gmarik/vundle'
         Bundle 'tpope/vim-markdown'
         Bundle 'tpope/vim-cucumber'
         Bundle 'quentindecock/vim-cucumber-align-pipes'
-        Bundle 'beyondwords/vim-twig'
+        Bundle 'evidens/vim-twig'
         Bundle 'groenewege/vim-less'
     " }
 " }

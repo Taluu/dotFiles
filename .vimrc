@@ -12,6 +12,7 @@
         set history=1000
         set hidden
         set spell
+        syntax on
 
         set backupdir=~/.vim/backups
         set directory=~/.vim/backups
@@ -139,6 +140,8 @@
         nnoremap <silent> <Leader>u :UndotreeToggle<CR>
         " If undotree is opened, it is likely one wants to interact with it.
         let g:undotree_SetFocusWhenToggle=1
+    " } DBGPavim {
+        "let g:dbgPavimKeyQuit = '<F6>'
     " }
 " } Map {
     " shift+tab = unindent
