@@ -1,13 +1,37 @@
+[user]
+    name = Baptiste \"Talus\" Clavié
+    email = clavie.b@gmail.com
+[color]
+    ui = true
+[core]
+    editor = vim
+[push]
+    default = upstream
+[color "status"]
+    added     = green
+    changed   = yellow
+    untracked = red
+[color "diff"]
+    meta = cyan
+[url "git@github.com:"]
+    insteadOf     = "ghs:"
+    pushInsteadOf = "ghs:"
+
+[url "git://github.com/"]
+    insteadOf = "gh:"
+
+[url "git@gist.github.com:"]
+    insteadOf     = "gists:"
+    pushInsteadOf = "gists:"
+
+[url "git://gist.github.com/"]
+    insteadOf = "gist:"
 [alias]
-	st           = status
-	co           = checkout
-    cam          = commit -a -m
+    st   = status
+    co   = checkout
+    cam  = commit -a -m
+    oops = commit -a --amend -C HEAD
 
     diff-word    = diff --word-diff
     log-graph    = log --graph --decorate --pretty=oneline --abbrev-commit
     log-decorate = log --oneline --decorate
-[user]
-	name = Baptiste \"Talus\" Clavié
-	email = clavie.b@gmail.com
-[color]
-    ui = true
