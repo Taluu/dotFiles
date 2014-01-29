@@ -12,13 +12,17 @@ SAVEHIST=$HISTSIZE
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git composer symfony2 debian npm node zsh-syntax-highlighting zsh-history-substring-search vundle colored-man)
+plugins=(git composer symfony2 debian npm node zsh-syntax-highlighting zsh-history-substring-search vundle colored-man gem)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+export COMPOSER_HOME=$HOME/.composer
+
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
-export PATH=$PATH:/home/talus/bin:/usr/share/redis-2.6.13/src
+export PATH=$PATH:/home/talus/bin
+export PATH=$PATH:$COMPOSER_HOME
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 export NODE_PATH=/usr/local/lib/node_modules
 
@@ -53,3 +57,9 @@ if [ "$TERM" = "xterm" ] ; then
     fi
 fi
 
+
+
+VIMRUNTIME=$HOME/.vim
+
+# added by travis gem
+source /home/talus/.travis/travis.sh

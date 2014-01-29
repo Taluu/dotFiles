@@ -12,7 +12,8 @@
         set history=1000
         set hidden
         set spell
-        syntax on
+        syntax on " wtf 2 ?!
+        syntax enable " wtf ?!
 
         set backupdir=~/.vim/backups
         set directory=~/.vim/backups
