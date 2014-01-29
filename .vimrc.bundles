@@ -10,6 +10,7 @@ Bundle 'gmarik/vundle'
     Bundle 'MarcWeber/vim-addon-mw-utils'
     Bundle 'tomtom/tlib_vim'
     Bundle 'mileszs/ack.vim'
+    Bundle 'rking/ag.vim'
 
 " } General {
     Bundle 'scrooloose/nerdtree'
@@ -45,5 +46,6 @@ Bundle 'gmarik/vundle'
     " }
 " }
 
-filetype plugin indent on
+filetype plugin on
+" filetype plugin indent on
 
