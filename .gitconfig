@@ -6,7 +6,8 @@
 [core]
     editor = vim
 [push]
-    default = upstream
+    default = simple
+
 [color "status"]
     added     = green
     changed   = yellow
@@ -31,7 +32,11 @@
     co   = checkout
     cam  = commit -a -m
     oops = commit -a --amend -C HEAD
+    push = push-wh
 
     diff-word    = diff --word-diff
     log-graph    = log --graph --decorate --pretty=oneline --abbrev-commit
     log-decorate = log --oneline --decorate
+[github]
+	user = Taluu
+	token = secret

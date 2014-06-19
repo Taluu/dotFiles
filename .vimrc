@@ -12,7 +12,6 @@
         set history=1000
         set hidden
         set spell
-        syntax on " wtf 2 ?!
         syntax enable " wtf ?!
 
         set backupdir=~/.vim/backups
@@ -39,6 +38,8 @@
         " list blank characters {
             set list
             set listchars=tab:,.,trail:.
+
+            autocmd FileType javascript setlocal nolist listchars=trail:.
        " }
     " } indent {
         set smartindent
@@ -47,9 +48,9 @@
         set shiftwidth=4
         set softtabstop=4
 
-        autocmd FileType cucumber setlocal shiftwidth=2 tabstop=2 softtabstop=2
-        autocmd FileType less     setlocal shiftwidth=2 tabstop=2 softtabstop=2
-        autocmd FileType css      setlocal shiftwidth=2 tabstop=2 softtabstop=2
+        autocmd FileType cucumber   setlocal shiftwidth=2 tabstop=2 softtabstop=2
+        autocmd FileType less       setlocal shiftwidth=2 tabstop=2 softtabstop=2
+        autocmd FileType css        setlocal shiftwidth=2 tabstop=2 softtabstop=2
     " } Formating {
         set pastetoggle=<F12>
         set nowrap
@@ -66,6 +67,7 @@
         autocmd FileType vim        autocmd BufWritePre <buffer> call TrimSpaces()
         autocmd FileType yaml       autocmd BufWritePre <buffer> call TrimSpaces()
         autocmd FileType less       autocmd BufWritePre <buffer> call TrimSpaces()
+        autocmd FileType ruby       autocmd BufWritePre <buffer> call TrimSpaces()
 
         function! TrimSpaces()
             " backup current position and last search
@@ -90,7 +92,7 @@
         colorscheme solarized
 
     " } Ack {
-        let g:ackprg="ack-grep -H --no-color --no-group --column"
+         " let g:ackprg="ack-grep -H --no-color --no-group --column"
 
     " } powerline {
         set laststatus=2
@@ -162,6 +164,8 @@
         " between tabs
         nnoremap <S-H> gT
         nnoremap <S-L> gt
+        nnoremap <S-J> <NOP>
+        nnoremap <S-K> <NOP>
     " }
 
     nnoremap Y y$

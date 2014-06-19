@@ -1,3 +1,9 @@
+This is roughly the setup i'm using when i'm on my unix laptop. 
+Some things may not really be up to date, such as the crap below, and is
+absolutely not relevant right now.
+
+I shall update the info and maybe add some more files... Later.
+
 To install
 ==========
 - weechat-curses
