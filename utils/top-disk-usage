@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+#
+# View the top file that eats the most space
+# should be run as a sudoer or a root
+#
+
+curdir=`pwd`
+target=$1
+number=$2
+
+if [ -z "$target" ]; then
+    target=/
+fi
+
+if [ -z "$number" ]; then
+    number=10
+fi
+
+cd $target
+
+echo "Here are the top $number files / directories in $target :"
+
+du -hsx * | sort -rh | head -n "$number"
+cd $curdir
+
