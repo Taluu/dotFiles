@@ -1,0 +1,26 @@
+#!/bin/sh
+
+#
+# Mount a samba drive
+# Better run as a sudoer
+#
+
+if [ "$#" -lt 2 ]; then
+    echo "Usage : smbmount address mountPoint [user]"
+    exit
+fi
+
+address=$1
+mountPoint=$2
+
+echo "$address"
+echo "$mountPoint"
+
+command="mount -t cifs //$1 /media/$2 -o rw"
+
+if [ ! -z "$3" ]; then
+    command="$command,username=$3"
+fi;
+
+mkdir -p /media/$mountPoint
+$command
