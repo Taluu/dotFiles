@@ -13,14 +13,14 @@ fi
 address=$1
 mountPoint=$2
 
-echo "$address"
-echo "$mountPoint"
-
 command="mount -t cifs //$1 /media/$2 -o rw"
 
 if [ ! -z "$3" ]; then
     command="$command,username=$3"
 fi;
 
+echo "Creating mount point /media/$mountPoint..."
 mkdir -p /media/$mountPoint
+
+echo "Mounting $address to /media/$mountPoint..."
 $command
