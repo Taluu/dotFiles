@@ -10,17 +10,16 @@ target=$1
 number=$2
 
 if [ -z "$target" ]; then
-    target=/
+    target=$curdir
 fi
 
 if [ -z "$number" ]; then
     number=10
 fi
 
-cd $target
-
 echo "Here are the top $number files / directories in $target :"
 
+cd $target
 du -hsx * | sort -rh | head -n "$number"
 cd $curdir
 
