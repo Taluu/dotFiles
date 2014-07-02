@@ -5,9 +5,22 @@
 # should be run as a sudoer or a root
 #
 
-curdir=`pwd`
+#
+# HOWTO
+#
+# `top-disk-usage`
+# Will list the 10 top most consuming elements in the curdir
+#
+# `top-disk-usage <where>`
+# Will list the 10 top most consuming elements in <where>
+#
+# `top-disk-usage <where> <number>`
+# Will list the <number> top most consuming elements in <where>
+#
+
 target=$1
 number=$2
+curdir=`pwd`
 
 if [ -z "$target" ]; then
     target=$curdir
