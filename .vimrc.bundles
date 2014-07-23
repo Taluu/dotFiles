@@ -4,44 +4,42 @@ filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " Utils {
-    Bundle 'MarcWeber/vim-addon-mw-utils'
-    Bundle 'tomtom/tlib_vim'
-    Bundle 'rking/ag.vim'
+    Plugin 'MarcWeber/vim-addon-mw-utils'
+    Plugin 'tomtom/tlib_vim'
+    Plugin 'rking/ag.vim'
 
 " } General {
-    Bundle 'scrooloose/nerdtree'
-    Bundle 'altercation/vim-colors-solarized'
-    Bundle 'kien/ctrlp.vim'
-    Bundle 'Lokaltog/powerline'
-    Bundle 'jistr/vim-nerdtree-tabs'
-    Bundle 'mbbill/undotree'
-    "Bundle 'nathanaelkane/vim-indent-guides'
-    Bundle 'tpope/vim-abolish'
+    Plugin 'scrooloose/nerdtree'
+    Plugin 'altercation/vim-colors-solarized'
+    Plugin 'kien/ctrlp.vim'
+    Plugin 'Lokaltog/powerline'
+    Plugin 'jistr/vim-nerdtree-tabs'
+    Plugin 'mbbill/undotree'
+    " Plugin 'nathanaelkane/vim-indent-guides'
+    Plugin 'tpope/vim-abolish'
 
 " } Prog {
-    Bundle 'scrooloose/syntastic'
-    Bundle 'mattn/gist-vim'
-    Bundle 'scrooloose/nerdcommenter'
-    Bundle 'godlygeek/tabular'
-    Bundle 'majutsushi/tagbar'
-    "Bundle 'Shougo/neocomplcache'
-    Bundle 'stephenmckinney/vim-autotag'
-    Bundle 'airblade/vim-gitgutter'
-    Bundle 'joonty/vdebug'
+    Plugin 'scrooloose/syntastic'
+    Plugin 'mattn/gist-vim'
+    Plugin 'scrooloose/nerdcommenter'
+    Plugin 'godlygeek/tabular'
+    Plugin 'majutsushi/tagbar'
+    " Plugin 'Shougo/neocomplcache'
+    Plugin 'stephenmckinney/vim-autotag'
+    Plugin 'airblade/vim-gitgutter'
+    Plugin 'joonty/vdebug'
+    " Plugin 'Valloric/YouCompleteMe'
 
-    " PHP {
-        "Bundle 'spf13/PIV'
-        Bundle 'StanAngeloff/php.vim'
-
-    " } Misc {
-        Bundle 'tpope/vim-markdown'
-        Bundle 'tpope/vim-cucumber'
-        Bundle 'quentindecock/vim-cucumber-align-pipes'
-        Bundle 'evidens/vim-twig'
-        Bundle 'groenewege/vim-less'
+    " Misc {
+        Plugin 'StanAngeloff/php.vim'
+        Plugin 'tpope/vim-markdown'
+        Plugin 'tpope/vim-cucumber'
+        Plugin 'quentindecock/vim-cucumber-align-pipes'
+        Plugin 'evidens/vim-twig'
+        Plugin 'groenewege/vim-less'
     " }
 " }
 

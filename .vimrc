@@ -144,7 +144,9 @@
         " If undotree is opened, it is likely one wants to interact with it.
         let g:undotree_SetFocusWhenToggle=1
     " } DBGPavim {
-        "let g:dbgPavimKeyQuit = '<F6>'
+        " let g:dbgPavimKeyQuit = '<F6>'
+    " } vDebug {
+        " let g:vdebug_options["break_on_open"] = 0
     " }
 " } Map {
     " shift+tab = unindent
