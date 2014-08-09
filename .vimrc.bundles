@@ -2,7 +2,7 @@
 filetype off
 
 set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+call vundle#begin()
 
 Plugin 'gmarik/vundle'
 
@@ -42,6 +42,8 @@ Plugin 'gmarik/vundle'
         Plugin 'groenewege/vim-less'
     " }
 " }
+
+call vundle#end()
 
 filetype plugin on
 " filetype plugin indent on
