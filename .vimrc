@@ -35,6 +35,8 @@
 
         set backspace=indent,eol,start
 
+        set t_Co=256
+
         " list blank characters {
             set list
             set listchars=tab:,.,trail:.
@@ -91,15 +93,19 @@
         set background=dark
         colorscheme solarized
 
-    " } Ack {
-         " let g:ackprg="ack-grep -H --no-color --no-group --column"
-
-    " } powerline {
+    " } vim-airline {
         set laststatus=2
         set noshowmode
-        set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
-        set ttimeoutlen=10
+        "set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+
+        let g:airline_powerline_fonts = 1
+        let g:airline#extensions#hunks#non_zero_only = 1
+        let g:airline_section_b = airline#section#create(['branch'])
+        let g:airline_section_c = airline#section#create(['%<', 'file', ' ', 'readonly', 'hunks'])
+
+        set timeoutlen=500
+
         augroup FastEscape
             autocmd!
             autocmd InsertEnter * set timeoutlen=0
