@@ -164,10 +164,15 @@
 
     " Moving in files and between tabs & buffers {
         " between buffers
-        nnoremap <C-J> <C-W>j<C-W>_
-        nnoremap <C-K> <C-W>k<C-W>_
-        nnoremap <C-L> <C-W>l<C-W>_
-        nnoremap <C-H> <C-W>h<C-W>_
+        nnoremap <A-J> <C-W>j<C-W>_
+        nnoremap <A-K> <C-W>k<C-W>_
+        nnoremap <A-L> <C-W>l<C-W>_
+        nnoremap <A-H> <C-W>h<C-W>_
+
+        nnoremap <C-J> :wincmd j<CR>
+        nnoremap <C-K> :wincmd k<CR>
+        nnoremap <C-L> :wincmd l<CR>
+        nnoremap <C-H> :wincmd h<CR>
 
         " between lines
         nnoremap j gj
