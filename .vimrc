@@ -149,10 +149,14 @@
         nnoremap <silent> <Leader>u :UndotreeToggle<CR>
         " If undotree is opened, it is likely one wants to interact with it.
         let g:undotree_SetFocusWhenToggle=1
-    " } DBGPavim {
-        " let g:dbgPavimKeyQuit = '<F6>'
     " } vDebug {
+        if !exists('g:vdebug_options')
+            let g:vdebug_options = {}
+        endif
+
         " let g:vdebug_options["break_on_open"] = 0
+        let g:vdebug_options["watch_window_height"]=45
+        let g:vdebug_options["status_window_height"]=5
     " }
 " } Map {
     " shift+tab = unindent

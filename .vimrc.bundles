@@ -32,7 +32,8 @@ Plugin 'gmarik/vundle'
     " Plugin 'Shougo/neocomplcache'
     Plugin 'stephenmckinney/vim-autotag'
     Plugin 'airblade/vim-gitgutter'
-    Plugin 'joonty/vdebug'
+    " Plugin 'joonty/vdebug'
+    Plugin 'taluu/vdebug' " temporary, while vdebug doesn't implement the resizing of windows
     " Plugin 'Valloric/YouCompleteMe'
 
     " Misc {
