@@ -93,25 +93,32 @@
         set background=dark
         colorscheme solarized
 
-    " } vim-airline {
+    " } statusbar {
         set laststatus=2
         set noshowmode
 
         "set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
         let g:airline_powerline_fonts = 1
+        let g:airline#extensions#tabline#enabled = 1
         let g:airline#extensions#hunks#non_zero_only = 1
-        let g:airline_section_b = airline#section#create(['branch'])
-        let g:airline_section_c = airline#section#create(['%<', 'file', ' ', 'readonly', 'hunks'])
+
+        " airline initialisation
+        function! AirlineInit()
+            let g:airline_section_b = airline#section#create(['branch'])
+            let g:airline_section_c = airline#section#create(['%<', 'file', ' ', 'readonly', 'hunks'])
+        endfunction
+
+        autocmd VimEnter * call AirlineInit()
 
         set timeoutlen=500
+        set ttimeoutlen=10
 
         augroup FastEscape
             autocmd!
             autocmd InsertEnter * set timeoutlen=0
             autocmd InsertLeave * set timeoutlen=1000
         augroup END
-
     " } NerdTree {
         noremap <C-n> :NERDTreeMirrorToggle<CR>
         noremap <leader>e :NERDTreeFind<CR>
