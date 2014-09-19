@@ -9,17 +9,19 @@ ZSH=$HOME/.oh-my-zsh
 HISTSIZE=10000
 SAVEHIST=$HISTSIZE
 
+# dafuq ?!
+setopt no_cdable_vars
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git composer symfony2 debian npm node zsh-syntax-highlighting zsh-history-substring-search vundle colored-man gem virtualenv virtualenvwrapper)
+plugins=(git composer symfony2 debian npm node zsh-syntax-highlighting zsh-history-substring-search colored-man gem)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export COMPOSER_HOME=$HOME/.composer
 
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
 export PATH=$PATH:/home/talus/bin
 export PATH=$PATH:$COMPOSER_HOME
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
@@ -57,8 +59,6 @@ if [ "$TERM" = "xterm" ] ; then
     fi
 fi
 
-
-
 VIMRUNTIME=$HOME/.vim
 
 # added by travis gem
@@ -67,6 +67,8 @@ source /home/talus/.travis/travis.sh
 # less, utf8 !
 LESSCHARSET=UTF-8
 
-alias git="LANG=en_US git"
+alias git="LANGUAGE=en_US.UTF-8 \"git\""
+alias vim="LANGUAGE=en_US.UTF-8 \"vim\""
+alias ls="LANGUAGE=en_US.UTF-8 \"ls\""
 
-WORKON_HOME=~/Envs
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
