@@ -100,7 +100,7 @@
         "set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
         let g:airline_powerline_fonts = 1
-        let g:airline#extensions#tabline#enabled = 1
+        " let g:airline#extensions#tabline#enabled = 1 " too buggy :(
         let g:airline#extensions#hunks#non_zero_only = 1
 
         " airline initialisation
@@ -125,7 +125,7 @@
         noremap <leader>nt :NERDTreeFind<CR>
 
         let NERDTreeShowBookmarks=1
-        let NERDTreeIgnore=['\.pyc', '\~$', '\.git$', 'node_modules$']
+        let NERDTreeIgnore=['\.pyc', '\~$', '\.git$', 'node_modules$', '\.tags$']
         let NERDTreeChDirMode=0
         let NERDTreeQuitOnOpen=1
         let NERDTreeCasadeOpenSingleChildDir=1
@@ -164,6 +164,7 @@
         " let g:vdebug_options["break_on_open"] = 0
         let g:vdebug_options["watch_window_height"]=45
         let g:vdebug_options["status_window_height"]=5
+        " let g:vdebug_options["continuous_mode"]=1
     " }
 " } Map {
     " shift+tab = unindent

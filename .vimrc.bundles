@@ -35,6 +35,8 @@ Plugin 'gmarik/vundle'
     " Plugin 'joonty/vdebug'
     Plugin 'taluu/vdebug' " temporary, while vdebug doesn't implement the resizing of windows
     " Plugin 'Valloric/YouCompleteMe'
+    Plugin 'vim-ruby/vim-ruby'
+    Plugin 'tpope/vim-rails'
 
     " Misc {
         Plugin 'StanAngeloff/php.vim'
