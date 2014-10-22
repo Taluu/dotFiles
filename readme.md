@@ -11,6 +11,10 @@ To install
 - vim (full)
 - python3
 - sphinx
-- php 5.4 (5.5)
-- apache
+- php 5.4 (5.5 / 5.6)
+- nginx
 - mysql
+- powerline fonts
+- zsh + ohmyzsh
+- ssh
+- chrome
