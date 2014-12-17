@@ -15,7 +15,7 @@ setopt no_cdable_vars
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git composer symfony2 debian npm node zsh-syntax-highlighting zsh-history-substring-search colored-man gem)
+plugins=(git composer symfony2 debian npm node zsh-syntax-highlighting history-substring-search colored-man gem zsh_reload rvm tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -62,7 +62,7 @@ fi
 VIMRUNTIME=$HOME/.vim
 
 # added by travis gem
-source /home/talus/.travis/travis.sh
+# source /home/talus/.travis/travis.sh
 
 # less, utf8 !
 LESSCHARSET=UTF-8
@@ -72,3 +72,6 @@ alias vim="LANGUAGE=en_US.UTF-8 \"vim\""
 alias ls="LANGUAGE=en_US.UTF-8 \"ls\""
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# fix tmux + zsh behaviour
+DISABLE_AUTO_TITLE=true
