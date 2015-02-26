@@ -71,7 +71,23 @@ alias git="LANGUAGE=en_US.UTF-8 \"git\""
 alias vim="LANGUAGE=en_US.UTF-8 \"vim\""
 alias ls="LANGUAGE=en_US.UTF-8 \"ls\""
 
+unalias gm
+unalias ag
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # fix tmux + zsh behaviour
 DISABLE_AUTO_TITLE=true
+
+# display a motd
+if [[ ! -a /tmp/motd ]]; then
+    sh /etc/update-motd.d/00-header
+    echo
+    
+    if [[ -x fortune ]]; then
+        fortune # | cowsay -n
+        echo
+    fi
+
+    touch /tmp/motd
+fi
