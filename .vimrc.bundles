@@ -37,6 +37,7 @@ Plugin 'gmarik/vundle'
     " Plugin 'Valloric/YouCompleteMe'
     Plugin 'vim-ruby/vim-ruby'
     Plugin 'tpope/vim-rails'
+    " Plugin 'laurentb/vim-cute-php'
 
     " Misc {
         Plugin 'StanAngeloff/php.vim'
