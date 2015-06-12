@@ -1,0 +1,10 @@
+{
+    "config": {
+        "bin-dir": "/home/talus/bin"
+    },
+    
+    "require": {
+        "psy/psysh": "@stable",
+        "phpunit/phpunit": "@stable"
+    }
+}
