@@ -84,8 +84,8 @@ if [[ ! -a /tmp/motd ]]; then
     sh /etc/update-motd.d/00-header
     echo
     
-    if [[ -x fortune ]]; then
-        fortune # | cowsay -n
+    if [[ -x /usr/games/fortune ]]; then
+        /usr/games/fortune # | cowsay -n
         echo
     fi
 
