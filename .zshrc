@@ -15,16 +15,15 @@ setopt no_cdable_vars
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git composer symfony2 debian npm node zsh-syntax-highlighting history-substring-search colored-man gem zsh_reload rvm tmux)
+plugins=(git composer symfony2 debian npm node history-substring-search colored-man gem zsh_reload tmux zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
+# composer
 export COMPOSER_HOME=$HOME/.composer
 
 export PATH=$PATH:/home/talus/bin
 export PATH=$PATH:$COMPOSER_HOME
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 export NODE_PATH=/usr/local/lib/node_modules
 
@@ -74,8 +73,6 @@ alias ls="LANGUAGE=en_US.UTF-8 \"ls\""
 
 unalias gm
 unalias ag
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # fix tmux + zsh behaviour
 DISABLE_AUTO_TITLE=true
