@@ -89,3 +89,7 @@ if [[ ! -a /tmp/motd ]]; then
 
     touch /tmp/motd
 fi
+
+# rbenv stuff
+export PATH="$PATH:$HOME/.rbenv/bin" # Add Rbenv to PATH for scripting
+eval "$(rbenv init -)"
