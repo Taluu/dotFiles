@@ -94,5 +94,9 @@ fi
 export PATH="$PATH:$HOME/.rbenv/bin" # Add Rbenv to PATH for scripting
 eval "$(rbenv init -)"
 
+# pip mess
+export PIP_DOWNLOAD_CACHE='~/.pip/cache'
+export PATH="$PATH:$HOME/.local/bin"
+
 # zsh completion
 autoload -U compinit && compinit
