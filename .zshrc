@@ -15,7 +15,7 @@ setopt no_cdable_vars
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git composer symfony2 debian npm node history-substring-search colored-man gem zsh_reload tmux zsh-syntax-highlighting)
+plugins=(git composer symfony2 debian npm node history-substring-search colored-man gem zsh_reload tmux zsh-completions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -93,3 +93,6 @@ fi
 # rbenv stuff
 export PATH="$PATH:$HOME/.rbenv/bin" # Add Rbenv to PATH for scripting
 eval "$(rbenv init -)"
+
+# zsh completion
+autoload -U compinit && compinit
