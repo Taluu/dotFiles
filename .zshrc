@@ -98,5 +98,10 @@ eval "$(rbenv init -)"
 export PIP_DOWNLOAD_CACHE='~/.pip/cache'
 export PATH="$PATH:$HOME/.local/bin"
 
+# nvm sheeeeeeeit
+export NVM_DIR="/home/talus/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+nvm use 0.10
+
 # zsh completion
 autoload -U compinit && compinit
