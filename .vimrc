@@ -107,10 +107,10 @@
     source ~/.vimrc.bundles
 
     " Solarized {
+        "let g:solarized_termcolors=256
         set background=dark
-        colorscheme solarized
-        let g:solarized_termcolors=256
 
+        colorscheme solarized
 
     " } statusbar {
         set laststatus=2
