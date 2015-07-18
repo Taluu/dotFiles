@@ -105,3 +105,9 @@ nvm use 0.10
 
 # zsh completion
 autoload -U compinit && compinit
+
+# thefuck alias
+if [[ -x thefuck ]]; then
+    alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
+fi
+
