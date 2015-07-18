@@ -1,10 +1,10 @@
 " Vim Bundles
 filetype off
 
-set rtp+=~/.vim/bundle/vundle
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
 " Utils {
     Plugin 'MarcWeber/vim-addon-mw-utils'
