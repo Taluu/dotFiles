@@ -107,7 +107,7 @@ nvm use 0.10
 autoload -U compinit && compinit
 
 # thefuck alias
-if [[ -x thefuck ]]; then
-    alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
+if [[ -x ~/.local/bin/thefuck ]]; then
+    alias fuck='eval $(~/.local/bin/thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 fi
 
