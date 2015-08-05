@@ -22,6 +22,7 @@ Plugin 'VundleVim/Vundle.vim'
     " Plugin 'nathanaelkane/vim-indent-guides'
     Plugin 'tpope/vim-abolish'
     Plugin 'tpope/vim-fugitive'
+    Plugin 'Rykka/riv.vim'
 
 " } Prog {
     Plugin 'scrooloose/syntastic'
