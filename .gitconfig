@@ -1,10 +1,14 @@
 [user]
     name = Baptiste Clavié
     email = clavie.b@gmail.com
+
 [color]
     ui = true
+
 [core]
     editor = vim
+    pager = diff-highlight | less -r
+
 [push]
     default = simple
 
@@ -12,8 +16,10 @@
     added     = green
     changed   = yellow
     untracked = red
+
 [color "diff"]
     meta = cyan
+
 [url "git@github.com:"]
     insteadOf     = "ghs:"
     pushInsteadOf = "ghs:"
@@ -27,16 +33,13 @@
 
 [url "git://gist.github.com/"]
     insteadOf = "gist:"
+
 [alias]
     st   = status
     co   = checkout
-    cam  = commit -a -m
     oops = commit -a --amend -C HEAD
     push = push-wh
 
     diff-word    = diff --word-diff
     log-graph    = log --graph --decorate --pretty=oneline --abbrev-commit
     log-decorate = log --oneline --decorate
-[github]
-	user = Taluu
-	token = secret
