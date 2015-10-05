@@ -43,3 +43,5 @@
     diff-word    = diff --word-diff
     log-graph    = log --graph --decorate --pretty=oneline --abbrev-commit
     log-decorate = log --oneline --decorate
+[commit]
+	template = /home/talus/.git_commit_msg
