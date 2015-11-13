@@ -21,14 +21,18 @@
         set encoding=utf-8
         scriptencoding utf-8
 
-    " undo {
+    " } undo {
         set undofile
         set undolevels=1000
         set undoreload=10000
         set undodir=~/.vim/undo
 
+    " } searching {
+        set incsearch
+
     " } ui {
         set number
+        set wildmenu
         set nofoldenable
         set cursorline
         set tabpagemax=15
@@ -139,6 +143,7 @@
             autocmd InsertEnter * set timeoutlen=0
             autocmd InsertLeave * set timeoutlen=1000
         augroup END
+
     " } NerdTree {
         noremap <C-n> :NERDTreeMirrorToggle<CR>
         noremap <leader>e :NERDTreeFind<CR>
@@ -154,19 +159,24 @@
 
     " } Ctags {
         set tags=./tags;/,~/.vimtags
+
     " } ctrlp {
-        let g:ctrlp_working_path_mode = 2
-        nnoremap <silent> <D-t> :CtrlP<CR>
-        nnoremap <silent> <D-r> :CtrlPMRU<CR>
+        nnoremap <silent> <S-r> :CtrlPMRU<CR>
+
+        let g:ctrlp_working_path_mode = 'ra'
+        let g:ctrlp_switch_buffer = 0
+        let g:ctrlp_use_caching = 1
+        let g:ctrlp_clear_cache_on_exist = 1
+
         let g:ctrlp_custom_ignore = {
-            \ 'dir':  '\.git$',
-            \ 'file': '\.exe$\|\.so$\|\.dll$' }
+            \ 'dir':  '\.git$'
+        \ }
 
         let g:ctrlp_user_command = {
             \ 'types': {
                 \ 1: ['.git', 'cd %s && git ls-files'],
             \ },
-            \ 'fallback': 'find %s -type f'
+            \ 'fallback': 'ag %s -l --nocolor -g ""'
         \ }
 
     " } TagBar {
