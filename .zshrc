@@ -92,7 +92,7 @@ fi
 
 # rbenv stuff
 export PATH="$PATH:$HOME/.rbenv/bin" # Add Rbenv to PATH for scripting
-eval "$(rbenv init -)"
+eval "$(rbenv init - zsh)"
 
 # pip mess
 export PATH="$PATH:$HOME/.local/bin"
