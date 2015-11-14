@@ -97,6 +97,9 @@ eval "$(rbenv init -)"
 # pip mess
 export PATH="$PATH:$HOME/.local/bin"
 
+# vim is da tru editor
+export EDITOR="/usr/bin/vim"
+
 # nvm sheeeeeeeit
 export NVM_DIR="/home/talus/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
