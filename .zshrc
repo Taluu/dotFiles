@@ -15,9 +15,11 @@ setopt no_cdable_vars
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git composer symfony2 archlinux npm node history-substring-search colored-man gem zsh_reload tmux zsh-completions zsh-syntax-highlighting jsontools)
+plugins=(git composer symfony2 archlinux npm node history-substring-search colored-man gem zsh_reload tmux zsh-completions jsontools)
 
 source $ZSH/oh-my-zsh.sh
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # composer
 export COMPOSER_HOME=$HOME/.composer
