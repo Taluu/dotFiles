@@ -81,9 +81,6 @@ DISABLE_AUTO_TITLE=true
 
 # display a motd
 if [[ ! -a /tmp/motd ]]; then
-    sh /etc/update-motd.d/00-header
-    echo
-    
     if [[ -x /usr/games/fortune ]]; then
         /usr/games/fortune # | cowsay -n
         echo
