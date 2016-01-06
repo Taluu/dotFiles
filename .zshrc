@@ -23,6 +23,7 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # composer
 export COMPOSER_HOME=$HOME/.composer
+export COMPOSER_DISABLE_XDEBUG_WARN=1
 
 export PATH=$PATH:/home/talus/bin
 export PATH=$PATH:$COMPOSER_HOME
@@ -89,6 +90,9 @@ if [[ ! -a /tmp/motd ]]; then
     touch /tmp/motd
 fi
 
+# disable fucking composer warning
+alias composer="COMPOSER_DISABLE_XDEBUG_WARN=1 composer"
+
 # rbenv stuff
 export PATH="$PATH:$HOME/.rbenv/bin" # Add Rbenv to PATH for scripting
 eval "$(rbenv init - zsh)"
@@ -110,4 +114,6 @@ autoload -U compinit && compinit
 if [[ -x ~/.local/bin/thefuck ]]; then
     alias fuck='eval $(~/.local/bin/thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 fi
+
+alias vim-tmux="tmux new-session -s Vim"
 
