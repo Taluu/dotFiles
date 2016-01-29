@@ -8,6 +8,8 @@
         "phpunit/phpunit": "@stable",
         "jakub-onderka/php-parallel-lint": "^0.9.0",
         "phploc/phploc": "*",
-        "symfony/var-dumper": "^3.0"
+        "symfony/var-dumper": "^3.0",
+        "techlivezheng/phpctags": "^0.6.0",
+        "etsy/phan": "^0.2.0"
     }
 }
