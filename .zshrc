@@ -117,3 +117,6 @@ fi
 
 alias vim-tmux="tmux new-session -s Vim"
 
+# fucking git, don't want the completion of remote branches !!
+zstyle :completion::complete:git-checkout:argument-rest:headrefs command "git for-each-ref --format='%(refname)' refs/heads 2>/dev/null"
+
