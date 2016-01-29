@@ -14,7 +14,7 @@ Plugin 'VundleVim/Vundle.vim'
 " } General {
     Plugin 'scrooloose/nerdtree'
     Plugin 'altercation/vim-colors-solarized'
-    Plugin 'kien/ctrlp.vim'
+    Plugin 'ctrlpvim/ctrlp.vim'
     " Plugin 'Lokaltog/powerline'
     Plugin 'bling/vim-airline'
     Plugin 'jistr/vim-nerdtree-tabs'
@@ -41,6 +41,7 @@ Plugin 'VundleVim/Vundle.vim'
     " Plugin 'laurentb/vim-cute-php'
     " Plugin 'hhvm/vim-hack'
     Plugin 'StanAngeloff/php.vim'
+    " Plugin 'vim-php/tagbar-phpctags.vim'
 
     " Misc {
         Plugin 'tpope/vim-markdown'

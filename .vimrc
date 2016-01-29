@@ -203,6 +203,10 @@
         "let g:vdebug_features["max_data"] = 2048
         "let g:vdebug_features["max_depth"] = 100
         let g:vdebug_features["max_children"] = 128
+
+        " <leader> + b : breakpoint window
+        nnoremap <silent> <leader>b :BreakpointWindow<CR>
+
     " } Riv.vim {
         let g:riv_disable_folding = 1
     " }
