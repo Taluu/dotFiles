@@ -11,5 +11,11 @@
         "symfony/var-dumper": "^3.0",
         "techlivezheng/phpctags": "^0.6.0",
         "etsy/phan": "^0.2.0"
+    },
+
+    "autoload": {
+        "files": [
+            "vendor/symfony/var-dumper/Resources/functions/dump.php"
+        ]
     }
 }
