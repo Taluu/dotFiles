@@ -49,3 +49,6 @@
 [commit]
     template = /home/talus/.git_templates/.git_commit_msg
     gpgsign = true
+
+[init]
+    templatedir = ~/.git_templates
