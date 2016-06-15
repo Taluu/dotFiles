@@ -9,6 +9,7 @@
 [core]
     editor = vim
     pager = diff-highlight | less -r
+    excludesfile = /home/talus/.gitignore
 
 [push]
     default = simple
