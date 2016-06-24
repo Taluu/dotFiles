@@ -7,7 +7,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Utils {
-    Plugin 'MarcWeber/vim-addon-mw-utils'
+    "Plugin 'MarcWeber/vim-addon-mw-utils'
     Plugin 'tomtom/tlib_vim'
     "Plugin 'rking/ag.vim' "Deprecated :{
     Plugin 'mileszs/ack.vim'
@@ -27,9 +27,9 @@ Plugin 'VundleVim/Vundle.vim'
 
 " } Prog {
     Plugin 'scrooloose/syntastic'
-    Plugin 'mattn/gist-vim'
+    "Plugin 'mattn/gist-vim'
     Plugin 'scrooloose/nerdcommenter'
-    Plugin 'godlygeek/tabular'
+    "Plugin 'godlygeek/tabular'
     Plugin 'majutsushi/tagbar'
     " Plugin 'Shougo/neocomplcache'
     Plugin 'stephenmckinney/vim-autotag'
