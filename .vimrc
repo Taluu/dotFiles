@@ -209,6 +209,13 @@
 
     " } Riv.vim {
         let g:riv_disable_folding = 1
+    " } Ack.vim {
+        let g:ackprg = 'ag --vimgrep --smart-case'
+
+        cnoreabbrev ag Ack
+        cnoreabbrev aG Ack
+        cnoreabbrev Ag Ack
+        cnoreabbrev AG Ack
     " }
 " } Map {
     " shift+tab = unindent

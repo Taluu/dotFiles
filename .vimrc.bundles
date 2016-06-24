@@ -9,7 +9,8 @@ Plugin 'VundleVim/Vundle.vim'
 " Utils {
     Plugin 'MarcWeber/vim-addon-mw-utils'
     Plugin 'tomtom/tlib_vim'
-    Plugin 'rking/ag.vim'
+    "Plugin 'rking/ag.vim' "Deprecated :{
+    Plugin 'mileszs/ack.vim'
 
 " } General {
     Plugin 'scrooloose/nerdtree'
