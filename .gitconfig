@@ -9,7 +9,7 @@
 [core]
     editor = vim
     pager = diff-highlight | less -r
-    excludesfile = /home/talus/.gitignore
+    excludesfile = ~/.gitignore
 
 [push]
     default = simple
@@ -47,8 +47,11 @@
     log-decorate = log --oneline --decorate
 
 [commit]
-    template = /home/talus/.git_templates/.git_commit_msg
+    template = ~/.git_templates/.git_commit_msg
     gpgsign = true
 
 [init]
     templatedir = ~/.git_templates
+
+[diff]
+    compactionHeuristic = true
