@@ -23,7 +23,7 @@ source $ZSH/oh-my-zsh.sh
 export COMPOSER_HOME=$HOME/.composer
 export COMPOSER_DISABLE_XDEBUG_WARN=1
 
-export PATH=$PATH:/home/talus/bin
+export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$COMPOSER_HOME
 
 export NODE_PATH=/usr/local/lib/node_modules
@@ -93,7 +93,7 @@ alias composer="COMPOSER_DISABLE_XDEBUG_WARN=1 composer"
 
 # rbenv stuff
 export PATH="$PATH:$HOME/.rbenv/bin" # Add Rbenv to PATH for scripting
-eval "$(rbenv init - zsh)"
+[ -s "rbenv" ] && eval "$(rbenv init - zsh)"
 
 # pip mess
 export PATH="$PATH:$HOME/.local/bin"
@@ -112,8 +112,6 @@ autoload -U compinit && compinit
 if [[ -x ~/.local/bin/thefuck ]]; then
     alias fuck='eval $(~/.local/bin/thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 fi
-
-alias vim-tmux="tmux new-session -s Vim"
 
 # fucking git, don't want the completion of remote branches !!
 zstyle :completion::complete:git-checkout:argument-rest:headrefs command "git for-each-ref --format='%(refname)' refs/heads 2>/dev/null"
