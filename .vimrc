@@ -158,7 +158,7 @@
         let NERDTreeShowHidden=1
 
     " } Ctags {
-        set tags=./tags;/,~/.vimtags
+        set tags=./tags;/,~/.vimtags,./.git/tags
 
     " } ctrlp {
         nnoremap <silent> <S-r> :CtrlPMRU<CR>
