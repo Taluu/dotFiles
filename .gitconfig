@@ -1,7 +1,6 @@
 [user]
     name = Baptiste Clavié
     email = clavie.b@gmail.com
-    signingkey = 3EF32F59
 
 [color]
     ui = true
@@ -48,10 +47,12 @@
 
 [commit]
     template = ~/.git_templates/.git_commit_msg
-    gpgsign = true
 
 [init]
     templatedir = ~/.git_templates
 
 [diff]
     compactionHeuristic = true
+
+[include]
+    path = ~/.git_personnal_config 
