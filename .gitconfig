@@ -7,8 +7,11 @@
 
 [core]
     editor = vim
-    pager = diff-highlight | less -r
     excludesfile = ~/.gitignore
+
+[pager]
+    show = diff-highlight | less -r
+    diff = diff-highlight | less -r
 
 [push]
     default = simple
