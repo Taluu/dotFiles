@@ -43,6 +43,7 @@ Plugin 'VundleVim/Vundle.vim'
     " Plugin 'hhvm/vim-hack'
     Plugin 'StanAngeloff/php.vim'
     " Plugin 'vim-php/tagbar-phpctags.vim'
+    Plugin 'scrooloose/nerdtree-git-plugin'
 
     " Misc {
         Plugin 'tpope/vim-markdown'
