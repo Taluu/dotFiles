@@ -28,14 +28,14 @@
     insteadOf     = "ghs:"
     pushInsteadOf = "ghs:"
 
-[url "git://github.com/"]
+[url "https://github.com/"]
     insteadOf = "gh:"
 
 [url "git@gist.github.com:"]
     insteadOf     = "gists:"
     pushInsteadOf = "gists:"
 
-[url "git://gist.github.com/"]
+[url "https://gist.github.com/"]
     insteadOf = "gist:"
 
 [alias]
