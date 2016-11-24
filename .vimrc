@@ -62,6 +62,8 @@
         set nowrap
         set textwidth=0
 
+        autocmd FileType php        autocmd BufNewFile,BufReadPre <buffer> call PhpSyntaxOverride()
+
         autocmd FileType php        autocmd BufWritePre <buffer> call TrimSpaces()
         autocmd FileType javascript autocmd BufWritePre <buffer> call TrimSpaces()
         autocmd FileType twig       autocmd BufWritePre <buffer> call TrimSpaces()
@@ -86,6 +88,11 @@
             " something happened, heh ?
             let @/=_s
             call cursor(_l, _c)
+        endfunction
+
+        function! PhpSyntaxOverride()
+            hi! def link phpDocTags phpDefine
+            hi! def link phpDocParam phpType
         endfunction
     " } tools {
         function! RunPHPUnitTest(filter)
