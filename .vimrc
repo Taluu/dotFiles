@@ -168,23 +168,25 @@
         set tags=./tags;/,~/.vimtags,./.git/tags
 
     " } ctrlp {
-        nnoremap <silent> <S-r> :CtrlPMRU<CR>
+        "nnoremap <silent> <S-r> :CtrlPMRU<CR>
 
-        let g:ctrlp_working_path_mode = 'ra'
-        let g:ctrlp_switch_buffer = 0
-        let g:ctrlp_use_caching = 0
-        let g:ctrlp_clear_cache_on_exit = 1
+        "let g:ctrlp_working_path_mode = 'ra'
+        "let g:ctrlp_switch_buffer = 0
+        "let g:ctrlp_use_caching = 0
+        "let g:ctrlp_clear_cache_on_exit = 1
 
-        let g:ctrlp_custom_ignore = {
-            \ 'dir':  '\.git$'
-        \ }
+        "let g:ctrlp_custom_ignore = {
+            "\ 'dir':  '\.git$'
+        "\ }
 
-        let g:ctrlp_user_command = {
-            \ 'types': {
-                \ 1: ['.git', 'cd %s && git ls-files'],
-            \ },
-            \ 'fallback': 'ag %s -l --nocolor -g ""'
-        \ }
+        "let g:ctrlp_user_command = {
+            "\ 'types': {
+                "\ 1: ['.git', 'cd %s && git ls-files'],
+            "\ },
+            "\ 'fallback': 'ag %s -l --nocolor -g ""'
+        "\ }
+    " } fzf {
+        nnoremap <silent> <c-p> :FZF<CR>
 
     " } TagBar {
         nnoremap <silent> <leader>tt :TagbarToggle<CR>
