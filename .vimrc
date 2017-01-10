@@ -172,8 +172,8 @@
 
         let g:ctrlp_working_path_mode = 'ra'
         let g:ctrlp_switch_buffer = 0
-        let g:ctrlp_use_caching = 1
-        let g:ctrlp_clear_cache_on_exist = 1
+        let g:ctrlp_use_caching = 0
+        let g:ctrlp_clear_cache_on_exit = 1
 
         let g:ctrlp_custom_ignore = {
             \ 'dir':  '\.git$'
