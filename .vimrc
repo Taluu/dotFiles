@@ -13,6 +13,7 @@
         set hidden
         set spell
         syntax enable " wtf ?!
+        set mouse= " remove mouse support
 
         set backupdir=~/.vim/backups
         set directory=~/.vim/backups
