@@ -14,8 +14,7 @@
         "symfony/var-dumper": "^3.0",
         "techlivezheng/phpctags": "^0.6.0",
 
-        "puli/cli": "^1.0",
-        "puli/composer-plugin": "^1.0"
+        "puli/cli": "^1.0"
     },
 
     "autoload": {
