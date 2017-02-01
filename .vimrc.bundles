@@ -1,62 +1,64 @@
-" Vim Bundles
-filetype off
+" My plugins
+"
+" This is using vim-plug (https://github.com/junegunn/vim-plug)
 
-set rtp+=~/.vim/bundle/Vundle.vim
-set rtp+=~/.fzf
-call vundle#begin()
+" Automatic installation of vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
 " Utils {
-    "Plugin 'MarcWeber/vim-addon-mw-utils'
-    Plugin 'tomtom/tlib_vim'
-    "Plugin 'rking/ag.vim' "Deprecated :{
-    Plugin 'mileszs/ack.vim'
+    "Plug 'MarcWeber/vim-addon-mw-utils'
+    Plug 'tomtom/tlib_vim'
+    "Plug 'rking/ag.vim' "Deprecated :{
+    Plug 'mileszs/ack.vim'
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 
 " } General {
-    Plugin 'scrooloose/nerdtree'
-    Plugin 'altercation/vim-colors-solarized'
-    " Plugin 'ctrlpvim/ctrlp.vim'
-    " Plugin 'Lokaltog/powerline'
-    Plugin 'vim-airline/vim-airline'
-    Plugin 'jistr/vim-nerdtree-tabs'
-    Plugin 'mbbill/undotree'
-    " Plugin 'nathanaelkane/vim-indent-guides'
-    Plugin 'tpope/vim-abolish'
-    Plugin 'tpope/vim-fugitive'
-    Plugin 'Rykka/riv.vim'
+    Plug 'scrooloose/nerdtree'
+    Plug 'altercation/vim-colors-solarized'
+    " Plug 'ctrlpvim/ctrlp.vim'
+    " Plug 'Lokaltog/powerline'
+    Plug 'vim-airline/vim-airline'
+    Plug 'jistr/vim-nerdtree-tabs'
+    Plug 'mbbill/undotree'
+    " Plug 'nathanaelkane/vim-indent-guides'
+    Plug 'tpope/vim-abolish'
+    Plug 'tpope/vim-fugitive'
+    Plug 'Rykka/riv.vim'
 
 " } Prog {
-    Plugin 'vim-syntastic/syntastic'
-    "Plugin 'mattn/gist-vim'
-    Plugin 'scrooloose/nerdcommenter'
-    "Plugin 'godlygeek/tabular'
-    Plugin 'majutsushi/tagbar'
-    " Plugin 'Shougo/neocomplcache'
-    Plugin 'stephenmckinney/vim-autotag'
-    Plugin 'airblade/vim-gitgutter'
-    " Plugin 'joonty/vdebug'
-    Plugin 'taluu/vdebug' " temporary, while vdebug doesn't implement the resizing of windows
-    " Plugin 'Valloric/YouCompleteMe'
-    Plugin 'vim-ruby/vim-ruby'
-    Plugin 'tpope/vim-rails'
-    " Plugin 'laurentb/vim-cute-php'
-    " Plugin 'hhvm/vim-hack'
-    Plugin 'StanAngeloff/php.vim'
-    " Plugin 'vim-php/tagbar-phpctags.vim'
-    Plugin 'scrooloose/nerdtree-git-plugin'
+    Plug 'vim-syntastic/syntastic'
+    "Plug 'mattn/gist-vim'
+    Plug 'scrooloose/nerdcommenter'
+    "Plug 'godlygeek/tabular'
+    Plug 'majutsushi/tagbar'
+    " Plug 'Shougo/neocomplcache'
+    Plug 'stephenmckinney/vim-autotag'
+    Plug 'airblade/vim-gitgutter'
+    " Plug 'joonty/vdebug'
+    Plug 'taluu/vdebug' " temporary, while vdebug doesn't implement the resizing of windows
+    " Plug 'Valloric/YouCompleteMe'
+    Plug 'vim-ruby/vim-ruby'
+    Plug 'tpope/vim-rails'
+    " Plug 'laurentb/vim-cute-php'
+    " Plug 'hhvm/vim-hack'
+    Plug 'StanAngeloff/php.vim'
+    " Plug 'vim-php/tagbar-phpctags.vim'
+    Plug 'scrooloose/nerdtree-git-plugin'
 
     " Misc {
-        Plugin 'tpope/vim-markdown'
-        Plugin 'tpope/vim-cucumber'
-        Plugin 'quentindecock/vim-cucumber-align-pipes'
-        Plugin 'evidens/vim-twig'
-        Plugin 'groenewege/vim-less'
+        Plug 'tpope/vim-markdown'
+        Plug 'tpope/vim-cucumber'
+        Plug 'quentindecock/vim-cucumber-align-pipes'
+        Plug 'evidens/vim-twig'
+        Plug 'groenewege/vim-less'
     " }
 " }
 
-call vundle#end()
-
-filetype plugin on
-" filetype plugin indent on
+call plug#end()
 
