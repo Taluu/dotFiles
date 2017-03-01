@@ -69,7 +69,7 @@ VIMRUNTIME=$HOME/.vim
 LESSCHARSET=UTF-8
 
 alias git="LANGUAGE=en_US.UTF-8 \"git\""
-alias vim="LANGUAGE=en_US.UTF-8 \"vim\""
+alias vim="LANGUAGE=en_US.UTF-8 \"nvim\""
 alias ls="LANGUAGE=en_US.UTF-8 \"ls\""
 
 unalias gm
@@ -99,7 +99,7 @@ export PATH="$PATH:$HOME/.rbenv/bin" # Add Rbenv to PATH for scripting
 export PATH="$PATH:$HOME/.local/bin"
 
 # vim is da tru editor
-export EDITOR="/usr/bin/vim"
+export EDITOR="/usr/bin/nvim"
 
 # nvm sheeeeeeeit
 export NVM_DIR="/home/talus/.nvm"
@@ -119,4 +119,5 @@ zstyle :completion::complete:git-checkout:argument-rest:headrefs command "git fo
 # fzf
 export FZF_DEFAULT_COMMAND='ag -i -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
