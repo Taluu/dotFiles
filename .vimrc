@@ -30,7 +30,7 @@
 
     " } searching {
         set incsearch
-        nnoremap <esc><esc> :noh<return>
+        nnoremap <silent> <esc><esc> :noh<cr>
 
     " } ui {
         set number
