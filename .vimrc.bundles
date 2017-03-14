@@ -30,6 +30,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-abolish'
     Plug 'tpope/vim-fugitive'
     Plug 'Rykka/riv.vim'
+    Plug 'https://bitbucket.org/cmthornton/vim-dist-ext.git'
 
 " } Prog {
     Plug 'vim-syntastic/syntastic'
