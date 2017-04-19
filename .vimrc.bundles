@@ -20,6 +20,7 @@ call plug#begin('~/.vim/plugged')
 
 " } General {
     Plug 'scrooloose/nerdtree'
+    Plug 'ryanoasis/vim-devicons'
     Plug 'altercation/vim-colors-solarized'
     " Plug 'ctrlpvim/ctrlp.vim'
     " Plug 'Lokaltog/powerline'
