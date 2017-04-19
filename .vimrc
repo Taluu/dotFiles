@@ -133,7 +133,7 @@
         "set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
         let g:airline_powerline_fonts = 1
-        " let g:airline#extensions#tabline#enabled = 1 " too buggy :(
+        let g:airline#extensions#tabline#enabled = 1
         let g:airline#extensions#hunks#non_zero_only = 1
 
         " airline initialisation
