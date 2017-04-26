@@ -58,6 +58,7 @@
         set softtabstop=4
 
         autocmd FileType cucumber   setlocal shiftwidth=2 tabstop=2 softtabstop=2
+        autocmd FileType ruby       setlocal shiftwidth=2 tabstop=2 softtabstop=2
         autocmd FileType less       setlocal shiftwidth=2 tabstop=2 softtabstop=2
         autocmd FileType css        setlocal shiftwidth=2 tabstop=2 softtabstop=2
         autocmd FileType go         setlocal noexpandtab tabstop=8 shiftwidth=8
