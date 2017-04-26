@@ -27,7 +27,7 @@ call plug#begin('~/.vim/plugged')
     " Plug 'nathanaelkane/vim-indent-guides'
     Plug 'tpope/vim-abolish'
     Plug 'tpope/vim-fugitive'
-    Plug 'Rykka/riv.vim'
+    Plug 'Rykka/riv.vim', { 'for': 'rst' }
     Plug 'https://bitbucket.org/cmthornton/vim-dist-ext.git'
 
 " } Prog {
@@ -41,20 +41,19 @@ call plug#begin('~/.vim/plugged')
     Plug 'airblade/vim-gitgutter'
     " Plug 'joonty/vdebug'
     Plug 'taluu/vdebug' " temporary, while vdebug doesn't implement the resizing of windows
-    " Plug 'Valloric/YouCompleteMe'
-    Plug 'vim-ruby/vim-ruby'
-    Plug 'tpope/vim-rails'
-    " Plug 'hhvm/vim-hack'
-    Plug 'StanAngeloff/php.vim'
-    " Plug 'vim-php/tagbar-phpctags.vim'
+    Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+    Plug 'tpope/vim-rails', { 'for': 'ruby' }
+    " Plug 'hhvm/vim-hack', { 'for': 'hack' }
+    Plug 'StanAngeloff/php.vim', { 'for': 'php' }
+    " Plug 'vim-php/tagbar-phpctags.vim', { 'for': 'php' }
     Plug 'scrooloose/nerdtree-git-plugin'
 
     " Misc {
-        Plug 'tpope/vim-markdown'
-        Plug 'tpope/vim-cucumber'
-        Plug 'quentindecock/vim-cucumber-align-pipes'
-        Plug 'evidens/vim-twig'
-        Plug 'groenewege/vim-less'
+        Plug 'tpope/vim-markdown', { 'for': 'markdown' }
+        Plug 'tpope/vim-cucumber', { 'for': 'cucumber' }
+        Plug 'quentindecock/vim-cucumber-align-pipes', { 'for': 'cucumber' }
+        Plug 'evidens/vim-twig', { 'for': 'twig' }
+        Plug 'groenewege/vim-less', { 'for': 'less' }
     " }
 " }
 
