@@ -48,6 +48,7 @@
             set listchars=tab:,.,trail:.
 
             autocmd FileType javascript setlocal nolist listchars=trail:.
+            autocmd FileType go setlocal nolist listchars=trail:.
        " }
     " } indent {
         set smartindent
@@ -59,6 +60,7 @@
         autocmd FileType cucumber   setlocal shiftwidth=2 tabstop=2 softtabstop=2
         autocmd FileType less       setlocal shiftwidth=2 tabstop=2 softtabstop=2
         autocmd FileType css        setlocal shiftwidth=2 tabstop=2 softtabstop=2
+        autocmd FileType go         setlocal noexpandtab tabstop=8 shiftwidth=8
     " } Formating {
         set pastetoggle=<F12>
         set nowrap
