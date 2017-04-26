@@ -14,7 +14,6 @@ call plug#begin('~/.vim/plugged')
 " Utils {
     "Plug 'MarcWeber/vim-addon-mw-utils'
     Plug 'tomtom/tlib_vim'
-    "Plug 'rking/ag.vim' "Deprecated :{
     Plug 'mileszs/ack.vim'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 
@@ -22,8 +21,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'scrooloose/nerdtree'
     Plug 'ryanoasis/vim-devicons'
     Plug 'altercation/vim-colors-solarized'
-    " Plug 'ctrlpvim/ctrlp.vim'
-    " Plug 'Lokaltog/powerline'
     Plug 'vim-airline/vim-airline'
     Plug 'jistr/vim-nerdtree-tabs'
     Plug 'mbbill/undotree'
@@ -47,7 +44,6 @@ call plug#begin('~/.vim/plugged')
     " Plug 'Valloric/YouCompleteMe'
     Plug 'vim-ruby/vim-ruby'
     Plug 'tpope/vim-rails'
-    " Plug 'laurentb/vim-cute-php'
     " Plug 'hhvm/vim-hack'
     Plug 'StanAngeloff/php.vim'
     " Plug 'vim-php/tagbar-phpctags.vim'
