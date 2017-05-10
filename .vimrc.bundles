@@ -37,6 +37,7 @@ call plug#begin('~/.vim/plugged')
     "Plug 'godlygeek/tabular'
     Plug 'majutsushi/tagbar'
     " Plug 'Shougo/neocomplcache'
+    Plug 'shawncplus/phpcomplete.vim', {'for': 'php'}
     Plug 'stephenmckinney/vim-autotag'
     Plug 'airblade/vim-gitgutter'
     " Plug 'joonty/vdebug'

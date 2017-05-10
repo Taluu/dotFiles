@@ -170,7 +170,7 @@
         let NERDTreeShowHidden=1
 
     " } Ctags {
-        set tags=./tags;/,~/.vimtags,./.git/tags
+        set tags=./tags,~/.vimtags,./.git/tags;$HOME
 
     " } fzf {
         nnoremap <silent> <c-p> :FZF<CR>
@@ -212,6 +212,8 @@
         cnoreabbrev aG Ack
         cnoreabbrev Ag Ack
         cnoreabbrev AG Ack
+    " } phpcomplete.vim {
+
     " }
 " } Map {
     " shift+tab = unindent
