@@ -166,7 +166,6 @@
         let NERDTreeIgnore=['\.pyc', '\~$', '\.git$', 'node_modules$', '\.tags$']
         let NERDTreeChDirMode=0
         let NERDTreeQuitOnOpen=1
-        let NERDTreeCasadeOpenSingleChildDir=1
         let NERDTreeShowLineNumbers=0
         let NERDTreeShowHidden=1
 
