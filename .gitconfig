@@ -56,10 +56,10 @@
 
 [diff]
     compactionHeuristic = true
-    
+
 [rebase]
     autosquash = true
     autostash = true
 
 [include]
-    path = ~/.git_personnal_config 
+    path = ~/.git_personnal_config
