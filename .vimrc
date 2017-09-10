@@ -101,6 +101,18 @@
             hi! def link phpDocTags phpDefine
             hi! def link phpDocParam phpType
         endfunction
+
+        function! SetVdebugDockerPath(docker_path, local_path)
+            if !exists('g:vdebug_options')
+                let g:vdebug_options = {}
+            endif
+
+            if !has_key(g:vdebug_options, "path_maps")
+                let g:vdebug_options["path_maps"] = {}
+            endif
+
+            let g:vdebug_options["path_maps"][a:docker_path] = a:local_path
+        endfunction
     " } tools {
         function! RunPHPUnitTest(filter)
             cd %:p:h
