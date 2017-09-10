@@ -37,7 +37,7 @@ call plug#begin('~/.vim/plugged')
     "Plug 'godlygeek/tabular'
     Plug 'majutsushi/tagbar'
     " Plug 'Shougo/neocomplcache'
-    Plug 'shawncplus/phpcomplete.vim', {'for': 'php'}
+    " Plug 'shawncplus/phpcomplete.vim', {'for': 'php'}
     Plug 'stephenmckinney/vim-autotag'
     Plug 'airblade/vim-gitgutter'
     " Plug 'joonty/vdebug'
@@ -48,6 +48,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'StanAngeloff/php.vim', { 'for': 'php' }
     " Plug 'vim-php/tagbar-phpctags.vim', { 'for': 'php' }
     Plug 'scrooloose/nerdtree-git-plugin'
+
+    " PHPActor
+    Plug 'roxma/nvim-completion-manager'
+    Plug 'phpactor/phpactor',  {'do': 'composer install --no-dev', 'for': 'php'}
+    Plug 'roxma/ncm-phpactor', {'for': 'php'}
 
     " Misc {
         Plug 'tpope/vim-markdown', { 'for': 'markdown' }
