@@ -48,6 +48,7 @@
             set listchars=tab:,.,trail:.
 
             autocmd FileType javascript setlocal nolist listchars=trail:.
+            autocmd FileType dockerfile setlocal nolist listchars=trail:.
             autocmd FileType go setlocal nolist listchars=trail:.
        " }
     " } indent {
@@ -57,6 +58,7 @@
         set shiftwidth=4
         set softtabstop=4
 
+        autocmd FileType dockerfile setlocal noexpandtab
         autocmd FileType cucumber   setlocal shiftwidth=2 tabstop=2 softtabstop=2
         autocmd FileType ruby       setlocal shiftwidth=2 tabstop=2 softtabstop=2
         autocmd FileType less       setlocal shiftwidth=2 tabstop=2 softtabstop=2
