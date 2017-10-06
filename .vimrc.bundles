@@ -66,8 +66,7 @@ call plug#begin('~/.vim/plugged')
         Plug 'tpope/vim-markdown', { 'for': 'markdown' }
         Plug 'tpope/vim-cucumber', { 'for': 'cucumber' }
         Plug 'quentindecock/vim-cucumber-align-pipes', { 'for': 'cucumber' }
-        Plug 'evidens/vim-twig', { 'for': 'twig' }
-        Plug 'groenewege/vim-less', { 'for': 'less' }
+        Plug 'nelsyeung/twig.vim'
     " }
 " }
 
