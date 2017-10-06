@@ -49,12 +49,20 @@ call plug#begin('~/.vim/plugged')
     " Plug 'vim-php/tagbar-phpctags.vim', { 'for': 'php' }
     Plug 'scrooloose/nerdtree-git-plugin'
 
-    " PHPActor
-    Plug 'roxma/nvim-completion-manager'
-    Plug 'phpactor/phpactor',  {'do': 'composer install --no-dev', 'for': 'php'}
-    Plug 'roxma/ncm-phpactor', {'for': 'php'}
+    " Completion stuff {
+        " Plug 'Shougo/neocomplcache'
+        Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+        Plug 'Shougo/denite.nvim'
+        Plug 'roxma/nvim-completion-manager'
+        Plug 'Shougo/echodoc.vim'
 
-    " Misc {
+        " PHP {
+            " Plug 'shawncplus/phpcomplete.vim', {'for': 'php'}
+            " Plug 'phpactor/phpactor',  {'do': 'composer install --no-dev', 'for': 'php'}
+            " Plug 'roxma/ncm-phpactor', {'for': 'php'}
+            Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install --no-dev && composer run-script parse-stubs'}
+        " }
+    " } Misc {
         Plug 'tpope/vim-markdown', { 'for': 'markdown' }
         Plug 'tpope/vim-cucumber', { 'for': 'cucumber' }
         Plug 'quentindecock/vim-cucumber-align-pipes', { 'for': 'cucumber' }

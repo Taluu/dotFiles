@@ -234,8 +234,8 @@
         cnoreabbrev aG Ack
         cnoreabbrev Ag Ack
         cnoreabbrev AG Ack
-    " } phpcomplete.vim {
-
+    " } completion {
+        autocmd FileType php LanguageClientStart
     " }
 " } Map {
     " shift+tab = unindent
