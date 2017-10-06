@@ -120,4 +120,7 @@ zstyle :completion::complete:git-checkout:argument-rest:headrefs command "git fo
 export FZF_DEFAULT_COMMAND='ag -l -g "" ./ vendor/'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
+# xdg stuff
+export XDG_CONFIG_DIRS="$XDG_CONFIG_DIRS:$HOME/.config/xdg"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
