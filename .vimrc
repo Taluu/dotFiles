@@ -102,6 +102,14 @@
             hi! def link phpDocParam phpType
         endfunction
 
+        function! SetVdebugIdeKey(ide_key)
+            if !exists('g:vdebug_options')
+                let g:vdebug_options = {}
+            endif
+
+            let g:vdebug_options["ide_key"] = a:ide_key
+        endfunction
+
         function! SetVdebugDockerPath(docker_path, local_path)
             if !exists('g:vdebug_options')
                 let g:vdebug_options = {}
@@ -201,14 +209,14 @@
             let g:vdebug_options = {}
         endif
 
-        if !exists('g:vdebug_features')
-            let g:vdebug_features = {}
-        endif
-
         " let g:vdebug_options["break_on_open"] = 0
         let g:vdebug_options["watch_window_height"]=45
         let g:vdebug_options["status_window_height"]=5
         " let g:vdebug_options["continuous_mode"]=1
+
+        if !exists('g:vdebug_features')
+            let g:vdebug_features = {}
+        endif
 
         "let g:vdebug_features["max_data"] = 2048
         "let g:vdebug_features["max_depth"] = 100
