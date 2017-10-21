@@ -31,7 +31,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'https://bitbucket.org/cmthornton/vim-dist-ext.git'
 
 " } Prog {
-    Plug 'vim-syntastic/syntastic'
+    " Plug 'vim-syntastic/syntastic'
+    Plug 'w0rp/ale'
     "Plug 'mattn/gist-vim'
     Plug 'scrooloose/nerdcommenter'
     "Plug 'godlygeek/tabular'
