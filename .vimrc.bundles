@@ -37,8 +37,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'scrooloose/nerdcommenter'
     "Plug 'godlygeek/tabular'
     Plug 'majutsushi/tagbar'
-    " Plug 'Shougo/neocomplcache'
-    " Plug 'shawncplus/phpcomplete.vim', {'for': 'php'}
     Plug 'stephenmckinney/vim-autotag'
     Plug 'airblade/vim-gitgutter'
     " Plug 'joonty/vdebug'
@@ -59,8 +57,8 @@ call plug#begin('~/.vim/plugged')
 
         " PHP {
             " Plug 'shawncplus/phpcomplete.vim', {'for': 'php'}
-            " Plug 'phpactor/phpactor',  {'do': 'composer install --no-dev', 'for': 'php'}
-            " Plug 'roxma/ncm-phpactor', {'for': 'php'}
+            Plug 'phpactor/phpactor',  {'do': 'composer install --no-dev', 'for': 'php'}
+            Plug 'roxma/ncm-phpactor', {'for': 'php'}
             Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install --no-dev && composer run-script parse-stubs'}
         " }
     " } Misc {
