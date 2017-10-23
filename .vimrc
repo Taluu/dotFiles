@@ -159,7 +159,7 @@
 
         let g:airline_powerline_fonts = 1
         let g:airline#extensions#tabline#enabled = 1
-        let g:airline#extensions#tabline#show_buffers = 0
+        " let g:airline#extensions#tabline#show_buffers = 1
         let g:airline#extensions#hunks#non_zero_only = 1
 
         " airline initialisation
@@ -243,15 +243,21 @@
 
     " Moving in files and between tabs & buffers {
         " between buffers
-        nnoremap <A-J> <C-W>j<C-W>_
-        nnoremap <A-K> <C-W>k<C-W>_
-        nnoremap <A-L> <C-W>l<C-W>_
-        nnoremap <A-H> <C-W>h<C-W>_
+        nnoremap <silent> <S-Left> :bprev<CR>
+        nnoremap <silent> <S-Right> :bnext<CR>
+        nnoremap <silent> <S-Up> <NOP>
+        nnoremap <silent> <S-Down> <NOP>
 
-        nnoremap <C-J> :wincmd j<CR>
-        nnoremap <C-K> :wincmd k<CR>
-        nnoremap <C-L> :wincmd l<CR>
-        nnoremap <C-H> :wincmd h<CR>
+        nnoremap <silent> <M-h> :bprev<CR>
+        nnoremap <silent> <M-l> :bnext<CR>
+        nnoremap <silent> <M-j> <NOP>
+        nnoremap <silent> <M-k> <NOP>
+
+        " between windows
+        nnoremap <silent> <C-J> :wincmd j<CR>
+        nnoremap <silent> <C-K> :wincmd k<CR>
+        nnoremap <silent> <C-L> :wincmd l<CR>
+        nnoremap <silent> <C-H> :wincmd h<CR>
 
         " between lines
         nnoremap j gj
@@ -274,7 +280,7 @@
     nnoremap <leader>et :tabedit %%
     nnoremap <silent> <leader>tc :tabclose<CR>
 
-    " ???
+    " map home / end keys
     map [F $
     imap [F $
     map [H g0
