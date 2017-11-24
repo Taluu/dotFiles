@@ -21,7 +21,7 @@ if test -d $HOME/.rbenv
     end
 
     if type -q rbenv
-        rbenv init - fish
+        rbenv init - fish > /dev/null
     end
 end
 
