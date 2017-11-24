@@ -1,0 +1,8 @@
+functions/
+!functions/csu.fish
+!functions/git.fish
+!functions/ls.fish
+!functions/src.fish
+!functions/vim.fish
+
+completions/
