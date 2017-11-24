@@ -1,5 +1,5 @@
 function fish_prompt --description 'Write out the prompt'
-	set -l color_cwd
+    set -l color_cwd
     set -l suffix
     switch $USER
         case root toor
