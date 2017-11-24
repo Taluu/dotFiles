@@ -235,7 +235,19 @@
         cnoreabbrev Ag Ack
         cnoreabbrev AG Ack
     " } completion {
-        autocmd FileType php LanguageClientStart
+        "autocmd FileType php LanguageClientStart
+        autocmd FileType php setlocal omnifunc=phpactor#Complete
+
+        " Include use statement
+        map <Leader>pu :call phpactor#UseAdd()<CR>
+        map <Leader>pe :call phpactor#ClassExpand()<CR>
+        map <Leader>pp :call phpactor#ContextMenu()<CR>
+        map <Leader>po :call phpactor#GotoDefinition()<CR>
+        map <Leader>pfm :call phpactor#MoveFile()<CR>
+        map <Leader>pfc :call phpactor#CopyFile()<CR>
+        map <Leader>pt :call phpactor#Transform()<CR>
+        map <Leader>pcn :call phpactor#ClassNew()<CR>
+        map <Leader>pfr :call phpactor#FindReferences()<CR>
     " }
 " } Map {
     " shift+tab = unindent

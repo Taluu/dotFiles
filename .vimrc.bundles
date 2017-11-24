@@ -39,8 +39,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'majutsushi/tagbar'
     Plug 'stephenmckinney/vim-autotag'
     Plug 'airblade/vim-gitgutter'
-    " Plug 'joonty/vdebug'
-    Plug 'taluu/vdebug' " temporary, while vdebug doesn't implement the resizing of windows
+    Plug 'joonty/vdebug', { 'branch': 'v2-integration' }
+    " Plug 'taluu/vdebug' " temporary, while vdebug doesn't implement the resizing of windows
     Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
     Plug 'tpope/vim-rails', { 'for': 'ruby' }
     " Plug 'hhvm/vim-hack', { 'for': 'hack' }
@@ -50,7 +50,7 @@ call plug#begin('~/.vim/plugged')
 
     " Completion stuff {
         " Plug 'Shougo/neocomplcache'
-        Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+        " Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
         " Plug 'Shougo/denite.nvim'
         Plug 'roxma/nvim-completion-manager'
         Plug 'Shougo/echodoc.vim'
@@ -59,7 +59,7 @@ call plug#begin('~/.vim/plugged')
             " Plug 'shawncplus/phpcomplete.vim', {'for': 'php'}
             Plug 'phpactor/phpactor',  {'do': 'composer install --no-dev', 'for': 'php'}
             Plug 'roxma/ncm-phpactor', {'for': 'php'}
-            Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install --no-dev && composer run-script parse-stubs'}
+            " Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install --no-dev && composer run-script parse-stubs'}
         " }
     " } Misc {
         Plug 'tpope/vim-markdown', { 'for': 'markdown' }
