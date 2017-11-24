@@ -1,9 +1,3 @@
-if test -d ~/dotFiles/fish/includes
-    for file in ~/dotFiles/fish/includes/*.fish
-        source $file
-    end
-end
-
 # xterm 256 colors
 set TERM xterm-256color
 
@@ -45,3 +39,6 @@ set XDG_CONFIG_DIRS "$XDG_CONFIG_DIRS:$HOME/.config/xdg"
 # composer stuff
 set COMPOSER_HOME $HOME/.composer
 set COMPOSER_DISABLE_XDEBUG_WARN 1
+
+# fisherman stuff
+set -U fish_path ~/dotFiles/fish
