@@ -41,3 +41,7 @@ set FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
 
 # xdg stuff
 set XDG_CONFIG_DIRS "$XDG_CONFIG_DIRS:$HOME/.config/xdg"
+
+# composer stuff
+set COMPOSER_HOME $HOME/.composer
+set COMPOSER_DISABLE_XDEBUG_WARN 1
