@@ -29,6 +29,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-fugitive'
     Plug 'Rykka/riv.vim', { 'for': 'rst' }
     Plug 'https://bitbucket.org/cmthornton/vim-dist-ext.git'
+    Plug 'dag/vim-fish'
 
 " } Prog {
     " Plug 'vim-syntastic/syntastic'
