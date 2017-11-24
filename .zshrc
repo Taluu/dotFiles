@@ -12,7 +12,31 @@ SAVEHIST=$HISTSIZE
 # dafuq ?!
 setopt no_cdable_vars
 
-plugins=(git composer symfony2 archlinux npm node history-substring-search colored-man gem zsh_reload tmux zsh-completions jsontools znt-navigation-tools rails zsh-syntax-highlighting docker docker-compose)
+plugins=(
+    # dev
+    git
+    npm
+    gem
+    node
+    rails
+    composer
+    symfony2
+    jsontools
+
+    docker
+    docker-compose
+
+    # os
+    tmux
+    colored-man
+
+    # zsh stuff
+    zsh_reload
+    zsh-completions
+    znt-navigation-tools
+    zsh-syntax-highlighting
+    history-substring-search
+)
 
 source $ZSH/oh-my-zsh.sh
 
