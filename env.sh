@@ -2,6 +2,9 @@
 # My env variables
 # 
 
+# xterm 256 colors
+export TERM=xterm-256color
+
 # fix tmux + zsh behaviour
 export DISABLE_AUTO_TITLE=true
 
