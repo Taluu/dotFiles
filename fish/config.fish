@@ -1,2 +1,9 @@
-[ -f "~/dotFiles/env.sh" ]; and source "~/dotFiles/env.sh"
-[ -f "~/dotFiles/aliases.sh" ]; and source "~/dotFiles/aliases.sh"
+if test -d ~/dotFiles/fish/includes
+    for file in ~/dotFiles/fish/includes/*.fish
+        source $file
+    end
+end
+
+function src
+    exec fish
+end
