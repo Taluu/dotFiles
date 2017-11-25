@@ -3,5 +3,6 @@ functions/
 !functions/git.fish
 !functions/src.fish
 !functions/vim.fish
+!functions/sf.fish
 
 completions/
