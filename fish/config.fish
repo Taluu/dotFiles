@@ -41,10 +41,10 @@ set COMPOSER_HOME $HOME/.composer
 set COMPOSER_DISABLE_XDEBUG_WARN 1
 
 # fisherman stuff
-set -U fish_path ~/dotFiles/fish
+set fish_path ~/dotFiles/fish
 
 # don't shorten the prompt, I need the full prompt, I like the full prompt...
-set -U fish_prompt_pwd_dir_length 0
+# set fish_prompt_pwd_dir_length 1
 
 # me want agnoster + powerline, thank you very much
 agnoster powerline
