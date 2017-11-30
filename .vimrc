@@ -1,6 +1,11 @@
 "My vimrc config :)
 
 " General configuration {
+    " fish is not POSIX compatible, which is problematic for vim...
+    if &shell =~# 'fish$'
+        set shell=sh
+    endif
+
     set nocompatible " fuck off vi !
 
     let mapleader = ','
