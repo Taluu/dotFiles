@@ -46,5 +46,8 @@ set fish_path ~/dotFiles/fish
 # don't shorten the prompt, I need the full prompt, I like the full prompt...
 # set fish_prompt_pwd_dir_length 1
 
+# no greeting message please. kthxby
+set fish_greeting
+
 # me want agnoster + powerline, thank you very much
 agnoster powerline
