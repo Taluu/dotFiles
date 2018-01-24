@@ -26,6 +26,11 @@ if not contains "$HOME/.local/bin" $PATH
     set PATH "$HOME/.local/bin" $PATH
 end
 
+# phpactor
+if not contains "$HOME/.vim/plugged/phpactor/bin/" $PATH
+    set PATH "$HOME/.vim/plugged/phpactor/bin/" $PATH
+end
+
 # nvim is da tru editor
 set EDITOR "/usr/bin/nvim"
 
