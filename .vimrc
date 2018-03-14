@@ -233,12 +233,12 @@
     " } Riv.vim {
         let g:riv_disable_folding = 1
     " } Ack.vim {
-        let g:ackprg = 'ag --vimgrep --smart-case'
+        let g:ackprg = 'rg --vimgrep --smart-case'
 
-        cnoreabbrev ag Ack
-        cnoreabbrev aG Ack
-        cnoreabbrev Ag Ack
-        cnoreabbrev AG Ack
+        cnoreabbrev rg Ack
+        cnoreabbrev rG Ack
+        cnoreabbrev Rg Ack
+        cnoreabbrev RG Ack
     " } completion {
         "autocmd FileType php LanguageClientStart
         autocmd FileType php setlocal omnifunc=phpactor#Complete
