@@ -25,6 +25,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'jistr/vim-nerdtree-tabs'
     Plug 'mbbill/undotree'
     " Plug 'nathanaelkane/vim-indent-guides'
+    Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-abolish'
     Plug 'tpope/vim-fugitive'
     Plug 'Rykka/riv.vim', { 'for': 'rst' }
