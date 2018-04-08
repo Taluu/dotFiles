@@ -240,8 +240,7 @@
         cnoreabbrev Rg Ack
         cnoreabbrev RG Ack
     " } completion {
-        "autocmd FileType php LanguageClientStart
-        autocmd FileType php setlocal omnifunc=phpactor#Complete
+        "autocmd FileType php setlocal omnifunc=phpactor#Complete
 
         nmap <Leader>pu :call phpactor#UseAdd()<CR>
         nmap <Leader>pe :call phpactor#ClassExpand()<CR>
