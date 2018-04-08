@@ -49,6 +49,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'StanAngeloff/php.vim', { 'for': 'php' }
     " Plug 'vim-php/tagbar-phpctags.vim', { 'for': 'php' }
     Plug 'scrooloose/nerdtree-git-plugin'
+    Plug 'fatih/vim-go'
 
     " Completion stuff {
         " Plug 'Shougo/neocomplcache'
