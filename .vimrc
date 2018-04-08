@@ -252,6 +252,7 @@
         vmap <silent><Leader>em :<C-U>call phpactor#ExtractMethod()<CR>
     " } Ale {
         let g:ale_echo_msg_format = '%linter% %s'
+        let g:ale_php_phpstan_level = 'max'
     " }
 " } Map {
     " shift+tab = unindent
