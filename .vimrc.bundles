@@ -56,7 +56,7 @@ call plug#begin('~/.vim/plugged')
         " Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
         " Plug 'Shougo/denite.nvim'
         Plug 'roxma/nvim-completion-manager'
-        Plug 'Shougo/echodoc.vim'
+        " Plug 'Shougo/echodoc.vim'
 
         " PHP {
             " Plug 'shawncplus/phpcomplete.vim', {'for': 'php'}
