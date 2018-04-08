@@ -55,7 +55,7 @@ call plug#begin('~/.vim/plugged')
         " Plug 'Shougo/neocomplcache'
         " Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
         " Plug 'Shougo/denite.nvim'
-        Plug 'roxma/nvim-completion-manager'
+        Plug 'roxma/nvim-completion-manager', { 'do': ':UpdateRemotePlugins' }
         " Plug 'Shougo/echodoc.vim'
 
         " PHP {
