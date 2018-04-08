@@ -53,7 +53,7 @@ call plug#begin('~/.vim/plugged')
 
     " Completion stuff {
         " Plug 'Shougo/neocomplcache'
-        " Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+        " Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
         " Plug 'Shougo/denite.nvim'
         Plug 'roxma/nvim-completion-manager'
         Plug 'Shougo/echodoc.vim'
