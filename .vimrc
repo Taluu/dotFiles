@@ -250,6 +250,8 @@
         nmap <Leader>pcn :call phpactor#ClassNew()<CR>
         nmap <Leader>pfr :call phpactor#FindReferences()<CR>
         vmap <silent><Leader>em :<C-U>call phpactor#ExtractMethod()<CR>
+    " } Ale {
+        let g:ale_echo_msg_format = '%linter% %s'
     " }
 " } Map {
     " shift+tab = unindent
