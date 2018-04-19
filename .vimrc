@@ -107,6 +107,7 @@
             hi! def link phpDocParam phpType
         endfunction
 
+    " } debug+remote {
         function! SetVdebugIdeKey(ide_key)
             if !exists('g:vdebug_options')
                 let g:vdebug_options = {}
@@ -126,24 +127,6 @@
 
             let g:vdebug_options["path_maps"][a:docker_path] = a:local_path
         endfunction
-    " } tools {
-        function! RunPHPUnitTest(filter)
-            cd %:p:h
-            if a:filter
-                normal! T yw
-                let result = system("phpunit --filter " . @" . " " . bufname("%"))
-            else
-                let result = system("phpunit " . bufname("%"))
-            endif
-            split __PHPUnit_Result__
-            normal! ggdG
-            setlocal buftype=nofile
-            call append(0, split(result, '\v\n'))
-            cd -
-        endfunction
-
-        nnoremap <leader>u :call RunPHPUnitTest(0)<cr>
-        nnoremap <leader>f :call RunPHPUnitTest(1)<cr>
     " } completion {
         let g:deoplete#enable_at_startup = 1
     " }

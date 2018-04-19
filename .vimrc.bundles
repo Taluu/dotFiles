@@ -12,19 +12,16 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " Utils {
-    "Plug 'MarcWeber/vim-addon-mw-utils'
     Plug 'tomtom/tlib_vim'
     Plug 'mileszs/ack.vim'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 
 " } General {
     Plug 'scrooloose/nerdtree'
-    " Plug 'ryanoasis/vim-devicons'
     Plug 'altercation/vim-colors-solarized'
     Plug 'vim-airline/vim-airline'
     Plug 'jistr/vim-nerdtree-tabs'
     Plug 'mbbill/undotree'
-    " Plug 'nathanaelkane/vim-indent-guides'
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-abolish'
     Plug 'tpope/vim-fugitive'
@@ -33,37 +30,24 @@ call plug#begin('~/.vim/plugged')
     Plug 'dag/vim-fish'
 
 " } Prog {
-    " Plug 'vim-syntastic/syntastic'
     Plug 'w0rp/ale'
-    "Plug 'mattn/gist-vim'
     Plug 'scrooloose/nerdcommenter'
-    "Plug 'godlygeek/tabular'
     Plug 'majutsushi/tagbar'
     Plug 'stephenmckinney/vim-autotag'
     Plug 'airblade/vim-gitgutter'
     Plug 'joonty/vdebug', { 'branch': 'v2-integration' }
-    " Plug 'taluu/vdebug' " temporary, while vdebug doesn't implement the resizing of windows
     Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
     Plug 'tpope/vim-rails', { 'for': 'ruby' }
-    " Plug 'hhvm/vim-hack', { 'for': 'hack' }
     Plug 'StanAngeloff/php.vim', { 'for': 'php' }
-    " Plug 'vim-php/tagbar-phpctags.vim', { 'for': 'php' }
     Plug 'scrooloose/nerdtree-git-plugin'
     Plug 'fatih/vim-go'
 
     " Completion stuff {
-        " Plug 'Shougo/neocomplcache'
-        " Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
-        " Plug 'Shougo/denite.nvim'
-        " Plug 'Shougo/echodoc.vim'
         Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
         " PHP {
-            " Plug 'shawncplus/phpcomplete.vim', {'for': 'php'}
-            Plug 'phpactor/phpactor',  {'do': 'composer install --no-dev', 'for': 'php'}
+            Plug 'phpactor/phpactor',  {'do': 'composer install --no-dev', 'for': 'php', 'branch': 'develop'}
             Plug 'kristijanhusak/deoplete-phpactor'
-            " Plug 'roxma/ncm-phpactor', {'for': 'php'}
-            " Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install --no-dev && composer run-script parse-stubs'}
         " }
     " } Misc {
         Plug 'tpope/vim-markdown', { 'for': 'markdown' }
