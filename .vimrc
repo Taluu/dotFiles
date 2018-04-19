@@ -144,6 +144,8 @@
 
         nnoremap <leader>u :call RunPHPUnitTest(0)<cr>
         nnoremap <leader>f :call RunPHPUnitTest(1)<cr>
+    " } completion {
+        let g:deoplete#enable_at_startup = 1
     " }
 " } Plugin configuration {
     " load plugins

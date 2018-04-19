@@ -55,13 +55,14 @@ call plug#begin('~/.vim/plugged')
         " Plug 'Shougo/neocomplcache'
         " Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
         " Plug 'Shougo/denite.nvim'
-        Plug 'roxma/nvim-completion-manager', { 'do': ':UpdateRemotePlugins' }
         " Plug 'Shougo/echodoc.vim'
+        Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
         " PHP {
             " Plug 'shawncplus/phpcomplete.vim', {'for': 'php'}
             Plug 'phpactor/phpactor',  {'do': 'composer install --no-dev', 'for': 'php'}
-            Plug 'roxma/ncm-phpactor', {'for': 'php'}
+            Plug 'kristijanhusak/deoplete-phpactor'
+            " Plug 'roxma/ncm-phpactor', {'for': 'php'}
             " Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install --no-dev && composer run-script parse-stubs'}
         " }
     " } Misc {
