@@ -28,6 +28,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'Rykka/riv.vim', { 'for': 'rst' }
     Plug 'https://bitbucket.org/cmthornton/vim-dist-ext.git'
     Plug 'dag/vim-fish'
+    Plug 'editorconfig/editorconfig-vim'
 
 " } Prog {
     Plug 'w0rp/ale'
