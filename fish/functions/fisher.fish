@@ -54,7 +54,7 @@ function $fisher_cmd_name -d "fish plugin manager"
             end
     end
 
-    set -g fisher_version "2.13.2"
+    set -g fisher_version "2.13.3"
     set -g fisher_spinners ⠋ ⠙ ⠹ ⠸ ⠼ ⠴ ⠦ ⠧ ⠇ ⠏
 
     if [ -e /dev/stdout ]
@@ -114,6 +114,10 @@ function $fisher_cmd_name -d "fish plugin manager"
 
     if test -z "$fisher_file"
         set -g fisher_file "$fish_path/fishfile"
+    end
+
+    if test -z "$fisher_copy"
+        set -g fisher_copy false
     end
 
     switch "$argv[1]"
@@ -686,11 +690,11 @@ end
 function __fisher_self_update
     set -l file (status --current-filename)
 
-    if test "$file" != "$fish_config/functions/$fisher_cmd_name.fish"
+    if test "$file" != "$fish_path/functions/$fisher_cmd_name.fish"
         return 1
     end
 
-    set -l completions "$fish_config/completions/$fisher_cmd_name.fish"
+    set -l completions "$fish_path/completions/$fisher_cmd_name.fish"
     set -l raw_url "https://raw.githubusercontent.com/fisherman/fisherman/master/fisher.fish"
     set -l fake_qs (date "+%s")
 
@@ -800,7 +804,11 @@ function __fisher_plugin_enable -a path
             command mv -f "$target" "$backup_target" ^ /dev/null
         end
 
-        command ln -sf "$file" "$target"
+        if test $fisher_copy = true
+            command cp -Rf "$file" "$target"
+        else
+            command ln -sf "$file" "$target"
+        end
 
         builtin source "$target" ^ /dev/null
 
@@ -815,19 +823,31 @@ function __fisher_plugin_enable -a path
 
     for file in $path/{functions/,}*.{py,awk}
         set -l base (basename "$file")
-        command ln -sf "$file" "$fish_path/functions/$base"
+        if test $fisher_copy = true
+            command cp -Rf "$file" "$fish_path/functions/$base"
+        else
+            command ln -sf "$file" "$fish_path/functions/$base"
+        end
     end
 
     for file in $path/conf.d/*.{py,awk}
         set -l base (basename "$file")
-        command ln -sf "$file" "$fish_path/conf.d/$base"
+        if test $fisher_copy = true
+            command cp -Rf "$file" "$fish_path/conf.d/$base"
+        else
+            command ln -sf "$file" "$fish_path/conf.d/$base"
+        end
     end
 
     for file in $path/conf.d/*.fish
         set -l base (basename "$file")
         set -l target "$fish_path/conf.d/$base"
 
-        command ln -sf "$file" "$target"
+        if test $fisher_copy = true
+            command cp -Rf "$file" "$target"
+        else
+            command ln -sf "$file" "$target"
+        end
         builtin source "$target" ^ /dev/null
     end
 
@@ -835,7 +855,11 @@ function __fisher_plugin_enable -a path
         set -l base (basename "$file")
         set -l target "$fish_path/completions/$base"
 
-        command ln -sf "$file" "$target"
+        if test $fisher_copy = true
+            command cp -Rf "$file" "$target"
+        else
+            command ln -sf "$file" "$target"
+        end
         builtin source "$target" ^ /dev/null
     end
 
@@ -1166,16 +1190,16 @@ function __fisher_remote_index_update
         }
 
         {
-            if ($0 ~ /^name: /) {
-                name = substr($0, 7)
+            if (match($0, /^name:[[:blank:]]*/)) {
+                name = substr($0, RLENGTH+1)
             }
 
-            if ($0 ~ /^description: /) {
-                info = substr($0, 14)
+            if (match($0, /^description:[[:blank:]]*/)) {
+                info = substr($0, RLENGTH+1)
             }
 
-            if ($0 ~ /^stargazers_count: /) {
-                stars = substr($0, 19)
+            if (match($0, /^stargazers_count:[[:blank:]]*/)) {
+                stars = substr($0, RLENGTH+1)
             }
 
             if (name != "" && stars != "") {
