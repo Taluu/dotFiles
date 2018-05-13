@@ -6,7 +6,7 @@ set VIMRUNTIME $HOME/.vim
 # less, utf8 !
 set LESSCHARSET UTF-8
 
-if not contains "$HOME/bin" $PATH
+if not contains "$HOME/bin" $PATH; and test -d "$HOME/bin";
     set PATH "$HOME/bin" $PATH
 end
 
@@ -22,12 +22,12 @@ if test -d $HOME/.rbenv
 end
 
 # pip mess
-if not contains "$HOME/.local/bin" $PATH
+if not contains "$HOME/.local/bin" $PATH; and test -d "$HOME/.local/bin"
     set PATH "$HOME/.local/bin" $PATH
 end
 
 # phpactor
-if not contains "$HOME/.config/nvim/plugged/phpactor/bin/" $PATH
+if not contains "$HOME/.config/nvim/plugged/phpactor/bin/" $PATH; and test -d "$HOME/.config/nvim/plugged/phpactor/bin/"
     set PATH "$HOME/.config/nvim/plugged/phpactor/bin/" $PATH
 end
 
@@ -35,7 +35,7 @@ end
 set EDITOR "/usr/bin/nvim"
 
 # fzf
-set FZF_DEFAULT_COMMAND 'ag -l -g "" ./ vendor/'
+set FZF_DEFAULT_COMMAND 'rg -l -g "" ./ vendor/'
 set FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
 
 # xdg stuff
