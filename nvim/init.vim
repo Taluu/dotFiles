@@ -20,8 +20,8 @@
         syntax enable " wtf ?!
         set mouse= " remove mouse support
 
-        set backupdir=~/.vim/backups
-        set directory=~/.vim/backups
+        set backupdir=~/.config/nvim/backups
+        set directory=~/.config/nvim/backups
 
     " } Encoding {
         set encoding=utf-8
@@ -31,7 +31,7 @@
         set undofile
         set undolevels=1000
         set undoreload=10000
-        set undodir=~/.vim/undo
+        set undodir=~/.config/nvim/undo
 
     " } searching {
         set incsearch
@@ -132,7 +132,7 @@
     " }
 " } Plugin configuration {
     " load plugins
-    source ~/.vimrc.bundles
+    source ~/.config/nvim/plugins.vim
 
     " Solarized {
         "let g:solarized_termcolors=256
