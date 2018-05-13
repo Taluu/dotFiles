@@ -225,7 +225,7 @@
         cnoreabbrev Rg Ack
         cnoreabbrev RG Ack
     " } completion {
-        "autocmd FileType php setlocal omnifunc=phpactor#Complete
+        autocmd FileType php setlocal omnifunc=phpactor#Complete
 
         nmap <Leader>pu :call phpactor#UseAdd()<CR>
         nmap <Leader>pe :call phpactor#ClassExpand()<CR>
@@ -245,11 +245,6 @@
 
     " Moving in files and between tabs & buffers {
         " between buffers
-        nnoremap <silent> <S-Left> :bprev<CR>
-        nnoremap <silent> <S-Right> :bnext<CR>
-        nnoremap <silent> <S-Up> <NOP>
-        nnoremap <silent> <S-Down> <NOP>
-
         nnoremap <silent> <M-h> :bprev<CR>
         nnoremap <silent> <M-l> :bnext<CR>
         nnoremap <silent> <M-j> <NOP>
@@ -275,12 +270,6 @@
     nnoremap Y y$
     vnoremap < <gv
     vnoremap > >gv
-
-    " helpers
-    cnoremap %% <C-R>=expand('%:h').'/'<CR>
-    nnoremap <leader>ew :edit %%
-    nnoremap <leader>et :tabedit %%
-    nnoremap <silent> <leader>tc :tabclose<CR>
 
     " map home / end keys
     map [F $
