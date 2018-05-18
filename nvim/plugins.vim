@@ -37,7 +37,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'majutsushi/tagbar'
     Plug 'stephenmckinney/vim-autotag'
     Plug 'airblade/vim-gitgutter'
-    Plug 'joonty/vdebug', { 'branch': 'v2-integration' }
+    Plug 'vim-vdebug/vdebug'
     Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
     Plug 'tpope/vim-rails', { 'for': 'ruby' }
     Plug 'StanAngeloff/php.vim', { 'for': 'php' }
