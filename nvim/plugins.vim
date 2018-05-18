@@ -29,6 +29,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'https://bitbucket.org/cmthornton/vim-dist-ext.git'
     Plug 'dag/vim-fish'
     Plug 'editorconfig/editorconfig-vim'
+    Plug 'b4b4r07/vim-ansible-vault'
 
 " } Prog {
     Plug 'w0rp/ale'
