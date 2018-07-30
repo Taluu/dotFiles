@@ -26,6 +26,11 @@ if not contains "$HOME/.local/bin" $PATH; and test -d "$HOME/.local/bin"
     set PATH "$HOME/.local/bin" $PATH
 end
 
+# yarn things
+if not contains (yarn global bin) $PATH
+    set PATH (yarn global bin) $PATH
+end
+
 # phpactor
 if not contains "$HOME/.config/nvim/plugged/phpactor/bin/" $PATH; and test -d "$HOME/.config/nvim/plugged/phpactor/bin/"
     set PATH "$HOME/.config/nvim/plugged/phpactor/bin/" $PATH
