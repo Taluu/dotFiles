@@ -45,11 +45,12 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'fatih/vim-go'
 
     " Completion stuff {
-        Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+        Plug 'ncm2/ncm2'
+        Plug 'roxma/nvim-yarp'
 
         " PHP {
             Plug 'phpactor/phpactor',  {'do': 'composer install --no-dev', 'for': 'php', 'branch': 'develop'}
-            Plug 'kristijanhusak/deoplete-phpactor'
+            Plug 'roxma/ncm2-phpactor'
         " }
     " } Misc {
         Plug 'tpope/vim-markdown', { 'for': 'markdown' }

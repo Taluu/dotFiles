@@ -226,7 +226,13 @@
         cnoreabbrev RG Ack
     " } completion {
         "autocmd FileType php setlocal omnifunc=phpactor#Complete
+        autocmd BufEnter * call ncm2#enable_for_buffer()
 
+        set completeopt=noinsert,menuone,noselect
+
+        set shortmess+=c
+
+    " } phpactor {
         nmap <Leader>pu :call phpactor#UseAdd()<CR>
         nmap <Leader>pe :call phpactor#ClassExpand()<CR>
         nmap <Leader>pp :call phpactor#ContextMenu()<CR>
