@@ -64,6 +64,9 @@
         set softtabstop=4
 
         autocmd FileType dockerfile setlocal noexpandtab
+        autocmd FileType make       setlocal noexpandtab
+        autocmd FileType makefile   setlocal noexpandtab
+        autocmd FileType build      setlocal noexpandtab
         autocmd FileType cucumber   setlocal shiftwidth=2 tabstop=2 softtabstop=2
         autocmd FileType ruby       setlocal shiftwidth=2 tabstop=2 softtabstop=2
         autocmd FileType less       setlocal shiftwidth=2 tabstop=2 softtabstop=2
