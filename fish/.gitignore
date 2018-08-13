@@ -6,3 +6,5 @@ functions/
 !functions/sf.fish
 
 completions/
+
+fishd.*
