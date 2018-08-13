@@ -58,6 +58,3 @@ set fish_path ~/dotFiles/fish
 
 # no greeting message please. kthxby
 set fish_greeting
-
-# me want agnoster + powerline, thank you very much
-agnoster powerline
