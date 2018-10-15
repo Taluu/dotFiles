@@ -93,16 +93,13 @@
         autocmd FileType ruby       autocmd BufWritePre <buffer> call TrimSpaces()
 
         function! TrimSpaces()
-            " backup current position and last search
-            let _s=@/
-            let _l = line(".")
-            let _c = col(".")
+            let save_cursor = getpos(".")
+            let old_query = getreg('/')
 
-            %s/\s\+$//e
+            :%s/\s\+$//e
 
-            " something happened, heh ?
-            let @/=_s
-            call cursor(_l, _c)
+            call setpos('.', save_cursor)
+            call setreg('/', old_query)
         endfunction
 
         function! PhpSyntaxOverride()
