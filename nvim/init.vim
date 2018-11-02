@@ -228,7 +228,12 @@
         "autocmd FileType php setlocal omnifunc=phpactor#Complete
         autocmd BufEnter * call ncm2#enable_for_buffer()
 
+        "set completefunc=LanguageClient#complete
         set completeopt=noinsert,menuone,noselect
+
+        let g:LanguageClient_serverCommands = {
+            \ 'php': [ 'phpactor', 'server:start', '--stdio']
+        \}
 
         set shortmess+=c
 
