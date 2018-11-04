@@ -67,11 +67,12 @@
         autocmd FileType make       setlocal noexpandtab
         autocmd FileType makefile   setlocal noexpandtab
         autocmd FileType build      setlocal noexpandtab
+        autocmd FileType neon       setlocal shiftwidth=2 tabstop=2 softtabstop=2
         autocmd FileType cucumber   setlocal shiftwidth=2 tabstop=2 softtabstop=2
         autocmd FileType ruby       setlocal shiftwidth=2 tabstop=2 softtabstop=2
         autocmd FileType less       setlocal shiftwidth=2 tabstop=2 softtabstop=2
         autocmd FileType css        setlocal shiftwidth=2 tabstop=2 softtabstop=2
-        autocmd FileType go         setlocal noexpandtab tabstop=8 shiftwidth=8
+        autocmd FileType go         setlocal noexpandtab  tabstop=8 shiftwidth=8
     " } Formating {
         set pastetoggle=<F12>
         set nowrap
