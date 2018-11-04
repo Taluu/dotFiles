@@ -46,13 +46,13 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'fatih/vim-go'
 
     " Completion stuff {
-        Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
+        "Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
         Plug 'ncm2/ncm2'
         Plug 'roxma/nvim-yarp'
 
         " PHP {
             Plug 'phpactor/phpactor',  {'do': 'composer install --no-dev', 'for': 'php', 'branch': 'develop'}
-            "Plug 'roxma/ncm2-phpactor'
+            Plug 'roxma/ncm2-phpactor'
         " }
     " } Misc {
         Plug 'tpope/vim-markdown', { 'for': 'markdown' }
