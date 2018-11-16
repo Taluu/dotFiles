@@ -245,7 +245,7 @@
         nmap <Leader>pcn :call phpactor#ClassNew()<CR>
         nmap <Leader>pe :call phpactor#ClassExpand()<CR>
         nmap <Leader>pp :call phpactor#ContextMenu()<CR>
-        nmap <leader>po :call phpactor#GotoDefinition<CR>
+        nmap <leader>po :call phpactor#GotoDefinition()<CR>
         nmap <Leader>pfr :call phpactor#FindReferences()<CR>
 
         vmap <silent><Leader>em :<C-U>call phpactor#ExtractMethod()<CR>
