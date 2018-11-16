@@ -52,7 +52,7 @@ call plug#begin('~/.config/nvim/plugged')
         Plug 'roxma/nvim-yarp'
 
         " PHP {
-            Plug 'phpactor/phpactor',  {'do': 'composer install --no-dev', 'for': 'php', 'branch': 'develop'}
+            Plug 'phpactor/phpactor',  {'do': 'composer install', 'for': 'php', 'branch': 'develop'}
             Plug 'roxma/ncm2-phpactor'
         " }
     " } Misc {
