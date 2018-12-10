@@ -42,6 +42,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
     Plug 'tpope/vim-rails', { 'for': 'ruby' }
     Plug 'StanAngeloff/php.vim', { 'for': 'php' }
+    Plug 'rust-lang/rust.vim', { 'for': 'rust' }
     Plug 'scrooloose/nerdtree-git-plugin'
     Plug 'fatih/vim-go'
     Plug 'fpob/nette.vim'

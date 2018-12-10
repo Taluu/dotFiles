@@ -92,6 +92,7 @@
         autocmd FileType yaml       autocmd BufWritePre <buffer> call TrimSpaces()
         autocmd FileType less       autocmd BufWritePre <buffer> call TrimSpaces()
         autocmd FileType ruby       autocmd BufWritePre <buffer> call TrimSpaces()
+        autocmd FileType rust       autocmd BufWritePre <buffer> call TrimSpaces()
 
         function! TrimSpaces()
             let save_cursor = getpos(".")
