@@ -231,13 +231,13 @@
         "set completefunc=LanguageClient#complete
         set completeopt=noinsert,menuone,noselect
 
-        "let g:LanguageClient_serverCommands = {}
+        let g:LanguageClient_serverCommands = {}
 
         set shortmess+=c
 
-        "nnoremap <silent> <leader>pp :call LanguageClient_contextMenu()<CR>
-        "nnoremap <silent> <leader>ph :call LanguageClient#textDocument_hover()<CR>
-        "nnoremap <silent> <leader>po :call LanguageClient#textDocument_definition()<CR>
+        nnoremap <silent> <leader>lp :call LanguageClient_contextMenu()<CR>
+        nnoremap <silent> <leader>lh :call LanguageClient#textDocument_hover()<CR>
+        nnoremap <silent> <leader>lo :call LanguageClient#textDocument_definition()<CR>
 
     " } phpactor {
         nmap <leader>ph :call phpactor#Hover()<CR>

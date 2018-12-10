@@ -48,7 +48,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'fpob/nette.vim'
 
     " Completion stuff {
-        "Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
+        Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
         Plug 'ncm2/ncm2'
         Plug 'roxma/nvim-yarp'
 
