@@ -231,7 +231,9 @@
         "set completefunc=LanguageClient#complete
         set completeopt=noinsert,menuone,noselect
 
-        let g:LanguageClient_serverCommands = {}
+        let g:LanguageClient_serverCommands = {
+            \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+            \ }
 
         set shortmess+=c
 
