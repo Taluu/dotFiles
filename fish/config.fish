@@ -31,6 +31,11 @@ if not contains (yarn global bin) $PATH
     set PATH (yarn global bin) $PATH
 end
 
+# rust / cargo
+if not contains "$HOME/.cargo/bin" $PATH
+    set PATH "$HOME/.cargo/bin" $PATH
+end
+
 # phpactor
 if not contains "$HOME/.config/nvim/plugged/phpactor/bin/" $PATH; and test -d "$HOME/.config/nvim/plugged/phpactor/bin/"
     set PATH "$HOME/.config/nvim/plugged/phpactor/bin/" $PATH
