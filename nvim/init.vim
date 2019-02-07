@@ -228,11 +228,11 @@
         "autocmd FileType php setlocal omnifunc=phpactor#Complete
         autocmd BufEnter * call ncm2#enable_for_buffer()
 
-        "set completefunc=LanguageClient#complete
+        " set completefunc=LanguageClient#complete
         set completeopt=noinsert,menuone,noselect
 
         let g:LanguageClient_serverCommands = {
-            \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+            \ 'rust': ['rustup', 'run', 'stable', 'rls'],
             \ }
 
         set shortmess+=c
