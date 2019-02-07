@@ -54,6 +54,7 @@
 
             autocmd FileType javascript setlocal nolist listchars=trail:.
             autocmd FileType dockerfile setlocal nolist listchars=trail:.
+            autocmd FileType make setlocal nolist listchars=trail:.
             autocmd FileType go setlocal nolist listchars=trail:.
        " }
     " } indent {
@@ -65,7 +66,6 @@
 
         autocmd FileType dockerfile setlocal noexpandtab
         autocmd FileType make       setlocal noexpandtab
-        autocmd FileType makefile   setlocal noexpandtab
         autocmd FileType build      setlocal noexpandtab
         autocmd FileType neon       setlocal shiftwidth=2 tabstop=2 softtabstop=2
         autocmd FileType cucumber   setlocal shiftwidth=2 tabstop=2 softtabstop=2
