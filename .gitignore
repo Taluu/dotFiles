@@ -4,5 +4,9 @@ tags
 .idea
 .phpactor
 .phpactor.yml
+.phpactor.json
+.php_version
+.phpactor/
+
 fish/conf.d
 nvim/backups
