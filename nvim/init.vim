@@ -16,7 +16,7 @@
         set whichwrap=<,>,[,]
         set history=1000
         set hidden
-        set spell
+        "set spell
         syntax enable " wtf ?!
         set mouse= " remove mouse support
 
