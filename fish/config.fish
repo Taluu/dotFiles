@@ -63,3 +63,8 @@ set fish_path ~/dotFiles/fish
 
 # no greeting message please. kthxby
 set fish_greeting
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f "$HOME/google-cloud-sdk/path.fish.inc" ]; 
+    source "$HOME/google-cloud-sdk/path.fish.inc"; 
+end
