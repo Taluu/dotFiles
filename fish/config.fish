@@ -41,6 +41,11 @@ if not contains "$HOME/.config/nvim/plugged/phpactor/bin/" $PATH; and test -d "$
     set PATH "$HOME/.config/nvim/plugged/phpactor/bin/" $PATH
 end
 
+# fzf
+if not contains "$HOME/.fzf/bin/" $PATH; and test -d "$HOME/.fzf/bin/"
+    set PATH "$HOME/.fzf/bin/" $PATH
+end
+
 # nvim is da tru editor
 set EDITOR "/usr/bin/nvim"
 
