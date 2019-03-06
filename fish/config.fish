@@ -67,3 +67,12 @@ end
 if command -sq thefuck
     thefuck --alias > /dev/null
 end
+
+# asdf-vm
+if test -e "$HOME/.asdf/asdf.fish"
+    source "$HOME/.asdf/asdf.fish"
+
+    if not test -e "$HOME/.config/fish/completions/asdf.fish"
+        ln -s "$HOME/.asdf/completions/asdf.fish" "$HOME/.config/fish/completions/asdf.fish"
+    end
+end
