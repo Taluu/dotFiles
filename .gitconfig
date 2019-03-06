@@ -61,5 +61,17 @@
     autosquash = true
     autostash = true
 
+[tag]
+    # Sort tags as version numbers whenever applicable, so 1.10.2 is AFTER 1.2.0.
+    sort = version:refname
+
+[versionsort]
+    prereleaseSuffix = -pre
+    prereleaseSuffix = .pre
+    prereleaseSuffix = -beta
+    prereleaseSuffix = .beta
+    prereleaseSuffix = -rc
+    prereleaseSuffix = .rc
+
 [include]
     path = ~/.git_personnal_config
