@@ -14,6 +14,7 @@
         "phpstan/phpstan": "^0.11",
         "phpstan/phpstan-symfony": "^0.11",
         "jangregor/phpstan-prophecy": "^0.3.0",
-        "phpstan/phpstan-doctrine": "^0.11.0"
+        "phpstan/phpstan-doctrine": "^0.11.0",
+        "bamarni/symfony-console-autocomplete": "^1.3"
     }
 }
