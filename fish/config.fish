@@ -10,17 +10,6 @@ if not contains "$HOME/bin" $PATH; and test -d "$HOME/bin";
     set PATH "$HOME/bin" $PATH
 end
 
-# rbenv stuff
-if test -d $HOME/.rbenv
-    if not contains "$HOME/.rbenv/bin" $PATH
-        set PATH "$HOME/.rbenv/bin" $PATH
-    end
-
-    if command -sq rbenv
-        rbenv init - fish > /dev/null
-    end
-end
-
 # pip mess
 if not contains "$HOME/.local/bin" $PATH; and test -d "$HOME/.local/bin"
     set PATH "$HOME/.local/bin" $PATH
