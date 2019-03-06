@@ -73,3 +73,8 @@ set fish_greeting
 if [ -f "$HOME/google-cloud-sdk/path.fish.inc" ]; 
     source "$HOME/google-cloud-sdk/path.fish.inc"; 
 end
+
+# thefuck alias <3
+if type -q thefuck
+    thefuck --alias > /dev/null
+end
