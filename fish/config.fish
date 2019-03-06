@@ -16,7 +16,7 @@ if test -d $HOME/.rbenv
         set PATH "$HOME/.rbenv/bin" $PATH
     end
 
-    if type -q rbenv
+    if command -sq rbenv
         rbenv init - fish > /dev/null
     end
 end
@@ -75,6 +75,6 @@ if [ -f "$HOME/google-cloud-sdk/path.fish.inc" ];
 end
 
 # thefuck alias <3
-if type -q thefuck
+if command -sq thefuck
     thefuck --alias > /dev/null
 end
