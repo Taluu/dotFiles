@@ -41,7 +41,7 @@
 [alias]
     st   = status
     co   = checkout
-    oops = commit -a --amend -C HEAD
+    oops = commit -a --amend --no-edit
     push = push-wh
 
     diff-word    = diff --word-diff
