@@ -76,3 +76,8 @@ if test -e "$HOME/.asdf/asdf.fish"
         ln -s "$HOME/.asdf/completions/asdf.fish" "$HOME/.config/fish/completions/asdf.fish"
     end
 end
+
+# direnv
+if command -sq direnv
+    direnv hook fish | source
+end

@@ -11,3 +11,5 @@ psalm.xml
 
 fish/conf.d
 nvim/backups
+
+.envrc
