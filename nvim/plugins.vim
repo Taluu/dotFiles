@@ -46,7 +46,8 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'pearofducks/ansible-vim'
 
     " Completion stuff {
-        Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
+        "Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
+        Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
         Plug 'ncm2/ncm2'
         Plug 'roxma/nvim-yarp'
 

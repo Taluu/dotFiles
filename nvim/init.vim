@@ -231,27 +231,30 @@
         " set completefunc=LanguageClient#complete
         set completeopt=noinsert,menuone,noselect
 
-        let g:LanguageClient_serverCommands = {
-            \ 'rust': ['rustup', 'run', 'stable', 'rls'],
-            \ }
+        " let g:LanguageClient_serverCommands = {
+        "     \ 'rust': ['rustup', 'run', 'stable', 'rls'],
+        "     \ }
 
         set shortmess+=c
 
-        nnoremap <silent> <leader>lp :call LanguageClient_contextMenu()<CR>
-        nnoremap <silent> <leader>lh :call LanguageClient#textDocument_hover()<CR>
-        nnoremap <silent> <leader>lo :call LanguageClient#textDocument_definition()<CR>
+        " nnoremap <silent> <leader>lp :call LanguageClient_contextMenu()<CR>
+        " nnoremap <silent> <leader>lh :call LanguageClient#textDocument_hover()<CR>
+        " nnoremap <silent> <leader>lo :call LanguageClient#textDocument_definition()<CR>
+        nmap <silent> <leader>gd <Plug>(coc-definition)
+        nmap <silent> <leader>gi <Plug>(coc-implementation)
+        nmap <silent> <leader>gr <Plug>(coc-references)
+        nmap <silent> <leader>h :call CocAction('doHover')<CR>
 
     " } phpactor {
-        nmap <leader>ph :call phpactor#Hover()<CR>
-        nmap <Leader>pu :call phpactor#UseAdd()<CR>
-        nmap <Leader>pt :call phpactor#Transform()<CR>
-        nmap <Leader>pcn :call phpactor#ClassNew()<CR>
-        nmap <Leader>pe :call phpactor#ClassExpand()<CR>
-        nmap <Leader>pp :call phpactor#ContextMenu()<CR>
-        nmap <leader>po :call phpactor#GotoDefinition()<CR>
-        nmap <Leader>pfr :call phpactor#FindReferences()<CR>
-
-        vmap <silent><Leader>em :<C-U>call phpactor#ExtractMethod()<CR>
+        "nmap <silent> <leader>ph :call phpactor#Hover()<CR>
+        nmap <silent> <Leader>pu :call phpactor#UseAdd()<CR>
+        nmap <silent> <Leader>pt :call phpactor#Transform()<CR>
+        nmap <silent> <Leader>pe :call phpactor#ClassExpand()<CR>
+        nmap <silent> <Leader>pp :call phpactor#ContextMenu()<CR>
+        "nmap <leader>po :call phpactor#GotoDefinition()<CR>
+        " the time to adapt...
+        nmap <silent> <leader>po <Plug>(coc-definition)
+        nmap <silent> <Leader>pfr :call phpactor#FindReferences()<CR>
     " } Ale {
         let g:ale_echo_msg_format = '%linter% %s'
         let g:ale_php_phpstan_level = 'max'
