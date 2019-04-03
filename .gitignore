@@ -5,6 +5,7 @@ tags
 .phpactor
 .phpactor.yml
 .phpactor.json
+psalm.xml
 .php_version
 .phpactor/
 
