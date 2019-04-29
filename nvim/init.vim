@@ -246,14 +246,12 @@
         nmap <silent> <leader>h :call CocAction('doHover')<CR>
 
     " } phpactor {
-        "nmap <silent> <leader>ph :call phpactor#Hover()<CR>
+        nmap <silent> <leader>ph :call phpactor#Hover()<CR>
         nmap <silent> <Leader>pu :call phpactor#UseAdd()<CR>
         nmap <silent> <Leader>pt :call phpactor#Transform()<CR>
         nmap <silent> <Leader>pe :call phpactor#ClassExpand()<CR>
         nmap <silent> <Leader>pp :call phpactor#ContextMenu()<CR>
-        "nmap <leader>po :call phpactor#GotoDefinition()<CR>
-        " the time to adapt...
-        nmap <silent> <leader>po <Plug>(coc-definition)
+        nmap <silent> <leader>po :call phpactor#GotoDefinition()<CR>
         nmap <silent> <Leader>pfr :call phpactor#FindReferences()<CR>
     " } Ale {
         let g:ale_echo_msg_format = '%linter% %s'
