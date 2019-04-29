@@ -140,6 +140,8 @@
         set background=dark
 
         colorscheme solarized
+    " } Signify {
+        hi! link SignColumn LineNr
 
     " } statusbar {
         set laststatus=2

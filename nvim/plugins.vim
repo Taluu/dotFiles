@@ -35,7 +35,8 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'scrooloose/nerdcommenter'
     Plug 'majutsushi/tagbar'
     Plug 'stephenmckinney/vim-autotag'
-    Plug 'airblade/vim-gitgutter'
+    Plug 'mhinz/vim-signify'
+    " Plug 'airblade/vim-gitgutter'
     "Plug 'vim-vdebug/vdebug' " commented out until we can redesign the thing properly... see https://github.com/vim-vdebug/vdebug/issues/360
     Plug 'taluu/vdebug', { 'branch': 'redesign' }
     Plug 'StanAngeloff/php.vim', { 'for': 'php' }
