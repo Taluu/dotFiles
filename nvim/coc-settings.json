@@ -1,0 +1,6 @@
+{
+    "yaml.customTags": [
+        "!tagged",
+        "!service"
+    ]
+}
