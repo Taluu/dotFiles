@@ -147,8 +147,6 @@
         set laststatus=2
         set noshowmode
 
-        "set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-
         let g:airline_powerline_fonts = 1
         let g:airline#extensions#tabline#enabled = 1
         " let g:airline#extensions#tabline#show_buffers = 1
