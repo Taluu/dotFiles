@@ -1,74 +1,12 @@
-# xterm 256 colors
+set LESSCHARSET UTF-8 # use utf-8 with less
 set TERM xterm-256color
-
-set VIMRUNTIME $HOME/.vim
-
-# less, utf8 !
-set LESSCHARSET UTF-8
+set EDITOR "/usr/bin/nvim" # nvim is da tru editor
+set XDG_CONFIG_DIRS "$XDG_CONFIG_DIRS:$HOME/.config/xdg"
 
 if not contains "$HOME/bin" $PATH; and test -d "$HOME/bin";
     set PATH "$HOME/bin" $PATH
 end
 
-# pip mess
-if not contains "$HOME/.local/bin" $PATH; and test -d "$HOME/.local/bin"
-    set PATH "$HOME/.local/bin" $PATH
-end
-
-# yarn things
-if not contains (yarn global bin) $PATH
-    set PATH (yarn global bin) $PATH
-end
-
-# rust / cargo
-if not contains "$HOME/.cargo/bin" $PATH
-    set PATH "$HOME/.cargo/bin" $PATH
-end
-
-# phpactor
-if not contains "$HOME/.config/nvim/plugged/phpactor/bin/" $PATH; and test -d "$HOME/.config/nvim/plugged/phpactor/bin/"
-    set PATH "$HOME/.config/nvim/plugged/phpactor/bin/" $PATH
-end
-
-# fzf
-if not contains "$HOME/.fzf/bin/" $PATH; and test -d "$HOME/.fzf/bin/"
-    set PATH "$HOME/.fzf/bin/" $PATH
-end
-
-# nvim is da tru editor
-set EDITOR "/usr/bin/nvim"
-
-# fzf
-set FZF_DEFAULT_COMMAND 'rg -l -g "" ./ vendor/'
-set FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
-
-# xdg stuff
-set XDG_CONFIG_DIRS "$XDG_CONFIG_DIRS:$HOME/.config/xdg"
-
-# composer stuff
-set COMPOSER_HOME $HOME/.composer
-set COMPOSER_DISABLE_XDEBUG_WARN 1
-
-# fisherman stuff
-set fish_path ~/dotFiles/fish
-
-# don't shorten the prompt, I need the full prompt, I like the full prompt...
-# set fish_prompt_pwd_dir_length 1
-
-# no greeting message please. kthxby
-set fish_greeting
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/google-cloud-sdk/path.fish.inc" ]; 
-    source "$HOME/google-cloud-sdk/path.fish.inc"; 
-end
-
-# thefuck alias <3
-if command -sq thefuck
-    thefuck --alias > /dev/null
-end
-
-# asdf-vm
 if test -e "$HOME/.asdf/asdf.fish"
     source "$HOME/.asdf/asdf.fish"
 
@@ -77,7 +15,47 @@ if test -e "$HOME/.asdf/asdf.fish"
     end
 end
 
-# direnv
 if command -sq direnv
     direnv hook fish | source
+end
+
+if not contains "$HOME/.local/bin" $PATH; and test -d "$HOME/.local/bin"
+    set PATH "$HOME/.local/bin" $PATH
+end
+
+if not contains (yarn global bin) $PATH
+    set PATH (yarn global bin) $PATH
+end
+
+if not contains "$HOME/.cargo/bin" $PATH
+    set PATH "$HOME/.cargo/bin" $PATH
+end
+
+if not contains "$HOME/.config/nvim/plugged/phpactor/bin/" $PATH; and test -d "$HOME/.config/nvim/plugged/phpactor/bin/"
+    set PATH "$HOME/.config/nvim/plugged/phpactor/bin/" $PATH
+end
+
+if not contains "$HOME/.fzf/bin/" $PATH; and test -d "$HOME/.fzf/bin/"
+    set PATH "$HOME/.fzf/bin/" $PATH
+end
+
+# fzf
+set FZF_DEFAULT_COMMAND 'rg -l -g "" ./ vendor/'
+set FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
+
+# composer stuff
+set COMPOSER_HOME $HOME/.composer
+set COMPOSER_DISABLE_XDEBUG_WARN 1
+
+# don't shorten the prompt, I need the full prompt, I like the full prompt...
+# set fish_prompt_pwd_dir_length 1
+
+set fish_greeting # no greeting message please. kthxby
+
+if [ -f "$HOME/google-cloud-sdk/path.fish.inc" ]; 
+    source "$HOME/google-cloud-sdk/path.fish.inc"; 
+end
+
+if command -sq thefuck
+    thefuck --alias > /dev/null
 end
