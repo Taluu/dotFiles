@@ -154,8 +154,6 @@
 
         " airline initialisation
         function! AirlineInit()
-            let g:airline_section_b = airline#section#create(['branch'])
-            let g:airline_section_c = airline#section#create(['%<', 'file', ' ', 'readonly', 'hunks'])
         endfunction
 
         autocmd VimEnter * call AirlineInit()
