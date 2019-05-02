@@ -227,7 +227,7 @@
         autocmd BufEnter * call ncm2#enable_for_buffer()
 
         " set completefunc=LanguageClient#complete
-        set completeopt=noinsert,menuone,noselect
+        set completeopt=noinsert,menuone,noselect,preview
 
         " let g:LanguageClient_serverCommands = {
         "     \ 'rust': ['rustup', 'run', 'stable', 'rls'],
