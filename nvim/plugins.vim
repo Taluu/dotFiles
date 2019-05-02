@@ -51,6 +51,7 @@ call plug#begin('~/.config/nvim/plugged')
         Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
         Plug 'ncm2/ncm2'
         Plug 'roxma/nvim-yarp'
+        Plug 'ncm2/ncm2-path'
 
         " PHP {
             Plug 'phpactor/phpactor',  {'do': 'composer install --no-dev', 'for': 'php', 'branch': 'develop'}
