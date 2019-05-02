@@ -253,7 +253,6 @@
         nmap <silent> <Leader>pfr :call phpactor#FindReferences()<CR>
     " } Ale {
         let g:ale_echo_msg_format = '%linter% %s'
-        let g:ale_php_phpstan_level = 'max'
         let g:ale_php_phpcs_standard = 'PSR2'
     " }
 " } Map {
