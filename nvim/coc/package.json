@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "coc-json": "^1.0.15",
+    "coc-lists": "^1.1.0",
+    "coc-phpls": "^2.0.5",
+    "coc-rls": "^1.0.11",
+    "coc-snippets": "^2.0.10",
+    "coc-yaml": "^1.0.1"
+  }
+}
