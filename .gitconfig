@@ -75,3 +75,6 @@
 
 [include]
     path = ~/.git_personnal_config
+
+[pull]
+    rebase = true
