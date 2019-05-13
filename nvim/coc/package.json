@@ -1,9 +1,9 @@
 {
   "dependencies": {
-    "coc-json": "^1.0.15",
-    "coc-lists": "^1.1.0",
-    "coc-phpls": "^2.0.5",
-    "coc-rls": "^1.0.11",
+    "coc-json": "^1.0.17",
+    "coc-lists": "^1.1.2",
+    "coc-phpls": "^2.0.6",
+    "coc-rls": "^1.1.0",
     "coc-snippets": "^2.0.10",
     "coc-yaml": "^1.0.1"
   }
