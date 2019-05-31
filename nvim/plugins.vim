@@ -42,7 +42,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'StanAngeloff/php.vim', { 'for': 'php' }
     Plug 'rust-lang/rust.vim', { 'for': 'rust' }
     Plug 'scrooloose/nerdtree-git-plugin'
-    Plug 'fatih/vim-go'
+    "Plug 'fatih/vim-go'
     Plug 'fpob/nette.vim'
     Plug 'pearofducks/ansible-vim'
 
