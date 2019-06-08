@@ -231,17 +231,20 @@
 
         " let g:LanguageClient_serverCommands = {
         "     \ 'rust': ['rustup', 'run', 'stable', 'rls'],
+        "     \ 'php': ['phpactor', 'language-server'],
         "     \ }
+
+        " let g:LanguageClient_autoStart = 1
 
         set shortmess+=c
 
-        " nnoremap <silent> <leader>lp :call LanguageClient_contextMenu()<CR>
-        " nnoremap <silent> <leader>lh :call LanguageClient#textDocument_hover()<CR>
-        " nnoremap <silent> <leader>lo :call LanguageClient#textDocument_definition()<CR>
-        nmap <silent> <leader>gd <Plug>(coc-definition)
-        nmap <silent> <leader>gi <Plug>(coc-implementation)
-        nmap <silent> <leader>gr <Plug>(coc-references)
-        nmap <silent> <leader>h :call CocAction('doHover')<CR>
+        " nnoremap <silent> <leader>m :call LanguageClient_contextMenu()<CR>
+        " nnoremap <silent> <leader>h :call LanguageClient#textDocument_hover()<CR>
+        " nnoremap <silent> <leader>gd :call LanguageClient#textDocument_definition()<CR>
+        " nmap <silent> <leader>gd <Plug>(coc-definition)
+        " nmap <silent> <leader>gi <Plug>(coc-implementation)
+        " nmap <silent> <leader>gr <Plug>(coc-references)
+        " nmap <silent> <leader>h :call CocAction('doHover')<CR>
 
     " } phpactor {
         nmap <silent> <leader>ph :call phpactor#Hover()<CR>
