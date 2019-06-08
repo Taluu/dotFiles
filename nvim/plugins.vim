@@ -13,7 +13,8 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Utils {
     Plug 'tomtom/tlib_vim'
-    Plug 'mileszs/ack.vim'
+    " Plug 'mileszs/ack.vim'
+    Plug 'wincent/ferret'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 
 " } General {
@@ -37,18 +38,18 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'stephenmckinney/vim-autotag'
     Plug 'mhinz/vim-signify'
     " Plug 'airblade/vim-gitgutter'
-    "Plug 'vim-vdebug/vdebug' " commented out until we can redesign the thing properly... see https://github.com/vim-vdebug/vdebug/issues/360
+    " Plug 'vim-vdebug/vdebug' " commented out until we can redesign the thing properly... see https://github.com/vim-vdebug/vdebug/issues/360
     Plug 'taluu/vdebug', { 'branch': 'redesign' }
     Plug 'StanAngeloff/php.vim', { 'for': 'php' }
     Plug 'rust-lang/rust.vim', { 'for': 'rust' }
     Plug 'scrooloose/nerdtree-git-plugin'
-    "Plug 'fatih/vim-go'
+    " Plug 'fatih/vim-go'
     Plug 'fpob/nette.vim'
     Plug 'pearofducks/ansible-vim'
 
     " Completion stuff {
-        "Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
-        "Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+        " Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
+        " Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
         Plug 'ncm2/ncm2'
         Plug 'roxma/nvim-yarp'
         Plug 'ncm2/ncm2-path'
