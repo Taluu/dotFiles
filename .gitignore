@@ -6,7 +6,9 @@ tags
 .phpactor.yml
 .phpactor.json
 psalm.xml
+phpstan.neon
 .php-version
+.tool-versions
 .phpactor/
 
 fish/conf.d
