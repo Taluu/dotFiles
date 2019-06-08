@@ -39,6 +39,8 @@ if not contains "$HOME/.fzf/bin/" $PATH; and test -d "$HOME/.fzf/bin/"
     set PATH "$HOME/.fzf/bin/" $PATH
 end
 
+set RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/src
+
 # fzf
 set FZF_DEFAULT_COMMAND 'rg -l -g "" ./ vendor/'
 set FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
