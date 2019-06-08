@@ -56,6 +56,8 @@ call plug#begin('~/.config/nvim/plugged')
         " PHP {
             Plug 'phpactor/phpactor',  {'do': 'composer install --no-dev', 'for': 'php', 'branch': 'develop'}
             Plug 'roxma/ncm2-phpactor'
+        " } Rust {
+            Plug 'ncm2/ncm2-racer'
         " }
     " } Misc {
         Plug 'tpope/vim-markdown', { 'for': 'markdown' }
