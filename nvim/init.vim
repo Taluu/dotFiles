@@ -221,22 +221,22 @@
         cnoreabbrev RG Ack
     " } completion {
         autocmd mine BufEnter * call ncm2#enable_for_buffer()
+        let g:LanguageClient_autoStart = 1
 
-        " set completefunc=LanguageClient#complete
         set completeopt=noinsert,menuone,noselect,preview
 
-        " let g:LanguageClient_serverCommands = {
-        "     \ 'rust': ['rustup', 'run', 'stable', 'rls'],
-        "     \ 'php': ['phpactor', 'language-server'],
-        "     \ }
+        let g:LanguageClient_serverCommands = {
+            \ 'rust': ['rustup', 'run', 'stable', 'rls'],
+            \ 'php': ['phpactor', 'language-server'],
+            \ }
 
-        " let g:LanguageClient_autoStart = 1
+        " let g:LanguageClient_loggingFile = '/var/log/ls.log'
+        " let g:LanguageClient_loggingLevel = 'DEBUG'
 
         set shortmess+=c
 
-        " nnoremap <silent> <leader>m :call LanguageClient_contextMenu()<CR>
-        " nnoremap <silent> <leader>h :call LanguageClient#textDocument_hover()<CR>
-        " nnoremap <silent> <leader>gd :call LanguageClient#textDocument_definition()<CR>
+        nmap <leader>h :call LanguageClient#textDocument_hover()<CR>
+        nmap <silent> <leader>gd :call LanguageClient#textDocument_definition()<CR>
         " nmap <silent> <leader>gd <Plug>(coc-definition)
         " nmap <silent> <leader>gi <Plug>(coc-implementation)
         " nmap <silent> <leader>gr <Plug>(coc-references)
@@ -249,13 +249,13 @@
             au FileType php au BufNewFile,BufReadPre <buffer> call PhpSyntaxOverride()
             au FileType php au BufWritePre <buffer> call TrimSpaces()
 
-            au FileType php nmap <silent> <Leader>h :call phpactor#Hover()<CR>
-            au FileType php nmap <silent> <Leader>u :call phpactor#UseAdd()<CR>
-            au FileType php nmap <silent> <Leader>t :call phpactor#Transform()<CR>
-            au FileType php nmap <silent> <Leader>ce :call phpactor#ClassExpand()<CR>
-            au FileType php nmap <silent> <Leader>cm :call phpactor#ContextMenu()<CR>
-            au FileType php nmap <silent> <Leader>gd :call phpactor#GotoDefinition()<CR>
-            au FileType php nmap <silent> <Leader>fr :call phpactor#FindReferences()<CR>
+            au FileType php nmap <silent> <Leader>ph :call phpactor#Hover()<CR>
+            au FileType php nmap <silent> <Leader>pu :call phpactor#UseAdd()<CR>
+            au FileType php nmap <silent> <Leader>pt :call phpactor#Transform()<CR>
+            au FileType php nmap <silent> <Leader>pce :call phpactor#ClassExpand()<CR>
+            au FileType php nmap <silent> <Leader>pcm :call phpactor#ContextMenu()<CR>
+            au FileType php nmap <silent> <Leader>pgd :call phpactor#GotoDefinition()<CR>
+            au FileType php nmap <silent> <Leader>pfr :call phpactor#FindReferences()<CR>
         augroup END
 
         augroup rust

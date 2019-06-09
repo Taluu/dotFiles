@@ -48,7 +48,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'pearofducks/ansible-vim'
 
     " Completion stuff {
-        " Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
+        Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
         " Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
         Plug 'ncm2/ncm2'
         Plug 'roxma/nvim-yarp'
@@ -56,9 +56,10 @@ call plug#begin('~/.config/nvim/plugged')
 
         " PHP {
             Plug 'phpactor/phpactor',  {'do': 'composer install --no-dev', 'for': 'php', 'branch': 'develop'}
-            Plug 'roxma/ncm2-phpactor'
+            " Plug 'roxma/ncm2-phpactor'
         " } Rust {
-            Plug 'ncm2/ncm2-racer'
+            " Plug 'racer-rust/vim-racer'
+            " Plug 'ncm2/ncm2-racer'
         " }
     " } Misc {
         Plug 'tpope/vim-markdown', { 'for': 'markdown' }
