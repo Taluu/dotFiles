@@ -6,10 +6,11 @@
         set shell=sh
     endif
 
-    set nocompatible " fuck off vi !
-
     let mapleader = ','
     let g:mapleader = ','
+
+    augroup mine
+    augroup END
 
     " Misc {
         set virtualedit=onemore
@@ -52,10 +53,10 @@
             set list
             set listchars=tab:,.,trail:.
 
-            autocmd FileType javascript setlocal nolist listchars=trail:.
-            autocmd FileType dockerfile setlocal nolist listchars=trail:.
-            autocmd FileType make setlocal nolist listchars=trail:.
-            autocmd FileType go setlocal nolist listchars=trail:.
+            autocmd mine FileType javascript setlocal nolist listchars=trail:.
+            autocmd mine FileType dockerfile setlocal nolist listchars=trail:.
+            autocmd mine FileType make setlocal nolist listchars=trail:.
+            autocmd mine FileType go setlocal nolist listchars=trail:.
        " }
     " } indent {
         set smartindent
@@ -64,38 +65,34 @@
         set shiftwidth=4
         set softtabstop=4
 
-        autocmd FileType dockerfile setlocal noexpandtab
-        autocmd FileType make       setlocal noexpandtab
-        autocmd FileType build      setlocal noexpandtab
-        autocmd FileType neon       setlocal shiftwidth=2 tabstop=2 softtabstop=2
-        autocmd FileType cucumber   setlocal shiftwidth=2 tabstop=2 softtabstop=2
-        autocmd FileType ruby       setlocal shiftwidth=2 tabstop=2 softtabstop=2
-        autocmd FileType less       setlocal shiftwidth=2 tabstop=2 softtabstop=2
-        autocmd FileType css        setlocal shiftwidth=2 tabstop=2 softtabstop=2
-        autocmd FileType go         setlocal noexpandtab  tabstop=8 shiftwidth=8
+        autocmd mine FileType dockerfile setlocal noexpandtab
+        autocmd mine FileType make       setlocal noexpandtab
+        autocmd mine FileType build      setlocal noexpandtab
+        autocmd mine FileType neon       setlocal shiftwidth=2 tabstop=2 softtabstop=2
+        autocmd mine FileType cucumber   setlocal shiftwidth=2 tabstop=2 softtabstop=2
+        autocmd mine FileType ruby       setlocal shiftwidth=2 tabstop=2 softtabstop=2
+        autocmd mine FileType less       setlocal shiftwidth=2 tabstop=2 softtabstop=2
+        autocmd mine FileType css        setlocal shiftwidth=2 tabstop=2 softtabstop=2
+        autocmd mine FileType go         setlocal noexpandtab  tabstop=8 shiftwidth=8
     " } Formating {
         set pastetoggle=<F12>
         set nowrap
         set textwidth=0
 
-        autocmd FileType php        autocmd BufNewFile,BufReadPre <buffer> call PhpSyntaxOverride()
-
-        autocmd FileType php        autocmd BufWritePre <buffer> call TrimSpaces()
-        autocmd FileType javascript autocmd BufWritePre <buffer> call TrimSpaces()
-        autocmd FileType twig       autocmd BufWritePre <buffer> call TrimSpaces()
-        autocmd FileType html.twig  autocmd BufWritePre <buffer> call TrimSpaces()
-        autocmd FileType python     autocmd BufWritePre <buffer> call TrimSpaces()
-        autocmd FileType yml        autocmd BufWritePre <buffer> call TrimSpaces()
-        autocmd FileType xml        autocmd BufWritePre <buffer> call TrimSpaces()
-        autocmd FileType cucumber   autocmd BufWritePre <buffer> call TrimSpaces()
-        autocmd FileType vim        autocmd BufWritePre <buffer> call TrimSpaces()
-        autocmd FileType yaml       autocmd BufWritePre <buffer> call TrimSpaces()
-        autocmd FileType less       autocmd BufWritePre <buffer> call TrimSpaces()
-        autocmd FileType ruby       autocmd BufWritePre <buffer> call TrimSpaces()
-        autocmd FileType rust       autocmd BufWritePre <buffer> call TrimSpaces()
+        autocmd mine FileType javascript autocmd BufWritePre <buffer> call TrimSpaces()
+        autocmd mine FileType twig       autocmd BufWritePre <buffer> call TrimSpaces()
+        autocmd mine FileType html.twig  autocmd BufWritePre <buffer> call TrimSpaces()
+        autocmd mine FileType python     autocmd BufWritePre <buffer> call TrimSpaces()
+        autocmd mine FileType yml        autocmd BufWritePre <buffer> call TrimSpaces()
+        autocmd mine FileType xml        autocmd BufWritePre <buffer> call TrimSpaces()
+        autocmd mine FileType cucumber   autocmd BufWritePre <buffer> call TrimSpaces()
+        autocmd mine FileType vim        autocmd BufWritePre <buffer> call TrimSpaces()
+        autocmd mine FileType yaml       autocmd BufWritePre <buffer> call TrimSpaces()
+        autocmd mine FileType less       autocmd BufWritePre <buffer> call TrimSpaces()
+        autocmd mine FileType ruby       autocmd BufWritePre <buffer> call TrimSpaces()
 
         function! TrimSpaces()
-            let save_cursor = getpos(".")
+            let save_cursor = getpos('.')
             let old_query = getreg('/')
 
             :%s/\s\+$//e
@@ -115,7 +112,7 @@
                 let g:vdebug_options = {}
             endif
 
-            let g:vdebug_options["ide_key"] = a:ide_key
+            let g:vdebug_options['ide_key'] = a:ide_key
         endfunction
 
         function! SetVdebugDockerPath(docker_path, local_path)
@@ -123,11 +120,11 @@
                 let g:vdebug_options = {}
             endif
 
-            if !has_key(g:vdebug_options, "path_maps")
-                let g:vdebug_options["path_maps"] = {}
+            if !has_key(g:vdebug_options, 'path_maps')
+                let g:vdebug_options['path_maps'] = {}
             endif
 
-            let g:vdebug_options["path_maps"][a:docker_path] = a:local_path
+            let g:vdebug_options['path_maps'][a:docker_path] = a:local_path
         endfunction
     " }
 " } Plugin configuration {
@@ -156,7 +153,7 @@
         function! AirlineInit()
         endfunction
 
-        autocmd VimEnter * call AirlineInit()
+        autocmd * VimEnter * call AirlineInit()
 
         set timeoutlen=500
         set ttimeoutlen=10
@@ -168,9 +165,9 @@
         augroup END
 
     " } NerdTree {
-        noremap <C-n> :NERDTreeMirrorToggle<CR>
-        noremap <leader>e :NERDTreeFind<CR>
-        noremap <leader>nt :NERDTreeFind<CR>
+        nmap <silent> <C-n> :NERDTreeMirrorToggle<CR>
+        nmap <silent> <leader>e :NERDTreeFind<CR>
+        nmap <silent> <leader>nt :NERDTreeFind<CR>
 
         let NERDTreeShowBookmarks=1
         let NERDTreeIgnore=['\.pyc', '\~$', '\.git$', 'node_modules$', '\.tags$']
@@ -197,10 +194,10 @@
             let g:vdebug_options = {}
         endif
 
-        " let g:vdebug_options["break_on_open"] = 0
-        let g:vdebug_options["watch_window_height"]=45
-        let g:vdebug_options["status_window_height"]=5
-        " let g:vdebug_options["continuous_mode"]=1
+        " let g:vdebug_options['break_on_open'] = 0
+        let g:vdebug_options['watch_window_height']=45
+        let g:vdebug_options['status_window_height']=5
+        " let g:vdebug_options['continuous_mode']=1
 
         if !exists('g:vdebug_features')
             let g:vdebug_features = {}
@@ -208,7 +205,7 @@
 
         "let g:vdebug_features["max_data"] = 2048
         "let g:vdebug_features["max_depth"] = 100
-        let g:vdebug_features["max_children"] = 128
+        let g:vdebug_features['max_children'] = 128
 
         " <leader> + b : breakpoint window
         nnoremap <silent> <leader>b :BreakpointWindow<CR>
@@ -223,8 +220,7 @@
         cnoreabbrev Rg Ack
         cnoreabbrev RG Ack
     " } completion {
-        "autocmd FileType php setlocal omnifunc=phpactor#Complete
-        autocmd BufEnter * call ncm2#enable_for_buffer()
+        autocmd mine BufEnter * call ncm2#enable_for_buffer()
 
         " set completefunc=LanguageClient#complete
         set completeopt=noinsert,menuone,noselect,preview
@@ -246,16 +242,29 @@
         " nmap <silent> <leader>gr <Plug>(coc-references)
         " nmap <silent> <leader>h :call CocAction('doHover')<CR>
 
-    " } phpactor {
-        nmap <silent> <leader>ph :call phpactor#Hover()<CR>
-        nmap <silent> <Leader>pu :call phpactor#UseAdd()<CR>
-        nmap <silent> <Leader>pt :call phpactor#Transform()<CR>
-        nmap <silent> <Leader>pe :call phpactor#ClassExpand()<CR>
-        nmap <silent> <Leader>pp :call phpactor#ContextMenu()<CR>
-        nmap <silent> <leader>po :call phpactor#GotoDefinition()<CR>
-        nmap <silent> <Leader>pfr :call phpactor#FindReferences()<CR>
+        augroup php
+            au!
+            "au FileType php setlocal omnifunc=phpactor#Complete()
+
+            au FileType php au BufNewFile,BufReadPre <buffer> call PhpSyntaxOverride()
+            au FileType php au BufWritePre <buffer> call TrimSpaces()
+
+            au FileType php nmap <silent> <Leader>h :call phpactor#Hover()<CR>
+            au FileType php nmap <silent> <Leader>u :call phpactor#UseAdd()<CR>
+            au FileType php nmap <silent> <Leader>t :call phpactor#Transform()<CR>
+            au FileType php nmap <silent> <Leader>ce :call phpactor#ClassExpand()<CR>
+            au FileType php nmap <silent> <Leader>cm :call phpactor#ContextMenu()<CR>
+            au FileType php nmap <silent> <Leader>gd :call phpactor#GotoDefinition()<CR>
+            au FileType php nmap <silent> <Leader>fr :call phpactor#FindReferences()<CR>
+        augroup END
+
+        augroup rust
+            au!
+
+            au FileType rust au BufWritePre <buffer> call TrimSpaces()
+        augroup END
     " } Ale {
-        let g:ale_echo_msg_format = '%linter% %s'
+        let g:ale_echo_msg_format = '[%linter% : %severity%] %s'
         let g:ale_php_phpcs_standard = 'PSR2'
     " }
 " } Map {
@@ -292,10 +301,7 @@
 
     " map home / end keys
     map [F $
-    imap [F $
     map [H g0
-    imap [H g0
 
     nnoremap <Del> <NOP>
 " }
-
