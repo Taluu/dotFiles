@@ -213,7 +213,8 @@
 
         set shortmess+=c
 
-        nmap <leader>h :call LanguageClient#textDocument_hover()<CR>
+        nmap <silent> <leader>m :call LanguageClient_contextMenu()<CR>
+        nmap <silent> <leader>h :call LanguageClient#textDocument_hover()<CR>
         nmap <silent> <leader>gd :call LanguageClient#textDocument_definition()<CR>
         " nmap <silent> <leader>gd <Plug>(coc-definition)
         " nmap <silent> <leader>gi <Plug>(coc-implementation)
