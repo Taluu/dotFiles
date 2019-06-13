@@ -79,28 +79,6 @@
         set nowrap
         set textwidth=0
 
-        autocmd mine FileType javascript autocmd BufWritePre <buffer> call TrimSpaces()
-        autocmd mine FileType twig       autocmd BufWritePre <buffer> call TrimSpaces()
-        autocmd mine FileType html.twig  autocmd BufWritePre <buffer> call TrimSpaces()
-        autocmd mine FileType python     autocmd BufWritePre <buffer> call TrimSpaces()
-        autocmd mine FileType yml        autocmd BufWritePre <buffer> call TrimSpaces()
-        autocmd mine FileType xml        autocmd BufWritePre <buffer> call TrimSpaces()
-        autocmd mine FileType cucumber   autocmd BufWritePre <buffer> call TrimSpaces()
-        autocmd mine FileType vim        autocmd BufWritePre <buffer> call TrimSpaces()
-        autocmd mine FileType yaml       autocmd BufWritePre <buffer> call TrimSpaces()
-        autocmd mine FileType less       autocmd BufWritePre <buffer> call TrimSpaces()
-        autocmd mine FileType ruby       autocmd BufWritePre <buffer> call TrimSpaces()
-
-        function! TrimSpaces()
-            let save_cursor = getpos('.')
-            let old_query = getreg('/')
-
-            :%s/\s\+$//e
-
-            call setpos('.', save_cursor)
-            call setreg('/', old_query)
-        endfunction
-
         function! PhpSyntaxOverride()
             hi! def link phpDocTags phpDefine
             hi! def link phpDocParam phpType
@@ -247,7 +225,6 @@
             "au FileType php setlocal omnifunc=phpactor#Complete()
 
             au FileType php au BufNewFile,BufReadPre <buffer> call PhpSyntaxOverride()
-            au FileType php au BufWritePre <buffer> call TrimSpaces()
 
             au FileType php nmap <silent> <Leader>ph :call phpactor#Hover()<CR>
             au FileType php nmap <silent> <Leader>pu :call phpactor#UseAdd()<CR>
@@ -260,12 +237,16 @@
 
         augroup rust
             au!
-
-            au FileType rust au BufWritePre <buffer> call TrimSpaces()
         augroup END
     " } Ale {
         let g:ale_echo_msg_format = '[%linter% : %severity%] %s'
         let g:ale_php_phpcs_standard = 'PSR2'
+
+        let g:ale_fixers = {
+        \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+        \ }
+
+        let g:ale_fix_on_save = 1
     " }
 " } Map {
     " shift+tab = unindent
