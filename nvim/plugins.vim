@@ -38,8 +38,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'stephenmckinney/vim-autotag'
     Plug 'mhinz/vim-signify'
     " Plug 'airblade/vim-gitgutter'
-    " Plug 'vim-vdebug/vdebug' " commented out until we can redesign the thing properly... see https://github.com/vim-vdebug/vdebug/issues/360
-    Plug 'taluu/vdebug', { 'branch': 'redesign' }
+    Plug 'vim-vdebug/vdebug'
     Plug 'StanAngeloff/php.vim', { 'for': 'php' }
     Plug 'rust-lang/rust.vim', { 'for': 'rust' }
     Plug 'scrooloose/nerdtree-git-plugin'
@@ -70,4 +69,3 @@ call plug#begin('~/.config/nvim/plugged')
 " }
 
 call plug#end()
-

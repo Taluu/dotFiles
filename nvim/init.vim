@@ -173,9 +173,9 @@
         endif
 
         " let g:vdebug_options['break_on_open'] = 0
-        let g:vdebug_options['watch_window_height']=45
-        let g:vdebug_options['status_window_height']=5
         " let g:vdebug_options['continuous_mode']=1
+
+        let g:vdebug_options['layout'] = 'horizontal'
 
         if !exists('g:vdebug_features')
             let g:vdebug_features = {}
@@ -213,13 +213,21 @@
 
         set shortmess+=c
 
+        " With LanguageClient
         nmap <silent> <leader>m :call LanguageClient_contextMenu()<CR>
         nmap <silent> <leader>h :call LanguageClient#textDocument_hover()<CR>
         nmap <silent> <leader>gd :call LanguageClient#textDocument_definition()<CR>
+
+        " With COC.nvim ?
         " nmap <silent> <leader>gd <Plug>(coc-definition)
         " nmap <silent> <leader>gi <Plug>(coc-implementation)
         " nmap <silent> <leader>gr <Plug>(coc-references)
         " nmap <silent> <leader>h :call CocAction('doHover')<CR>
+
+        " With ALE ?
+        " nmap <silent> <leader>h <Plug>(ale_hover)
+        " nmap <silent> <leader>gd <Plug>(ale_go_to_definition)
+        " nmap <silent> <leader>fr <Plug>(ale_find_references)
 
         augroup php
             au!
