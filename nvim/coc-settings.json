@@ -2,5 +2,6 @@
     "yaml.customTags": [
         "!tagged",
         "!service"
-    ]
+    ],
+    "suggest.triggerAfterInsertEnter": true
 }
