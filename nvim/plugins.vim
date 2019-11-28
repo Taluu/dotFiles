@@ -47,11 +47,11 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'pearofducks/ansible-vim'
 
     " Completion stuff {
-        Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
-        " Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-        Plug 'ncm2/ncm2'
-        Plug 'roxma/nvim-yarp'
-        Plug 'ncm2/ncm2-path'
+        "Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
+        Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+        "Plug 'ncm2/ncm2'
+        "Plug 'roxma/nvim-yarp'
+        "Plug 'ncm2/ncm2-path'
 
         " PHP {
             Plug 'phpactor/phpactor',  {'do': 'composer install --no-dev', 'for': 'php', 'branch': 'develop'}

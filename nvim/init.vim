@@ -198,15 +198,15 @@
         cnoreabbrev Rg Ack
         cnoreabbrev RG Ack
     " } completion {
-        autocmd mine BufEnter * call ncm2#enable_for_buffer()
-        let g:LanguageClient_autoStart = 1
+        "autocmd mine BufEnter * call ncm2#enable_for_buffer()
+        "let g:LanguageClient_autoStart = 1
 
         set completeopt=noinsert,menuone,noselect,preview
 
-        let g:LanguageClient_serverCommands = {
-            \ 'rust': ['rustup', 'run', 'stable', 'rls'],
-            \ 'php': ['phpactor', 'language-server'],
-            \ }
+        " let g:LanguageClient_serverCommands = {
+        "     \ 'rust': ['rustup', 'run', 'stable', 'rls'],
+        "     \ 'php': ['phpactor', 'language-server'],
+        "     \ }
 
         " let g:LanguageClient_loggingFile = '/var/log/ls.log'
         " let g:LanguageClient_loggingLevel = 'DEBUG'
@@ -214,15 +214,15 @@
         set shortmess+=c
 
         " With LanguageClient
-        nmap <silent> <leader>m :call LanguageClient_contextMenu()<CR>
-        nmap <silent> <leader>h :call LanguageClient#textDocument_hover()<CR>
-        nmap <silent> <leader>gd :call LanguageClient#textDocument_definition()<CR>
+        " nmap <silent> <leader>m :call LanguageClient_contextMenu()<CR>
+        " nmap <silent> <leader>h :call LanguageClient#textDocument_hover()<CR>
+        " nmap <silent> <leader>gd :call LanguageClient#textDocument_definition()<CR>
 
         " With COC.nvim ?
-        " nmap <silent> <leader>gd <Plug>(coc-definition)
-        " nmap <silent> <leader>gi <Plug>(coc-implementation)
-        " nmap <silent> <leader>gr <Plug>(coc-references)
-        " nmap <silent> <leader>h :call CocAction('doHover')<CR>
+        nmap <silent> <leader>gd <Plug>(coc-definition)
+        nmap <silent> <leader>gi <Plug>(coc-implementation)
+        nmap <silent> <leader>gr <Plug>(coc-references)
+        nmap <silent> <leader>h :call CocAction('doHover')<CR>
 
         " With ALE ?
         " nmap <silent> <leader>h <Plug>(ale_hover)
