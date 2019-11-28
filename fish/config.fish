@@ -42,7 +42,7 @@ end
 set RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/src
 
 # fzf
-set FZF_DEFAULT_COMMAND 'rg -l -g "" ./ vendor/'
+set FZF_DEFAULT_COMMAND 'rg -l ./'
 set FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
 
 # composer stuff
@@ -54,8 +54,8 @@ set COMPOSER_DISABLE_XDEBUG_WARN 1
 
 set fish_greeting # no greeting message please. kthxby
 
-if [ -f "$HOME/google-cloud-sdk/path.fish.inc" ]; 
-    source "$HOME/google-cloud-sdk/path.fish.inc"; 
+if [ -f "$HOME/google-cloud-sdk/path.fish.inc" ];
+    source "$HOME/google-cloud-sdk/path.fish.inc";
 end
 
 if command -sq thefuck
