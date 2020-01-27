@@ -33,6 +33,6 @@ fi
 echo "Here are the top $number files / directories in $target :"
 
 cd $target
-du -hsx * | sort -rh | head -n "$number"
+du -hsx | sort -rh | head -n "$number"
 cd $curdir
 
