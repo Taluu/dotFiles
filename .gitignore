@@ -15,4 +15,4 @@ fish/conf.d
 nvim/backups
 
 .envrc
-.riggreprc
+.ripgreprc
