@@ -198,41 +198,18 @@
         cnoreabbrev Rg Ack
         cnoreabbrev RG Ack
     " } completion {
-        "autocmd mine BufEnter * call ncm2#enable_for_buffer()
-        "let g:LanguageClient_autoStart = 1
-
         set completeopt=noinsert,menuone,noselect,preview
-
-        " let g:LanguageClient_serverCommands = {
-        "     \ 'rust': ['rustup', 'run', 'stable', 'rls'],
-        "     \ 'php': ['phpactor', 'language-server'],
-        "     \ }
-
-        " let g:LanguageClient_loggingFile = '/var/log/ls.log'
-        " let g:LanguageClient_loggingLevel = 'DEBUG'
 
         set shortmess+=c
 
-        " With LanguageClient
-        " nmap <silent> <leader>m :call LanguageClient_contextMenu()<CR>
-        " nmap <silent> <leader>h :call LanguageClient#textDocument_hover()<CR>
-        " nmap <silent> <leader>gd :call LanguageClient#textDocument_definition()<CR>
-
-        " With COC.nvim ?
+        " With COC.nvim
         nmap <silent> <leader>gd <Plug>(coc-definition)
         nmap <silent> <leader>gi <Plug>(coc-implementation)
         nmap <silent> <leader>gr <Plug>(coc-references)
         nmap <silent> <leader>h :call CocAction('doHover')<CR>
 
-        " With ALE ?
-        " nmap <silent> <leader>h <Plug>(ale_hover)
-        " nmap <silent> <leader>gd <Plug>(ale_go_to_definition)
-        " nmap <silent> <leader>fr <Plug>(ale_find_references)
-
         augroup php
             au!
-            "au FileType php setlocal omnifunc=phpactor#Complete()
-
             au FileType php au BufNewFile,BufReadPre <buffer> call PhpSyntaxOverride()
 
             au FileType php nmap <silent> <Leader>ph :call phpactor#Hover()<CR>

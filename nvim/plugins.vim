@@ -13,7 +13,6 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Utils {
     Plug 'tomtom/tlib_vim'
-    " Plug 'mileszs/ack.vim'
     Plug 'wincent/ferret'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 " } General {
@@ -33,32 +32,21 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'majutsushi/tagbar'
     Plug 'stephenmckinney/vim-autotag'
     Plug 'mhinz/vim-signify'
-    " Plug 'airblade/vim-gitgutter'
     Plug 'vim-vdebug/vdebug'
     Plug 'scrooloose/nerdtree-git-plugin'
     Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
-    " Completion stuff {
-        "Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
-        "Plug 'ncm2/ncm2'
-        "Plug 'roxma/nvim-yarp'
-        "Plug 'ncm2/ncm2-path'
-        "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    " } PHP {
+    " PHP {
         Plug 'StanAngeloff/php.vim', { 'for': 'php' }
         Plug 'phpactor/phpactor',  {'do': 'composer install --no-dev', 'for': 'php', 'branch': 'develop'}
-        " Plug 'roxma/ncm2-phpactor'
     " } Rust {
         Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-        " Plug 'racer-rust/vim-racer'
-        " Plug 'ncm2/ncm2-racer'
     " } Other Languages {
         Plug 'tpope/vim-markdown', { 'for': 'markdown' }
         Plug 'tpope/vim-cucumber', { 'for': 'cucumber' }
         Plug 'quentindecock/vim-cucumber-align-pipes', { 'for': 'cucumber' }
         Plug 'nelsyeung/twig.vim'
         Plug 'fpob/nette.vim'
-        " Plug 'fatih/vim-go'
         Plug 'pearofducks/ansible-vim'
         Plug 'dag/vim-fish'
         Plug 'Rykka/riv.vim', { 'for': 'rst' }
