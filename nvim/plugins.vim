@@ -16,7 +16,6 @@ call plug#begin('~/.config/nvim/plugged')
     " Plug 'mileszs/ack.vim'
     Plug 'wincent/ferret'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
-
 " } General {
     Plug 'scrooloose/nerdtree'
     Plug 'altercation/vim-colors-solarized'
@@ -26,11 +25,8 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-abolish'
     Plug 'tpope/vim-fugitive'
-    Plug 'Rykka/riv.vim', { 'for': 'rst' }
     Plug 'https://bitbucket.org/cmthornton/vim-dist-ext.git'
-    Plug 'dag/vim-fish'
     Plug 'editorconfig/editorconfig-vim'
-
 " } Prog {
     Plug 'w0rp/ale'
     Plug 'scrooloose/nerdcommenter'
@@ -39,32 +35,33 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'mhinz/vim-signify'
     " Plug 'airblade/vim-gitgutter'
     Plug 'vim-vdebug/vdebug'
-    Plug 'StanAngeloff/php.vim', { 'for': 'php' }
-    Plug 'rust-lang/rust.vim', { 'for': 'rust' }
     Plug 'scrooloose/nerdtree-git-plugin'
-    " Plug 'fatih/vim-go'
-    Plug 'fpob/nette.vim'
-    Plug 'pearofducks/ansible-vim'
+    Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
     " Completion stuff {
         "Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
-        Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
         "Plug 'ncm2/ncm2'
         "Plug 'roxma/nvim-yarp'
         "Plug 'ncm2/ncm2-path'
-
-        " PHP {
-            Plug 'phpactor/phpactor',  {'do': 'composer install --no-dev', 'for': 'php', 'branch': 'develop'}
-            " Plug 'roxma/ncm2-phpactor'
-        " } Rust {
-            " Plug 'racer-rust/vim-racer'
-            " Plug 'ncm2/ncm2-racer'
-        " }
-    " } Misc {
+        "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    " } PHP {
+        Plug 'StanAngeloff/php.vim', { 'for': 'php' }
+        Plug 'phpactor/phpactor',  {'do': 'composer install --no-dev', 'for': 'php', 'branch': 'develop'}
+        " Plug 'roxma/ncm2-phpactor'
+    " } Rust {
+        Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+        " Plug 'racer-rust/vim-racer'
+        " Plug 'ncm2/ncm2-racer'
+    " } Other Languages {
         Plug 'tpope/vim-markdown', { 'for': 'markdown' }
         Plug 'tpope/vim-cucumber', { 'for': 'cucumber' }
         Plug 'quentindecock/vim-cucumber-align-pipes', { 'for': 'cucumber' }
         Plug 'nelsyeung/twig.vim'
+        Plug 'fpob/nette.vim'
+        " Plug 'fatih/vim-go'
+        Plug 'pearofducks/ansible-vim'
+        Plug 'dag/vim-fish'
+        Plug 'Rykka/riv.vim', { 'for': 'rst' }
     " }
 " }
 
