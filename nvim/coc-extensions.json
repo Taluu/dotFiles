@@ -5,7 +5,7 @@
     "coc-phpls": ">=2.1.7",
     "coc-rls": ">=1.1.4",
     "coc-snippets": ">=2.1.18",
-    "coc-xml": ">=1.9.5",
+    "coc-xml": ">=1.10.0",
     "coc-yaml": ">=1.0.2"
   }
 }
