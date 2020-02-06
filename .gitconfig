@@ -43,6 +43,7 @@
     co   = checkout
     oops = commit -a --amend --no-edit
     push = push-wh
+    yolo = push --force-with-lease
 
     diff-word    = diff --word-diff
     log-graph    = log --graph --decorate --pretty=oneline --abbrev-commit
