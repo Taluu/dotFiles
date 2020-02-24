@@ -194,19 +194,6 @@
         nmap <silent> <leader>gr <Plug>(coc-references)
         nmap <silent> <leader>h :call CocAction('doHover')<CR>
 
-        augroup php
-            au!
-            au FileType php au BufNewFile,BufReadPre <buffer> call PhpSyntaxOverride()
-
-            au FileType php nmap <silent> <Leader>ph :call phpactor#Hover()<CR>
-            au FileType php nmap <silent> <Leader>pu :call phpactor#UseAdd()<CR>
-            au FileType php nmap <silent> <Leader>pt :call phpactor#Transform()<CR>
-            au FileType php nmap <silent> <Leader>pce :call phpactor#ClassExpand()<CR>
-            au FileType php nmap <silent> <Leader>pcm :call phpactor#ContextMenu()<CR>
-            au FileType php nmap <silent> <Leader>pgd :call phpactor#GotoDefinition()<CR>
-            au FileType php nmap <silent> <Leader>pfr :call phpactor#FindReferences()<CR>
-        augroup END
-
         augroup rust
             au!
         augroup END
@@ -219,6 +206,21 @@
         \ }
 
         let g:ale_fix_on_save = 1
+    " } Phpactor {
+        let g:phpactorInputListStrategy = 'phpactor#input#list#fzf'
+        let g:phpactorQuickfixStrategy = 'phpactor#quickfix#fzf'
+
+        augroup php
+            au!
+            au FileType php au BufNewFile,BufReadPre <buffer> call PhpSyntaxOverride()
+
+            au FileType php nmap <silent> <Leader>pu :PhpactorImportClass<CR>
+            au FileType php nmap <silent> <Leader>pt :PhpactorTransform<CR>
+            au FileType php nmap <silent> <Leader>pce :PhpactorClassExpand<CR>
+            au FileType php nmap <silent> <Leader>pcm :PhpactorContextMenu<CR>
+            au FileType php nmap <silent> <Leader>pgd :PhpactorGotoDefinition<CR>
+            au FileType php nmap <silent> <Leader>pfr :PhpactorFindReferences<CR>
+        augroup END
     " }
 " } Map {
     " shift+tab = unindent
