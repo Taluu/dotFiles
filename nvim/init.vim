@@ -199,7 +199,7 @@
         augroup END
     " } Ale {
         let g:ale_echo_msg_format = '[%linter% : %severity%] %s'
-        let g:ale_php_phpcs_standard = 'PSR2'
+        let g:ale_php_phpcs_standard = 'PSR12'
 
         let g:ale_fixers = {
         \   '*': ['remove_trailing_lines', 'trim_whitespace'],
