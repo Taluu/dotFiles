@@ -23,21 +23,17 @@
 
         set backupdir=~/.config/nvim/backups
         set directory=~/.config/nvim/backups
-
     " } Encoding {
         set encoding=utf-8
         scriptencoding utf-8
-
     " } undo {
         set undofile
         set undolevels=1000
         set undoreload=10000
         set undodir=~/.config/nvim/undo
-
     " } searching {
         set incsearch
         nnoremap <silent> <esc><esc> :noh<cr>
-
     " } ui {
         set number
         set wildmenu
@@ -83,7 +79,6 @@
             hi! def link phpDocTags phpDefine
             hi! def link phpDocParam phpType
         endfunction
-
     " } debug+remote {
         function! SetVdebugIdeKey(ide_key)
             if !exists('g:vdebug_options')
@@ -106,7 +101,6 @@
         endfunction
     " }
 " } Plugin configuration {
-    " load plugins
     source ~/.config/nvim/plugins.vim
 
     " Solarized {
@@ -117,7 +111,6 @@
         colorscheme solarized
     " } Signify {
         hi! link SignColumn LineNr
-
     " } statusbar {
         set laststatus=2
         set noshowmode
@@ -141,7 +134,6 @@
             autocmd InsertEnter * set timeoutlen=0
             autocmd InsertLeave * set timeoutlen=1000
         augroup END
-
     " } NerdTree {
         nmap <silent> <C-n> :NERDTreeMirrorToggle<CR>
         nmap <silent> <leader>e :NERDTreeFind<CR>
@@ -153,19 +145,14 @@
         let NERDTreeQuitOnOpen=1
         let NERDTreeShowLineNumbers=0
         let NERDTreeShowHidden=1
-
     " } Ctags {
         set tags=./tags,~/.vimtags,./.git/tags;$HOME
-
     " } fzf {
         nnoremap <silent> <c-p> :FZF<CR>
-
     " } TagBar {
         nnoremap <silent> <leader>tt :TagbarToggle<CR>
-
     " } UndoTree {
         nnoremap <silent> <Leader>u :UndotreeToggle<CR>
-        " If undotree is opened, it is likely one wants to interact with it.
         let g:undotree_SetFocusWhenToggle=1
     " } vDebug {
         if !exists('g:vdebug_options')
@@ -187,7 +174,6 @@
 
         " <leader> + b : breakpoint window
         nnoremap <silent> <leader>b :BreakpointWindow<CR>
-
     " } Riv.vim {
         let g:riv_disable_folding = 1
     " } Ack.vim {
