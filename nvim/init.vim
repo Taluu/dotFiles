@@ -148,7 +148,8 @@
     " } Ctags {
         set tags=./tags,~/.vimtags,./.git/tags;$HOME
     " } fzf {
-        nnoremap <silent> <c-p> :FZF<CR>
+        nnoremap <silent> <C-P> :FZF<CR>
+        nnoremap <silent> <S-P> :Commands<CR>
     " } TagBar {
         nnoremap <silent> <leader>tt :TagbarToggle<CR>
     " } UndoTree {
@@ -178,11 +179,6 @@
         let g:riv_disable_folding = 1
     " } Ack.vim {
         let g:ackprg = 'rg --vimgrep --smart-case'
-
-        cnoreabbrev rg Ack
-        cnoreabbrev rG Ack
-        cnoreabbrev Rg Ack
-        cnoreabbrev RG Ack
     " } completion {
         set completeopt=noinsert,menuone,noselect,preview
 

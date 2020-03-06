@@ -15,6 +15,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'tomtom/tlib_vim'
     Plug 'wincent/ferret'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+    Plug 'junegunn/fzf.vim'
 " } General {
     Plug 'scrooloose/nerdtree'
     Plug 'altercation/vim-colors-solarized'
