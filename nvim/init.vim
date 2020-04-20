@@ -150,7 +150,7 @@
         set tags=./tags,~/.vimtags,./.git/tags;$HOME
     " } fzf {
         nnoremap <silent> <C-P> :FZF<CR>
-        nnoremap <silent> <S-P> :Commands<CR>
+        nnoremap <silent> <C-M-P> :Commands<CR>
     " } TagBar {
         nnoremap <silent> <leader>tt :TagbarToggle<CR>
     " } UndoTree {
