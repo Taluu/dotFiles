@@ -173,6 +173,7 @@
         "let g:vdebug_features["max_data"] = 2048
         "let g:vdebug_features["max_depth"] = 100
         let g:vdebug_features['max_children'] = 128
+        let g:vdebug_features['extended_properties'] = 1
 
         " <leader> + b : breakpoint window
         nnoremap <silent> <leader>b :BreakpointWindow<CR>
