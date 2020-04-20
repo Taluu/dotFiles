@@ -17,7 +17,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
     Plug 'junegunn/fzf.vim'
 " } General {
-    Plug 'scrooloose/nerdtree'
+    Plug 'preservim/nerdtree'
     Plug 'altercation/vim-colors-solarized'
     Plug 'vim-airline/vim-airline'
     Plug 'jistr/vim-nerdtree-tabs'
