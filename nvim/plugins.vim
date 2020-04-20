@@ -39,7 +39,7 @@ call plug#begin('~/.config/nvim/plugged')
 
     " PHP {
         Plug 'StanAngeloff/php.vim', { 'for': 'php' }
-        Plug 'phpactor/phpactor',  {'do': 'composer install --no-dev', 'for': 'php', 'branch': 'develop'}
+        Plug 'phpactor/phpactor',  {'do': 'composer install --no-dev --no-interaction', 'for': 'php', 'branch': 'develop'}
     " } Rust {
         Plug 'rust-lang/rust.vim', { 'for': 'rust' }
     " } Other Languages {
