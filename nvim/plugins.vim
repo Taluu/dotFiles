@@ -44,6 +44,7 @@ call plug#begin('~/.config/nvim/plugged')
         Plug 'rust-lang/rust.vim', { 'for': 'rust' }
     " } Other Languages {
         Plug 'tpope/vim-markdown', { 'for': 'markdown' }
+        Plug 'cespare/vim-toml', { 'for': 'toml' }
         Plug 'tpope/vim-cucumber', { 'for': 'cucumber' }
         Plug 'quentindecock/vim-cucumber-align-pipes', { 'for': 'cucumber' }
         Plug 'nelsyeung/twig.vim'
