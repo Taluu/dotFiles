@@ -40,7 +40,7 @@ function! PackagerInit() abort
     call packager#add('scrooloose/nerdcommenter')
     call packager#add('stephenmckinney/vim-autotag')
     call packager#add('scrooloose/nerdtree-git-plugin')
-    call packager#add('neoclide/coc.nvim', { 'do': function('InstallCoc') })
+    call packager#add('neoclide/coc.nvim', { 'do': 'yarn install --lock-file' })
 
     " PHP
     call packager#add('StanAngeloff/php.vim')
@@ -61,14 +61,13 @@ function! PackagerInit() abort
     call packager#add('pearofducks/ansible-vim')
 endfunction
 
-function! InstallCoc(plugin) abort
-    exe '!cd '.a:plugin.dir.' && yarn install'
+function! CocPlugins() abort
     call coc#add_extension('coc-json', 'coc-lists', 'coc-yaml', 'coc-phpls', 'coc-rls', 'coc-snippets', 'coc-xml')
 endfunction
 
-command! PackagerInstall call PackagerInit() | call packager#install()
-command! -bang PackagerUpdate call PackagerInit() | call packager#update({ 'force_hooks': '<bang>' })
-command! PackagerClean call PackagerInit() | call packager#clean()
+command! PackagerInstall call PackagerInit() | call packager#install() | call CocPlugins()
+command! -bang PackagerUpdate call PackagerInit() | call packager#update({ 'force_hooks': '<bang>' }) | call CocPlugins()
+command! PackagerClean call PackagerInit() | call packager#clean() | call CocPlugins()
 command! PackagerStatus call PackagerInit() | call packager#status()
 
 augroup packager_filetype
