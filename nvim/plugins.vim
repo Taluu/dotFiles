@@ -1,58 +1,79 @@
 " My plugins
 "
-" This is using vim-plug (https://github.com/junegunn/vim-plug)
+" This is using vim-packager (https://github.com/kristijanhusak/vim-packager)
 
-" Automatic installation of vim-plug
-if empty(glob('~/.config/nvim/autoload/plug.vim'))
-    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+" Automatic installation of vim-packager
+if !isdirectory('~/.config/nvim/pack/packager/opt/vim-packager')
+    silent !git clone https://github.com/kristijanhusak/vim-packager ~/.config/nvim/pack/packager/opt/vim-packager
+    autocmd mine VimEnter * PackagerInstall
 endif
 
-call plug#begin('~/.config/nvim/plugged')
+function! PackagerInit() abort
+    packadd vim-packager
+    call packager#init()
 
-" Utils {
-    Plug 'tomtom/tlib_vim'
-    Plug 'wincent/ferret'
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
-    Plug 'junegunn/fzf.vim'
-" } General {
-    Plug 'preservim/nerdtree'
-    Plug 'altercation/vim-colors-solarized'
-    Plug 'vim-airline/vim-airline'
-    Plug 'jistr/vim-nerdtree-tabs'
-    Plug 'mbbill/undotree'
-    Plug 'tpope/vim-repeat'
-    Plug 'tpope/vim-abolish'
-    Plug 'tpope/vim-fugitive'
-    Plug 'https://bitbucket.org/cmthornton/vim-dist-ext.git'
-    Plug 'editorconfig/editorconfig-vim'
-" } Prog {
-    Plug 'w0rp/ale'
-    Plug 'scrooloose/nerdcommenter'
-    Plug 'majutsushi/tagbar'
-    Plug 'stephenmckinney/vim-autotag'
-    Plug 'mhinz/vim-signify'
-    Plug 'vim-vdebug/vdebug'
-    Plug 'scrooloose/nerdtree-git-plugin'
-    Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+    " General
+    call packager#add('wincent/ferret')
+    call packager#add('tomtom/tlib_vim')
+    call packager#add('mbbill/undotree')
+    call packager#add('tpope/vim-repeat')
+    call packager#add('tpope/vim-abolish')
+    call packager#add('tpope/vim-fugitive')
+    call packager#add('vim-airline/vim-airline')
+    call packager#add('editorconfig/editorconfig-vim')
+    call packager#add('altercation/vim-colors-solarized')
+    call packager#add('https://bitbucket.org/cmthornton/vim-dist-ext.git')
 
-    " PHP {
-        Plug 'StanAngeloff/php.vim', { 'for': 'php' }
-        Plug 'phpactor/phpactor',  {'do': 'composer install --no-dev --no-interaction', 'for': 'php', 'branch': 'develop'}
-    " } Rust {
-        Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-    " } Other Languages {
-        Plug 'tpope/vim-markdown', { 'for': 'markdown' }
-        Plug 'cespare/vim-toml', { 'for': 'toml' }
-        Plug 'tpope/vim-cucumber', { 'for': 'cucumber' }
-        Plug 'quentindecock/vim-cucumber-align-pipes', { 'for': 'cucumber' }
-        Plug 'nelsyeung/twig.vim'
-        Plug 'fpob/nette.vim'
-        Plug 'pearofducks/ansible-vim'
-        Plug 'dag/vim-fish'
-        Plug 'Rykka/riv.vim', { 'for': 'rst' }
-    " }
-" }
+    " fzf
+    call packager#add('junegunn/fzf', { 'do': './install --bin && ln -s $(pwd) ~/.fzf'})
+    call packager#add('junegunn/fzf.vim')
 
-call plug#end()
+    " Nerdtree
+    call packager#add('preservim/nerdtree')
+    call packager#add('jistr/vim-nerdtree-tabs')
+
+    " Prog
+    call packager#add('w0rp/ale')
+    call packager#add('majutsushi/tagbar')
+    call packager#add('mhinz/vim-signify')
+    call packager#add('vim-vdebug/vdebug')
+    call packager#add('scrooloose/nerdcommenter')
+    call packager#add('stephenmckinney/vim-autotag')
+    call packager#add('scrooloose/nerdtree-git-plugin')
+    call packager#add('neoclide/coc.nvim', { 'do': function('InstallCoc') })
+
+    " PHP
+    call packager#add('StanAngeloff/php.vim')
+    call packager#add('phpactor/phpactor',  {'do': 'composer install --no-dev --no-interaction', 'type': 'opt', 'branch': 'develop'})
+
+    " cucumber
+    call packager#add('tpope/vim-cucumber')
+    call packager#add('quentindecock/vim-cucumber-align-pipes', { 'type': 'opt' })
+
+    " Other Languages
+    call packager#add('dag/vim-fish')
+    call packager#add('Rykka/riv.vim')
+    call packager#add('fpob/nette.vim')
+    call packager#add('cespare/vim-toml')
+    call packager#add('tpope/vim-markdown')
+    call packager#add('rust-lang/rust.vim')
+    call packager#add('nelsyeung/twig.vim')
+    call packager#add('pearofducks/ansible-vim')
+endfunction
+
+function! InstallCoc(plugin) abort
+    exe '!cd '.a:plugin.dir.' && yarn install'
+    call coc#add_extension('coc-json', 'coc-lists', 'coc-yaml', 'coc-phpls', 'coc-rls', 'coc-snippets', 'coc-xml')
+endfunction
+
+command! PackagerInstall call PackagerInit() | call packager#install()
+command! -bang PackagerUpdate call PackagerInit() | call packager#update({ 'force_hooks': '<bang>' })
+command! PackagerClean call PackagerInit() | call packager#clean()
+command! PackagerStatus call PackagerInit() | call packager#status()
+
+augroup packager_filetype
+    autocmd!
+
+    autocmd FileType php packadd phpactor
+    autocmd FileType cucumber vim-cucumber-align-pipes
+augroup END

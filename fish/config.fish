@@ -35,6 +35,10 @@ if not contains "$HOME/.config/nvim/plugged/phpactor/bin/" $PATH; and test -d "$
     set PATH "$HOME/.config/nvim/plugged/phpactor/bin/" $PATH
 end
 
+if not contains "$HOME/.config/nvim/pack/packager/opt/phpactor/bin/" $PATH; and test -d "$HOME/.config/nvim/pack/packager/opt/phpactor/bin/"
+    set PATH "$HOME/.config/nvim/pack/packager/opt/phpactor/bin/" $PATH
+end
+
 if not contains "$HOME/.fzf/bin/" $PATH; and test -d "$HOME/.fzf/bin/"
     set PATH "$HOME/.fzf/bin/" $PATH
 end
