@@ -211,6 +211,7 @@
         augroup php
             au!
             au FileType php au BufNewFile,BufReadPre <buffer> call PhpSyntaxOverride()
+            au FileType php set iskeyword+=$
 
             au FileType php nmap <silent> <Leader>pu :PhpactorImportClass<CR>
             au FileType php nmap <silent> <Leader>pt :PhpactorTransform<CR>

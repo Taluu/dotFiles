@@ -3,5 +3,18 @@
         "!tagged",
         "!service"
     ],
-    "suggest.triggerAfterInsertEnter": true
+    "suggest.triggerAfterInsertEnter": true,
+
+    "languageserver": {
+        "phpactor": {
+            "trace.server": "verbose",
+            "command": "phpactor",
+            "args": ["language-server"],
+            "filetypes": ["php","cucumber"],
+            "initializationOptions": {
+            },
+            "settings": {
+            }
+        }
+    }
 }

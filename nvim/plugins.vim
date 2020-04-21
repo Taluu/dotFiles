@@ -62,7 +62,7 @@ function! PackagerInit() abort
 endfunction
 
 function! CocPlugins() abort
-    call coc#add_extension('coc-json', 'coc-lists', 'coc-yaml', 'coc-phpls', 'coc-rls', 'coc-snippets', 'coc-xml')
+    call coc#add_extension('coc-json', 'coc-lists', 'coc-yaml', 'coc-rls', 'coc-snippets', 'coc-xml')
 endfunction
 
 command! PackagerInstall call PackagerInit() | call packager#install() | call CocPlugins()
