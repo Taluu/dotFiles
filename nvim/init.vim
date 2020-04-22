@@ -190,6 +190,23 @@
             \ 'coc-snippets',
             \ 'coc-xml',
         \ ]
+
+        let g:coc_user_config = {
+            \ 'yaml.customTags': ['!tagged', '!service'],
+            \ 'suggest.triggerAfterInsertEnter': v:true,
+            \ 'diagnostic.displayByAle': v:true,
+            \
+            \ 'languageserver': {
+                \ 'phpactor': {
+                    \ 'trace.server': 'verbose',
+                    \ 'command': 'phpactor',
+                    \ 'args': ['language-server'],
+                    \ 'filetypes': ['php','cucumber'],
+                    \ 'initializationOptions': {},
+                    \ 'settings': {}
+                \ }
+            \ }
+        \ }
     " } completion {
         set completeopt=noinsert,menuone,noselect,preview
 
