@@ -181,6 +181,15 @@
         let g:riv_disable_folding = 1
     " } Ack.vim {
         let g:ackprg = 'rg --vimgrep --smart-case'
+    " } Coc.nvim {
+        let g:coc_global_extensions = [
+            \ 'coc-json',
+            \ 'coc-lists',
+            \ 'coc-yaml',
+            \ 'coc-rls',
+            \ 'coc-snippets',
+            \ 'coc-xml',
+        \ ]
     " } completion {
         set completeopt=noinsert,menuone,noselect,preview
 

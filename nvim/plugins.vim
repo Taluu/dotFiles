@@ -61,13 +61,9 @@ function! PackagerInit() abort
     call packager#add('pearofducks/ansible-vim')
 endfunction
 
-function! CocPlugins() abort
-    call coc#add_extension('coc-json', 'coc-lists', 'coc-yaml', 'coc-rls', 'coc-snippets', 'coc-xml')
-endfunction
-
-command! PackagerInstall call PackagerInit() | call packager#install() | call CocPlugins()
-command! -bang PackagerUpdate call PackagerInit() | call packager#update({ 'force_hooks': '<bang>' }) | call CocPlugins()
-command! PackagerClean call PackagerInit() | call packager#clean() | call CocPlugins()
+command! PackagerInstall call PackagerInit() | call packager#install()
+command! -bang PackagerUpdate call PackagerInit() | call packager#update({ 'force_hooks': '<bang>' })
+command! PackagerClean call PackagerInit() | call packager#clean()
 command! PackagerStatus call PackagerInit() | call packager#status()
 
 augroup packager_filetype
