@@ -50,10 +50,10 @@
     log-decorate = log --oneline --decorate
 
 [commit]
-    template = ~/.git_templates/.git_commit_msg
+    template = ~/.git-templates/.git_commit_msg
 
 [init]
-    templatedir = ~/.git_templates
+    templatedir = ~/.git-templates
 
 [diff]
     compactionHeuristic = true
