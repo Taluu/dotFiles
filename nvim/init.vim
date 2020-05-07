@@ -151,6 +151,7 @@
     " } fzf {
         nnoremap <silent> <C-P> :FZF<CR>
         nnoremap <silent> <C-M-P> :Commands<CR>
+        inoremap <expr> <C-M-F> fzf#vim#complete#path('rg --files')
     " } TagBar {
         nnoremap <silent> <leader>tt :TagbarToggle<CR>
     " } UndoTree {
