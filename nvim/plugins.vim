@@ -25,7 +25,7 @@ function! PackagerInit() abort
     call packager#add('https://bitbucket.org/cmthornton/vim-dist-ext.git')
 
     " fzf
-    call packager#add('junegunn/fzf', { 'do': './install --bin && ln -s $(pwd) ~/.fzf'})
+    call packager#add('junegunn/fzf', { 'do': './install --bin && ln -sf $(pwd) ~/.fzf'})
     call packager#add('junegunn/fzf.vim')
 
     " Nerdtree
