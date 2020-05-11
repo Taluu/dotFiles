@@ -8,6 +8,7 @@
 
     let mapleader = ','
     let g:mapleader = ','
+    let g:loaded_python_provider = 0
 
     augroup mine
     augroup END
