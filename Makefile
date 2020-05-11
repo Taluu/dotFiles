@@ -9,6 +9,8 @@ sync:
 	@-[[ -f ~/.tool-versions ]] || ln -s `pwd`/.tool-versions ~/.tool-versions
 	@-[[ -d ~/.config/composer ]] || mkdir -p ~/.config/composer
 	@-[[ -f ~/.config/composer/composer.json ]] || ln -s `pwd`/composer.json ~/.config/composer/composer.json
+	@-[[ -f ~/.antigenrc ]] || ln -s `pwd`/zsh/antigen.zsh ~/.antigenrc
+	@-[[ -f ~/.zshrc ]] || ln -s `pwd`/zsh/config.zsh ~/.zshrc
 	@-[[ -d ${BIN_DIR} ]] || mkdir ${BIN_DIR}
 	@-[[ -f ${BIN_DIR}/diff-highlight ]] || ln -s `pwd`/utils/diff-highlight ${BIN_DIR}/diff-highlight
 	@-[[ -f ${BIN_DIR}/git-prune-merged ]] || ln -s `pwd`/utils/git-prune-merged ${BIN_DIR}/git-prune-merged
