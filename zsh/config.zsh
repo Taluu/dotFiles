@@ -18,7 +18,7 @@ autoload -Uz compinit && compinit
 
 alias git="LANGUAGE=en_US.UTF-8 \"git\""
 alias vim="LANGUAGE=en_US.UTF-8 \"nvim\""
-alias ls="LANGUAGE=en_US.UTF-8 \"ls\""
+alias ls="LANGUAGE=en_US.UTF-8 \"ls\" --color"
 
 unalias gm
 # unalias ag
