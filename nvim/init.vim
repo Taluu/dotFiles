@@ -188,7 +188,7 @@
             \ 'coc-json',
             \ 'coc-lists',
             \ 'coc-yaml',
-            \ 'coc-rls',
+            \ 'coc-rust-analyzer',
             \ 'coc-snippets',
             \ 'coc-xml',
         \ ]
