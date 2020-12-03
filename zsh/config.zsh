@@ -46,3 +46,6 @@ export FZF_DEFAULT_COMMAND='rg -u --files'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 export XDG_CONFIG_DIRS="$XDG_CONFIG_DIRS:$HOME/.config/xdg"
+
+# completion
+complete -C '/usr/bin/aws_completer' aws
