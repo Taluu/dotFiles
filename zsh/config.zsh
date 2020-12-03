@@ -33,10 +33,10 @@ export DISABLE_AUTO_TITLE=true
 export LESSCHARSET=UTF-8
 
 # composer
-export COMPOSER_HOME=$HOME/.composer
+export COMPOSER_HOME=$HOME/.config/composer #xdg base
 export COMPOSER_DISABLE_XDEBUG_WARN=1
 
-export PATH=$PATH:$HOME/bin:$COMPOSER_HOME:$HOME/.config/nvim/pack/packager/opt/phpactor/bin
+export PATH=$PATH:$HOME/bin:$HOME/.config/nvim/pack/packager/opt/phpactor/bin:$HOME/.local/bin
 
 # nvim is da tru editor
 export EDITOR="/usr/bin/nvim"
