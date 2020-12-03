@@ -43,10 +43,6 @@ function! PackagerInit() abort
     call packager#add('stephenmckinney/vim-autotag')
     call packager#add('neoclide/coc.nvim', { 'do': 'yarn install --lock-file' })
 
-    " PHP
-    call packager#add('StanAngeloff/php.vim')
-    call packager#add('phpactor/phpactor',  {'do': 'composer install --no-dev --no-interaction', 'type': 'opt', 'branch': 'develop'})
-
     " cucumber
     call packager#add('tpope/vim-cucumber')
     call packager#add('quentindecock/vim-cucumber-align-pipes', { 'type': 'opt' })
@@ -60,6 +56,7 @@ function! PackagerInit() abort
     call packager#add('rust-lang/rust.vim')
     call packager#add('nelsyeung/twig.vim')
     call packager#add('pearofducks/ansible-vim')
+    call packager#add('phpactor/phpactor',  {'do': 'composer install --no-dev --no-interaction', 'type': 'opt', 'branch': 'develop'})
 endfunction
 
 command! PackagerInstall call PackagerInit() | call packager#install()
