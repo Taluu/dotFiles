@@ -191,23 +191,17 @@
             \ 'coc-rust-analyzer',
             \ 'coc-snippets',
             \ 'coc-xml',
+            \ 'coc-phpactor',
         \ ]
 
         let g:coc_user_config = {
-            \ 'yaml.customTags': ['!tagged', '!service'],
             \ 'suggest.triggerAfterInsertEnter': v:true,
             \ 'diagnostic.displayByAle': v:true,
             \
-            \ 'languageserver': {
-                \ 'phpactor': {
-                    \ 'trace.server': 'verbose',
-                    \ 'command': 'phpactor',
-                    \ 'args': ['language-server'],
-                    \ 'filetypes': ['php','cucumber'],
-                    \ 'initializationOptions': {},
-                    \ 'settings': {}
-                \ }
-            \ }
+            \ 'yaml.customTags': ['!tagged', '!service'],
+            \
+            \ 'phpactor.path': 'phpactor',
+            \ 'phpactor.enable': v:true,
         \ }
     " } completion {
         set completeopt=noinsert,menuone,noselect,preview
