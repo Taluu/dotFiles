@@ -11,6 +11,7 @@ endif
 function! PackagerInit() abort
     packadd vim-packager
     call packager#init()
+    call packager#add('kristijanhusak/vim-packager', { 'type': 'opt' })
 
     " General
     call packager#add('wincent/ferret')
@@ -31,15 +32,15 @@ function! PackagerInit() abort
     " Nerdtree
     call packager#add('preservim/nerdtree')
     call packager#add('jistr/vim-nerdtree-tabs')
+    call packager#add('Xuyuanp/nerdtree-git-plugin')
 
     " Prog
-    call packager#add('w0rp/ale')
+    call packager#add('dense-analysis/ale')
     call packager#add('majutsushi/tagbar')
     call packager#add('mhinz/vim-signify')
     call packager#add('vim-vdebug/vdebug')
-    call packager#add('scrooloose/nerdcommenter')
+    call packager#add('preservim/nerdcommenter')
     call packager#add('stephenmckinney/vim-autotag')
-    call packager#add('scrooloose/nerdtree-git-plugin')
     call packager#add('neoclide/coc.nvim', { 'do': 'yarn install --lock-file' })
 
     " PHP
