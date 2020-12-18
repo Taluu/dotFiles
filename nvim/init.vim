@@ -197,6 +197,7 @@
             \ 'coc-snippets',
             \ 'coc-xml',
             \ 'coc-phpactor',
+            \ 'coc-go',
         \ ]
 
         let g:coc_user_config = {
