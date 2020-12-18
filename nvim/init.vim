@@ -150,6 +150,8 @@
 
         " If more than one window and previous buffer was NERDTree, go back to it.
         autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
+
+        map <silent> <C-f> :NERDTreeFind<CR>
     " } Ctags {
         set tags=./tags,~/.vimtags,./.git/tags;$HOME
     " } fzf {
