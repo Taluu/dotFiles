@@ -202,7 +202,7 @@
 
         let g:coc_user_config = {
             \ 'suggest.triggerAfterInsertEnter': v:true,
-            \ 'diagnostic.displayByAle': v:true,
+            \ 'diagnostic.displayByAle': v:false,
             \
             \ 'yaml.customTags': ['!tagged', '!service'],
             \
