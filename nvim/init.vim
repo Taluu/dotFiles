@@ -71,7 +71,7 @@
         autocmd mine FileType less       setlocal shiftwidth=2 tabstop=2 softtabstop=2
         autocmd mine FileType css        setlocal shiftwidth=2 tabstop=2 softtabstop=2
         autocmd mine FileType toml       setlocal shiftwidth=2 tabstop=2 softtabstop=2
-        autocmd mine FileType go         setlocal noexpandtab  tabstop=8 shiftwidth=8
+        autocmd mine FileType go         setlocal noexpandtab  tabstop=4 shiftwidth=4
     " } Formating {
         set pastetoggle=<F12>
         set nowrap
