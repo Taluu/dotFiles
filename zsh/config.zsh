@@ -37,18 +37,11 @@ export PATH=$PATH:$HOME/bin:$HOME/.config/nvim/pack/packager/opt/phpactor/bin:$H
 
 # nvim is da tru editor
 export EDITOR="/usr/bin/nvim"
-bindkey -v
 
-# let's keep some old "emacs" binding for now, until I get used to vi ones
+# let's keep "emacs" mode for now... Consider migrating to vim mode, cuz it's da tru editor
+bindkey -e
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-bindkey 'k' history-substring-search-up
-bindkey 'j' history-substring-search-down
-
-bindkey '^A' beginning-of-line
-bindkey '^' beginning-of-line
-bindkey '^E' end-of-line
-bindkey '$' end-of-line
 
 # fzf
 export FZF_DEFAULT_COMMAND='rg -u --files'
