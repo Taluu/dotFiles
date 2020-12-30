@@ -2,8 +2,8 @@
 set -k
 
 # history
-HISTSIZE=10000
-SAVEHIST=$HISTSIZE
+export HISTSIZE=10000
+export SAVEHIST=$HISTSIZE
 
 [ -f ~/dotfiles/zsh/zplug.zsh ] && source ~/dotfiles/zsh/zplug.zsh
 
