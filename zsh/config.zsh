@@ -17,9 +17,6 @@ alias git="LANGUAGE=en_US.UTF-8 \"git\""
 alias vim="LANGUAGE=en_US.UTF-8 \"nvim\""
 alias ls="LANGUAGE=en_US.UTF-8 \"ls\" --color"
 
-# fuck you git plugin, I don't want such aliases
-unalias gm
-
 if [[ -x ~/.local/bin/thefuck ]]; then
     alias fuck='eval $(~/.local/bin/thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 fi

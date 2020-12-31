@@ -8,7 +8,6 @@ source ~/.zplug/init.zsh
 
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
-zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/dnf", from:oh-my-zsh
 zplug "plugins/fzf", from:oh-my-zsh
 zplug "plugins/direnv", from:oh-my-zsh
