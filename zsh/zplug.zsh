@@ -35,7 +35,7 @@ zplug "exercism/cli", use:"shell/*.zsh"
 
 zplug "containers/libpod", use:"completions/zsh/*"
 
-zplug "themes/agnoster", from:oh-my-zsh
+zplug "agnoster/agnoster-zsh-theme", as:theme
 
 if ! zplug check --verbose; then
     zplug install
