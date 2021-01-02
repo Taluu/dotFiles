@@ -12,9 +12,7 @@ sync:
 	@-[[ -f ~/.zshrc ]] || ln -s `pwd`/zsh/config.zsh ~/.zshrc
 	@-[[ -d ${BIN_DIR} ]] || mkdir ${BIN_DIR}
 	@-[[ -f ${BIN_DIR}/diff-highlight ]] || ln -s `pwd`/utils/diff-highlight ${BIN_DIR}/diff-highlight
-	@-[[ -f ${BIN_DIR}/git-prune-merged ]] || ln -s `pwd`/utils/git-prune-merged ${BIN_DIR}/git-prune-merged
 	@-[[ -f ${BIN_DIR}/git-repo-size ]] || ln -s `pwd`/utils/git-repo-size ${BIN_DIR}/git-repo-size
-	@-[[ -f ${BIN_DIR}/git-wtf ]] || ln -s `pwd`/utils/git-wtf ${BIN_DIR}/git-wtf
 # vim is still not xdg compliant, so...
 	@-[[ -d ~/.vim ]] || mkdir -p ~/.vim
 	@-[[ -f ~/.vim/vimrc ]] || ln -s `pwd`/vim/init.vim ~/.vim/vimrc

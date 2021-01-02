@@ -1,3 +1,0 @@
-#!/bin/bash
-
-~/bin/psalm --language-server --config=~/.config/psalm/global.xml
