@@ -11,7 +11,6 @@ endif
 " Automatic installation of vim-packager
 if !isdirectory(path_to_packager + '/pack/packager/opt/vim-packager')
     silent execute '!git clone https://github.com/kristijanhusak/vim-packager ' + path_to_packager + '/pack/packager/opt/vim-packager'
-    autocmd mine VimEnter * PackagerInstall
 endif
 
 function! PackagerInit() abort
