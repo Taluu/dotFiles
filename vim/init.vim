@@ -52,7 +52,7 @@
 
         " list blank characters {
             set list
-            set listchars=tab:,.,trail:.
+            set listchars=tab:>-,trail:.
 
             autocmd mine FileType javascript setlocal nolist listchars=trail:.
             autocmd mine FileType dockerfile setlocal nolist listchars=trail:.
