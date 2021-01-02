@@ -18,7 +18,6 @@ sync:
 # vim is still not xdg compliant, so...
 	@-[[ -d ~/.vim ]] || mkdir -p ~/.vim
 	@-[[ -f ~/.vim/vimrc ]] || ln -s `pwd`/vim/init.vim ~/.vim/vimrc
-	@-[[ -f ~/.vim/plugins.vim ]] || ln -s `pwd`/vim/plugins.vim ~/.vim/plugins.vim
 	@-[[ -d ~/.config/psalm ]] || mkdir -p ~/.config/psalm
 	@-[[ -f ~/.config/psalm/global.xml ]] || ln -s `pwd`/psalm/global.xml ~/.config/psalm/global.xml
 
@@ -30,7 +29,7 @@ clean:
 	@rm ~/.php-version
 	@rm ~/.tool-versions
 	@rm -rf ${BIN_DIR}
-	@rm ~/.vim/vimrc ~/.vim/plugins.vim
+	@rm ~/.vim/vimrc
 	@rm ~/.config/composer/composer.json ~/.config/composer/composer.lock
 	@rm ~/.config/psalm/global.xml
 

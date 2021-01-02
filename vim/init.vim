@@ -107,7 +107,7 @@
         endfunction
     " }
 " } Plugin configuration {
-    source ~/.config/nvim/plugins.vim
+    source ~/dotfiles/vim/plugins.vim
 
     " Solarized {
         "let g:solarized_termcolors=256
