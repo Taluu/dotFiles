@@ -26,6 +26,10 @@
 
         set backupdir=~/.config/nvim/backups
         set directory=~/.config/nvim/backups
+
+        augroup mine
+            autocmd!
+        augroup END
     " } Encoding {
         set encoding=utf-8
         scriptencoding utf-8
@@ -54,10 +58,12 @@
             set list
             set listchars=tab:>-,trail:.
 
-            autocmd mine FileType javascript setlocal nolist listchars=trail:.
-            autocmd mine FileType dockerfile setlocal nolist listchars=trail:.
-            autocmd mine FileType make setlocal nolist listchars=trail:.
-            autocmd mine FileType go setlocal nolist listchars=trail:.
+            augroup mine
+                autocmd FileType javascript setlocal nolist listchars=trail:.
+                autocmd FileType dockerfile setlocal nolist listchars=trail:.
+                autocmd FileType make setlocal nolist listchars=trail:.
+                autocmd FileType go setlocal nolist listchars=trail:.
+            augroup END
        " }
     " } indent {
         set smartindent
@@ -66,16 +72,18 @@
         set shiftwidth=4
         set softtabstop=4
 
-        autocmd mine FileType dockerfile setlocal noexpandtab
-        autocmd mine FileType make       setlocal noexpandtab
-        autocmd mine FileType build      setlocal noexpandtab
-        autocmd mine FileType neon       setlocal shiftwidth=2 tabstop=2 softtabstop=2
-        autocmd mine FileType cucumber   setlocal shiftwidth=2 tabstop=2 softtabstop=2
-        autocmd mine FileType ruby       setlocal shiftwidth=2 tabstop=2 softtabstop=2
-        autocmd mine FileType less       setlocal shiftwidth=2 tabstop=2 softtabstop=2
-        autocmd mine FileType css        setlocal shiftwidth=2 tabstop=2 softtabstop=2
-        autocmd mine FileType toml       setlocal shiftwidth=2 tabstop=2 softtabstop=2
-        autocmd mine FileType go         setlocal noexpandtab  tabstop=4 shiftwidth=4
+        augroup mine
+            autocmd FileType dockerfile setlocal noexpandtab
+            autocmd FileType make       setlocal noexpandtab
+            autocmd FileType build      setlocal noexpandtab
+            autocmd FileType neon       setlocal shiftwidth=2 tabstop=2 softtabstop=2
+            autocmd FileType cucumber   setlocal shiftwidth=2 tabstop=2 softtabstop=2
+            autocmd FileType ruby       setlocal shiftwidth=2 tabstop=2 softtabstop=2
+            autocmd FileType less       setlocal shiftwidth=2 tabstop=2 softtabstop=2
+            autocmd FileType css        setlocal shiftwidth=2 tabstop=2 softtabstop=2
+            autocmd FileType toml       setlocal shiftwidth=2 tabstop=2 softtabstop=2
+            autocmd FileType go         setlocal noexpandtab  tabstop=4 shiftwidth=4
+        augroup END
     " } Formating {
         set pastetoggle=<F12>
         set nowrap
@@ -130,7 +138,7 @@
         function! AirlineInit()
         endfunction
 
-        autocmd * VimEnter * call AirlineInit()
+        autocmd mine VimEnter * call AirlineInit()
 
         set timeoutlen=500
         set ttimeoutlen=10
@@ -153,7 +161,7 @@
         let NERDTreeShowHidden=1
 
         " If more than one window and previous buffer was NERDTree, go back to it.
-        autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
+        autocmd mine BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
 
         map <silent> <C-f> :NERDTreeFind<CR>
     " } Ctags {
