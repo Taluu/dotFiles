@@ -76,13 +76,13 @@
             autocmd FileType dockerfile setlocal noexpandtab
             autocmd FileType make       setlocal noexpandtab
             autocmd FileType build      setlocal noexpandtab
+            autocmd FileType go         setlocal noexpandtab
             autocmd FileType neon       setlocal shiftwidth=2 tabstop=2 softtabstop=2
             autocmd FileType cucumber   setlocal shiftwidth=2 tabstop=2 softtabstop=2
             autocmd FileType ruby       setlocal shiftwidth=2 tabstop=2 softtabstop=2
             autocmd FileType less       setlocal shiftwidth=2 tabstop=2 softtabstop=2
             autocmd FileType css        setlocal shiftwidth=2 tabstop=2 softtabstop=2
             autocmd FileType toml       setlocal shiftwidth=2 tabstop=2 softtabstop=2
-            autocmd FileType go         setlocal noexpandtab  tabstop=4 shiftwidth=4
         augroup END
     " } Formating {
         set pastetoggle=<F12>
