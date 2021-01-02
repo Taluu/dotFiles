@@ -14,7 +14,7 @@ export TERM=xterm-256color
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 alias git="LANGUAGE=en_US.UTF-8 \"git\""
-alias vim="LANGUAGE=en_US.UTF-8 \"nvim\""
+alias vim="LANGUAGE=en_US.UTF-8 \"vim\""
 alias ls="LANGUAGE=en_US.UTF-8 \"ls\" --color"
 
 if [[ -x ~/.local/bin/thefuck ]]; then
@@ -32,8 +32,8 @@ export COMPOSER_DISABLE_XDEBUG_WARN=1
 
 export PATH=$PATH:$HOME/bin:$HOME/.config/nvim/pack/packager/opt/phpactor/bin:$HOME/.local/bin:$HOME/go/bin
 
-# nvim is da tru editor
-export EDITOR="/usr/bin/nvim"
+# vim is da tru editor
+export EDITOR="/usr/bin/vim"
 
 # let's keep "emacs" mode for now... Consider migrating to vim mode, cuz it's da tru editor
 bindkey -e

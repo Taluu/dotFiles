@@ -14,6 +14,7 @@
     augroup END
 
     " Misc {
+        set nocompatible
         set virtualedit=onemore
         set whichwrap=<,>,[,]
         set history=1000
@@ -21,6 +22,7 @@
         "set spell
         syntax enable " wtf ?!
         set mouse= " remove mouse support
+        set signcolumn=number
 
         set backupdir=~/.config/nvim/backups
         set directory=~/.config/nvim/backups
@@ -28,10 +30,12 @@
         set encoding=utf-8
         scriptencoding utf-8
     " } undo {
-        set undofile
-        set undolevels=1000
-        set undoreload=10000
-        set undodir=~/.config/nvim/undo
+        if has('persistent_undo')
+            set undodir=$HOME/.undo
+            set undofile
+            set undolevels=1000
+            set undoreload=10000
+        endif
     " } searching {
         set incsearch
         nnoremap <silent> <esc><esc> :noh<cr>
@@ -111,8 +115,7 @@
         set background=dark
 
         colorscheme solarized
-    " } Signify {
-        hi! link SignColumn LineNr
+        set cursorline
     " } statusbar {
         set laststatus=2
         set noshowmode
