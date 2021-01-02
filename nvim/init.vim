@@ -209,6 +209,7 @@
             \
             \ 'phpactor.path': 'phpactor',
             \ 'phpactor.enable': v:true,
+            \ 'go.goplsPath': 'gopls'
         \ }
     " } completion {
         set completeopt=noinsert,menuone,noselect,preview
