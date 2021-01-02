@@ -2,18 +2,11 @@ tags
 .my_debug
 .puli
 .idea
-.phpactor
-.phpactor.yml
 .phpactor.json
 .psalm/
-psalm.xml
-phpstan.neon
 .php-version
 .tool-versions
 .phpactor/
-
-fish/conf.d
-nvim/backups
 
 .envrc
 .ripgreprc
