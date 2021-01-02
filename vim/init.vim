@@ -255,15 +255,12 @@
         augroup END
     " }
 " } Map {
-    " shift+tab = unindent
-    inoremap <S-TAB> <C-D>
-
     " Moving in files and between tabs & buffers {
         " between buffers
-        nnoremap <silent> <M-h> :bprev<CR>
-        nnoremap <silent> <M-l> :bnext<CR>
-        nnoremap <silent> <M-j> <NOP>
-        nnoremap <silent> <M-k> <NOP>
+        nmap <silent> <m-h> :bprev<CR>
+        nmap <silent> <m-l> :bnext<CR>
+        nnoremap <silent> <m-j> <NOP>
+        nnoremap <silent> <m-k> <NOP>
 
         " between windows
         nnoremap <silent> <C-J> :wincmd j<CR>
@@ -282,7 +279,6 @@
         nnoremap <S-K> <NOP>
     " }
 
-    nnoremap Y y$
     vnoremap < <gv
     vnoremap > >gv
 
