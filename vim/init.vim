@@ -211,17 +211,6 @@
             \ 'coc-phpactor',
             \ 'coc-go',
         \ ]
-
-        let g:coc_user_config = {
-            \ 'suggest.triggerAfterInsertEnter': v:true,
-            \ 'diagnostic.displayByAle': v:false,
-            \
-            \ 'yaml.customTags': ['!tagged', '!service'],
-            \
-            \ 'phpactor.path': 'phpactor',
-            \ 'phpactor.enable': v:true,
-            \ 'go.goplsPath': 'gopls'
-        \ }
     " } completion {
         set completeopt=noinsert,menuone,noselect,preview
 

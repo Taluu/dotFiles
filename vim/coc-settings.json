@@ -1,0 +1,15 @@
+{
+    "suggest.triggerAfterInsertEnter": true,
+    "diagnostic.displayByAle": true,
+
+    "yaml.customTags": ["service", "tagged"],
+    "yaml.schemas": {},
+
+    "json.schemas": [
+    ],
+
+    "phpactor.path": "phpactor",
+    "phpactor.enable": true,
+
+    "go.goplsPath": "gopls"
+}

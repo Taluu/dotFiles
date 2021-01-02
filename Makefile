@@ -18,6 +18,7 @@ sync:
 # vim is still not xdg compliant, so...
 	@-[[ -d ~/.vim ]] || mkdir -p ~/.vim
 	@-[[ -f ~/.vim/vimrc ]] || ln -s `pwd`/vim/init.vim ~/.vim/vimrc
+	@-[[ -f ~/.vim/coc-settings.json ]] || ln -s `pwd`/vim/coc-settings.json ~/.vim
 	@-[[ -d ~/.config/psalm ]] || mkdir -p ~/.config/psalm
 	@-[[ -f ~/.config/psalm/global.xml ]] || ln -s `pwd`/psalm/global.xml ~/.config/psalm/global.xml
 
