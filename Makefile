@@ -35,4 +35,4 @@ clean:
 install:
 	@echo 'TODO LOL ?'
 
-.PHONY: sync unsync install
+.PHONY: sync clean install
