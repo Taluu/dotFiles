@@ -140,13 +140,13 @@
 
         autocmd mine VimEnter * call AirlineInit()
 
-        set timeoutlen=50
+        set timeoutlen=300
         set ttimeoutlen=10
 
         augroup FastEscape
             autocmd!
             autocmd InsertEnter * set timeoutlen=0
-            autocmd InsertLeave * set timeoutlen=50
+            autocmd InsertLeave * set timeoutlen=300
         augroup END
     " } NerdTree {
         nmap <silent> <C-n> :NERDTreeMirrorToggle<CR>
