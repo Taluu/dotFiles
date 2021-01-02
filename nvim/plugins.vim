@@ -54,6 +54,7 @@ function! PackagerInit() abort
     call packager#add('quentindecock/vim-cucumber-align-pipes', { 'type': 'opt' })
 
     " Other Languages
+    call packager#add('fatih/vim-go')
     call packager#add('Rykka/riv.vim')
     call packager#add('fpob/nette.vim')
     call packager#add('cespare/vim-toml')
