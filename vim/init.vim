@@ -21,7 +21,6 @@
     augroup END
 
     " Misc {
-        set nocompatible
         set virtualedit=onemore
         set whichwrap=<,>,[,]
         set history=1000
@@ -29,11 +28,26 @@
         "set spell
         syntax enable " wtf ?!
         set mouse= " remove mouse support
-        set signcolumn=number
-        set clipboard=unnamedplus
+
+        " vim specific settings
+        if !has('nvim')
+            set nocompatible
+            set clipboard=unnamedplus
+            set signcolumn=number " @todo move this once nvim 0.5 has been released
+        endif
 
         let &backupdir=path_to_config . '/backups'
         let &directory=path_to_config. '/backups'
+    " } Timeout presses for vim combinations
+        set timeoutlen=300
+        set ttimeoutlen=10
+
+        " to exit insert mode fast
+        augroup FastEscape
+            autocmd!
+            autocmd InsertEnter * set timeoutlen=0
+            autocmd InsertLeave * set timeoutlen=300
+        augroup END
     " } Encoding {
         set encoding=utf-8
         scriptencoding utf-8
@@ -68,6 +82,9 @@
             "
             " Until then, when switching buffers... will need to do a `:e` or `:w`
             " In order to retrigger the FileType event :/
+            "
+            " Meanwhile, neovim fixed that problem, so no need to "retrigger"
+            " the FileType event. Yeay !
             augroup local_listchars
                 autocmd!
                 autocmd FileType * setlocal listchars=tab:│\ ,trail:.
@@ -113,7 +130,6 @@
     source $HOME/dotfiles/vim/plugins.vim
 
     " Solarized {
-        "let g:solarized_termcolors=256
         let g:solarized_termtrans=1
         set background=dark
 
@@ -121,6 +137,11 @@
         highlight clear SpecialKey
         highligh SpecialKey cterm=bold ctermfg=12
         set cursorline
+
+        " Remove this on nvim 0.5 (use signcolumn=number instead)
+        if has('nvim')
+            hi! link SignColumn LineNr
+        endif
     " } statusbar {
         set laststatus=2
         set noshowmode
@@ -130,21 +151,6 @@
         let g:airline#extensions#tabline#show_splits = 1
         let g:airline#extensions#tabline#show_buffers = 1
         let g:airline#extensions#hunks#non_zero_only = 1
-
-        " airline initialisation
-        function! AirlineInit()
-        endfunction
-
-        autocmd mine VimEnter * call AirlineInit()
-
-        set timeoutlen=300
-        set ttimeoutlen=10
-
-        augroup FastEscape
-            autocmd!
-            autocmd InsertEnter * set timeoutlen=0
-            autocmd InsertLeave * set timeoutlen=300
-        augroup END
     " } NerdTree {
         nmap <silent> <C-n> :NERDTreeMirrorToggle<CR>
         nmap <silent> <leader>e :NERDTreeFind<CR>
@@ -164,9 +170,14 @@
     " } Ctags {
         set tags=./tags,$HOME/.vimtags,./.git/tags;$HOME
     " } fzf {
-        nnoremap <silent> <C-P> :FZF<CR>
-        nnoremap <silent> <C-M-P> :Commands<CR>
-        inoremap <expr> <C-M-F> fzf#vim#complete#path('rg --files')
+        nnoremap <silent> <C-p> :FZF<CR>
+
+        " Because meta-keys are funky on vim... let's register these only on
+        " nvim
+        if has('nvim')
+            nnoremap <silent> <C-M-P> :Commands<CR>
+            inoremap <expr> <C-M-F> fzf#vim#complete#path('rg --files')
+        endif
     " } TagBar {
         nnoremap <silent> <leader>tt :TagbarToggle<CR>
     " } UndoTree {
@@ -189,7 +200,6 @@
         \ ]
     " } completion {
         set completeopt=noinsert,menuone,noselect,preview
-
         set shortmess+=c
 
         " With COC.nvim
@@ -226,10 +236,18 @@
 " } Map {
     " Moving in files and between tabs & buffers {
         " between buffers
-        nmap <silent> h :bprev<CR>
-        nmap <silent> l :bnext<CR>
-        nnoremap <silent> j <NOP>
-        nnoremap <silent> k <NOP>
+        " (differences between vim and nvim : meta fucking keys)
+        if has('nvim')
+            nmap <silent> <M-h> :bprev<CR>
+            nmap <silent> <M-l> :bnext<CR>
+            nnoremap <silent> <M-j> <NOP>
+            nnoremap <silent> <M-k> <NOP>
+        else
+            nmap <silent> h :bprev<CR>
+            nmap <silent> l :bnext<CR>
+            nnoremap <silent> j <NOP>
+            nnoremap <silent> k <NOP>
+        endif
 
         " between windows
         nnoremap <silent> <C-H> :wincmd h<CR>
