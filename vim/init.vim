@@ -57,13 +57,20 @@
 
         " list blank characters {
             set list
-            set listchars=tab:>-,trail:.
+            set listchars=tab:│\ ,trail:.
 
-            augroup mine
-                autocmd FileType javascript setlocal nolist listchars=trail:.
-                autocmd FileType dockerfile setlocal nolist listchars=trail:.
-                autocmd FileType make setlocal nolist listchars=trail:.
-                autocmd FileType go setlocal nolist listchars=trail:.
+            " waiting for https://github.com/vim/vim/issues/5206 to be
+            " resolved (aka todo item about allowin listchars to be defined
+            " locally)
+            "
+            " Until then, when switching buffers... will need to do a `:e` or `:w`
+            " In order to retrigger the FileType event :/
+            augroup local_listchars
+                autocmd!
+                autocmd FileType * setlocal listchars=tab:│\ ,trail:.
+                autocmd FileType dockerfile setlocal listchars=tab:\ \ ,trail:.
+                autocmd FileType make setlocal listchars=tab:\ \ ,trail:.
+                autocmd FileType go setlocal listchars=tab:\ \ ,trail:.
             augroup END
        " }
     " } indent {
@@ -124,6 +131,8 @@
         set background=dark
 
         colorscheme solarized
+        highlight clear SpecialKey
+        highligh SpecialKey cterm=bold ctermfg=12
         set cursorline
     " } statusbar {
         set laststatus=2
