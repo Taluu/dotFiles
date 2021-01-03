@@ -38,6 +38,7 @@ function! PackagerInit() abort
     call packager#add('majutsushi/tagbar')
     call packager#add('mhinz/vim-signify')
     call packager#add('vim-vdebug/vdebug')
+    call packager#add('puremourning/vimspector')
     call packager#add('preservim/nerdcommenter')
     call packager#add('stephenmckinney/vim-autotag')
     call packager#add('neoclide/coc.nvim', { 'do': 'yarn install --lock-file' })

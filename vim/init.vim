@@ -105,6 +105,10 @@
             hi! def link phpDocParam phpType
         endfunction
     " } debug+remote {
+        let g:vimspector_enable_mappings = 'HUMAN'
+        let g:vimspector_base_dir = path_to_config . '/vimspector-config'
+        let g:vimspector_install_gadgets = [ 'vscode-go', 'CodeLLDB', 'vscode-php-debug' ]
+
         function! SetVdebugIdeKey(ide_key)
             if !exists('g:vdebug_options')
                 let g:vdebug_options = {}
@@ -188,7 +192,7 @@
     " } UndoTree {
         nnoremap <silent> <Leader>u :UndotreeToggle<CR>
         let g:undotree_SetFocusWhenToggle=1
-    " } vDebug {
+    " } debugger {
         if !exists('g:vdebug_options')
             let g:vdebug_options = {}
         endif
