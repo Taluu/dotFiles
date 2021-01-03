@@ -37,7 +37,6 @@ function! PackagerInit() abort
     call packager#add('dense-analysis/ale')
     call packager#add('majutsushi/tagbar')
     call packager#add('mhinz/vim-signify')
-    call packager#add('vim-vdebug/vdebug')
     call packager#add('puremourning/vimspector')
     call packager#add('preservim/nerdcommenter')
     call packager#add('stephenmckinney/vim-autotag')

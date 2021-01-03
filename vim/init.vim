@@ -108,26 +108,6 @@
         let g:vimspector_enable_mappings = 'HUMAN'
         let g:vimspector_base_dir = path_to_config . '/vimspector-config'
         let g:vimspector_install_gadgets = [ 'vscode-go', 'CodeLLDB', 'vscode-php-debug' ]
-
-        function! SetVdebugIdeKey(ide_key)
-            if !exists('g:vdebug_options')
-                let g:vdebug_options = {}
-            endif
-
-            let g:vdebug_options['ide_key'] = a:ide_key
-        endfunction
-
-        function! SetVdebugDockerPath(docker_path, local_path)
-            if !exists('g:vdebug_options')
-                let g:vdebug_options = {}
-            endif
-
-            if !has_key(g:vdebug_options, 'path_maps')
-                let g:vdebug_options['path_maps'] = {}
-            endif
-
-            let g:vdebug_options['path_maps'][a:docker_path] = a:local_path
-        endfunction
     " }
 " } Plugin configuration {
     source $HOME/dotfiles/vim/plugins.vim
@@ -192,27 +172,6 @@
     " } UndoTree {
         nnoremap <silent> <Leader>u :UndotreeToggle<CR>
         let g:undotree_SetFocusWhenToggle=1
-    " } debugger {
-        if !exists('g:vdebug_options')
-            let g:vdebug_options = {}
-        endif
-
-        " let g:vdebug_options['break_on_open'] = 0
-        " let g:vdebug_options['continuous_mode']=1
-
-        let g:vdebug_options['layout'] = 'horizontal'
-
-        if !exists('g:vdebug_features')
-            let g:vdebug_features = {}
-        endif
-
-        "let g:vdebug_features["max_data"] = 2048
-        "let g:vdebug_features["max_depth"] = 100
-        let g:vdebug_features['max_children'] = 128
-        let g:vdebug_features['extended_properties'] = 1
-
-        " <leader> + b : breakpoint window
-        nnoremap <silent> <leader>b :BreakpointWindow<CR>
     " } Riv.vim {
         let g:riv_disable_folding = 1
     " } Ack.vim {
