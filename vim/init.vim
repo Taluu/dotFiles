@@ -32,8 +32,8 @@
         set signcolumn=number
         set clipboard=unnamedplus
 
-        set backupdir=~/.config/nvim/backups
-        set directory=~/.config/nvim/backups
+        let &backupdir=path_to_config . '/backups'
+        let &directory=path_to_config. '/backups'
     " } Encoding {
         set encoding=utf-8
         scriptencoding utf-8
@@ -126,7 +126,7 @@
         endfunction
     " }
 " } Plugin configuration {
-    source ~/dotfiles/vim/plugins.vim
+    source $HOME/dotfiles/vim/plugins.vim
 
     " Solarized {
         "let g:solarized_termcolors=256
@@ -178,7 +178,7 @@
 
         map <silent> <C-f> :NERDTreeFind<CR>
     " } Ctags {
-        set tags=./tags,~/.vimtags,./.git/tags;$HOME
+        set tags=./tags,$HOME/.vimtags,./.git/tags;$HOME
     " } fzf {
         nnoremap <silent> <C-P> :FZF<CR>
         nnoremap <silent> <C-M-P> :Commands<CR>

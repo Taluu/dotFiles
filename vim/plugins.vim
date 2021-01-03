@@ -2,15 +2,9 @@
 "
 " This is using vim-packager (https://github.com/kristijanhusak/vim-packager)
 
-if has('nvim')
-    let path_to_packager = '~/.config/nvim'
-else
-    let path_to_packager = '~/.vim'
-endif
-
 " Automatic installation of vim-packager
-if !isdirectory(path_to_packager + '/pack/packager/opt/vim-packager')
-    silent execute '!git clone https://github.com/kristijanhusak/vim-packager ' + path_to_packager + '/pack/packager/opt/vim-packager'
+if !isdirectory(path_to_config + '/pack/packager/opt/vim-packager')
+    silent execute '!git clone https://github.com/kristijanhusak/vim-packager ' + path_to_config + '/pack/packager/opt/vim-packager'
 endif
 
 function! PackagerInit() abort
