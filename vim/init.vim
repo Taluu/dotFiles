@@ -10,7 +10,14 @@
     let g:mapleader = ','
     let g:loaded_python_provider = 0
 
+    if has('nvim')
+        let path_to_config = expand('$HONE/.config/nvim')
+    else
+        let path_to_config = expand('$HOME/.vim')
+    endif
+
     augroup mine
+        autocmd!
     augroup END
 
     " Misc {
@@ -27,10 +34,6 @@
 
         set backupdir=~/.config/nvim/backups
         set directory=~/.config/nvim/backups
-
-        augroup mine
-            autocmd!
-        augroup END
     " } Encoding {
         set encoding=utf-8
         scriptencoding utf-8
@@ -264,16 +267,16 @@
 " } Map {
     " Moving in files and between tabs & buffers {
         " between buffers
-        nmap <silent> <A-h> :bprev<CR>
-        nmap <silent> <A-l> :bnext<CR>
-        nnoremap <silent> <A-j> <NOP>
-        nnoremap <silent> <A-k> <NOP>
+        nmap <silent> h :bprev<CR>
+        nmap <silent> l :bnext<CR>
+        nnoremap <silent> j <NOP>
+        nnoremap <silent> k <NOP>
 
         " between windows
+        nnoremap <silent> <C-H> :wincmd h<CR>
         nnoremap <silent> <C-J> :wincmd j<CR>
         nnoremap <silent> <C-K> :wincmd k<CR>
         nnoremap <silent> <C-L> :wincmd l<CR>
-        nnoremap <silent> <C-H> :wincmd h<CR>
 
         " between lines
         nnoremap j gj
