@@ -11,7 +11,7 @@
     let g:loaded_python_provider = 0
 
     if has('nvim')
-        let path_to_config = expand('$HONE/.config/nvim')
+        let path_to_config = expand('$HOME/.config/nvim')
     else
         let path_to_config = expand('$HOME/.vim')
     endif
