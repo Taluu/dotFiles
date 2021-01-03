@@ -53,10 +53,10 @@
         scriptencoding utf-8
     " } undo {
         if has('persistent_undo')
-            set undodir=$HOME/.undo
             set undofile
             set undolevels=1000
             set undoreload=10000
+            let &undodir=path_to_config . '/undo'
         endif
     " } searching {
         set incsearch
