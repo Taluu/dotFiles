@@ -23,6 +23,7 @@
         syntax enable " wtf ?!
         set mouse= " remove mouse support
         set signcolumn=number
+        set clipboard=unnamedplus
 
         set backupdir=~/.config/nvim/backups
         set directory=~/.config/nvim/backups
@@ -254,10 +255,10 @@
 " } Map {
     " Moving in files and between tabs & buffers {
         " between buffers
-        nmap <silent> <m-h> :bprev<CR>
-        nmap <silent> <m-l> :bnext<CR>
-        nnoremap <silent> <m-j> <NOP>
-        nnoremap <silent> <m-k> <NOP>
+        nmap <silent> <A-h> :bprev<CR>
+        nmap <silent> <A-l> :bnext<CR>
+        nnoremap <silent> <A-j> <NOP>
+        nnoremap <silent> <A-k> <NOP>
 
         " between windows
         nnoremap <silent> <C-J> :wincmd j<CR>
