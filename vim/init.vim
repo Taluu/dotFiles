@@ -197,10 +197,6 @@
         nmap <silent> <leader>gi <Plug>(coc-implementation)
         nmap <silent> <leader>gr <Plug>(coc-references)
         nmap <silent> <leader>h :call CocAction('doHover')<CR>
-
-        augroup rust
-            au!
-        augroup END
     " } Ale {
         let g:ale_echo_msg_format = '[%linter% : %severity%] %s'
         let g:ale_php_phpcs_standard = 'PSR12'
