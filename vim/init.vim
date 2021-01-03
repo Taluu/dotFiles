@@ -123,7 +123,7 @@
         endfunction
     " } debug+remote {
         let g:vimspector_enable_mappings = 'HUMAN'
-        let g:vimspector_base_dir = path_to_config . '/vimspector-config'
+        let g:vimspector_base_dir = path_to_config . '/vimspector'
         let g:vimspector_install_gadgets = [ 'vscode-go', 'CodeLLDB', 'vscode-php-debug' ]
     " }
 " } Plugin configuration {
