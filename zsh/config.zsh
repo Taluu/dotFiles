@@ -2,8 +2,17 @@
 set -k
 
 # history
+export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=10000
 export SAVEHIST=$HISTSIZE
+
+setopt EXTENDED_HISTORY
+setopt HIST_VERIFY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
 
 [ -f ~/dotfiles/zsh/zplug.zsh ] && source ~/dotfiles/zsh/zplug.zsh
 
