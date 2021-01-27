@@ -20,7 +20,7 @@ setopt HIST_SAVE_NO_DUPS
 
 export TERM=xterm-256color
 
-#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.fzf/shell/completion.zsh ] && source ~/.fzf/shell/completion.zsh
 
 alias git="LANGUAGE=en_US.UTF-8 \"git\""
 alias vim="LANGUAGE=en_US.UTF-8 \"vim\""
