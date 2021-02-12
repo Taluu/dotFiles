@@ -55,7 +55,7 @@ function! PackagerInit() abort
     call packager#add('rust-lang/rust.vim')
     call packager#add('nelsyeung/twig.vim')
     call packager#add('pearofducks/ansible-vim')
-    call packager#add('phpactor/phpactor',  {'do': 'composer install --no-dev --no-interaction', 'type': 'opt', 'branch': 'develop'})
+    call packager#add('phpactor/phpactor',  {'do': 'composer install --no-dev --no-interaction', 'type': 'opt'})
 endfunction
 
 command! PackagerInstall call PackagerInit() | call packager#install()
