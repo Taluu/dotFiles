@@ -14,9 +14,9 @@ sync:
 	@-[[ -f ${BIN_DIR}/diff-highlight ]] || ln -s `pwd`/utils/diff-highlight ${BIN_DIR}/diff-highlight
 	@-[[ -f ${BIN_DIR}/git-repo-size ]] || ln -s `pwd`/utils/git-repo-size ${BIN_DIR}/git-repo-size
 # vim is still not xdg compliant, so...
-	@-[[ -d ~/.vim ]] || mkdir -p ~/.vim
-	@-[[ -f ~/.vim/vimrc ]] || ln -s `pwd`/vim/init.vim ~/.vim/vimrc
-	@-[[ -f ~/.vim/coc-settings.json ]] || ln -s `pwd`/vim/coc-settings.json ~/.vim
+	@-[[ -d ~/.config/nvim ]] || mkdir -p ~/.config/nvim
+	@-[[ -f ~/.config/nvim/init.vim	]] || ln -s `pwd`/vim/init.vim ~/.config/nvim/init.vim
+	@-[[ -f ~/.config/nvim/coc-settings.json ]] || ln -s `pwd`/vim/coc-settings.json ~/.config/nvim
 	@-[[ -d ~/.config/psalm ]] || mkdir -p ~/.config/psalm
 	@-[[ -f ~/.config/psalm/global.xml ]] || ln -s `pwd`/psalm/global.xml ~/.config/psalm/global.xml
 
@@ -28,7 +28,7 @@ clean:
 	@rm ~/.php-version
 	@rm ~/.tool-versions
 	@rm -rf ${BIN_DIR}
-	@rm ~/.vim/vimrc
+	@rm ~/.config/nvim/*
 	@rm ~/.config/composer/composer.json ~/.config/composer/composer.lock
 	@rm ~/.config/psalm/global.xml
 
