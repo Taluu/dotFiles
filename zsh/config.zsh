@@ -23,8 +23,9 @@ export TERM=xterm-256color
 [ -f ~/.fzf/shell/completion.zsh ] && source ~/.fzf/shell/completion.zsh
 
 alias git="LANGUAGE=en_US.UTF-8 \"git\""
-alias vim="LANGUAGE=en_US.UTF-8 \"vim\""
+alias vim="LANGUAGE=en_US.UTF-8 \"nvim\""
 alias ls="LANGUAGE=en_US.UTF-8 \"ls\" --color"
+alias ll="LANGUAGE=en_US.UTF-8 \"ls\" --color -al"
 
 if [[ -x ~/.local/bin/thefuck ]]; then
     alias fuck='eval $(~/.local/bin/thefuck $(fc -ln -1 | tail -n 1)); fc -R'
