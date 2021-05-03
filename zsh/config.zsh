@@ -49,6 +49,8 @@ export EDITOR="/usr/bin/vim"
 bindkey -e
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+bindkey '\eOA' history-substring-search-up
+bindkey '\eOB' history-substring-search-down
 
 # fzf
 export FZF_DEFAULT_COMMAND='rg -u --files --follow'
