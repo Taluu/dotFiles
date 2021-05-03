@@ -50,7 +50,7 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
 # fzf
-export FZF_DEFAULT_COMMAND='rg -u --files'
+export FZF_DEFAULT_COMMAND='rg -u --files --follow'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 export XDG_CONFIG_DIRS="$XDG_CONFIG_DIRS:$HOME/.config/xdg"

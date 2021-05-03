@@ -186,7 +186,7 @@
     " } Riv.vim {
         let g:riv_disable_folding = 1
     " } Ack.vim {
-        let g:ackprg = 'rg --vimgrep --smart-case'
+        let g:ackprg = 'rg --vimgrep --smart-case --follow'
     " } Coc.nvim {
         let g:coc_global_extensions = [
             \ 'coc-json',
