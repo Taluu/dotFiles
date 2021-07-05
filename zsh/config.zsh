@@ -53,7 +53,7 @@ bindkey '\eOA' history-substring-search-up
 bindkey '\eOB' history-substring-search-down
 
 # fzf
-export FZF_DEFAULT_COMMAND='rg -u --files --follow'
+export FZF_DEFAULT_COMMAND='rg --files --follow'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 export XDG_CONFIG_DIRS="$XDG_CONFIG_DIRS:$HOME/.config/xdg"
