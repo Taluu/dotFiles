@@ -56,6 +56,11 @@ function! PackagerInit() abort
     call packager#add('nelsyeung/twig.vim')
     call packager#add('pearofducks/ansible-vim')
     call packager#add('phpactor/phpactor',  {'do': 'composer install --no-dev --no-interaction', 'type': 'opt'})
+
+    # vim or nvim specifics
+    if has('nvim')
+        call packager#add('nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' })
+    endif
 endfunction
 
 command! PackagerInstall call PackagerInit() | call packager#install()
