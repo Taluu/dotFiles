@@ -197,6 +197,7 @@
             \ 'coc-xml',
             \ 'coc-phpactor',
             \ 'coc-go',
+            \ 'coc-tsserver',
         \ ]
     " } completion {
         set completeopt=noinsert,menuone,noselect,preview
