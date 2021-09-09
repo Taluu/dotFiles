@@ -35,7 +35,7 @@ function! PackagerInit() abort
 
     " Prog
     call packager#add('dense-analysis/ale')
-    call packager#add('majutsushi/tagbar')
+    call packager#add('preservim/tagbar')
     call packager#add('mhinz/vim-signify')
     call packager#add('puremourning/vimspector')
     call packager#add('preservim/nerdcommenter')
