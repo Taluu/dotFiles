@@ -121,6 +121,8 @@
             hi! def link phpDocTags phpDefine
             hi! def link phpDocParam phpType
         endfunction
+
+        let g:PHP_noArrowMatching = 1
     " } debug+remote {
         let g:vimspector_enable_mappings = 'HUMAN'
         let g:vimspector_base_dir = path_to_config . '/vimspector'
@@ -153,7 +155,6 @@
         let g:airline#extensions#hunks#non_zero_only = 1
     " } NerdTree {
         nmap <silent> <C-n> :NERDTreeMirrorToggle<CR>
-        nmap <silent> <leader>e :NERDTreeFind<CR>
         nmap <silent> <leader>nt :NERDTreeFind<CR>
 
         let NERDTreeShowBookmarks=1

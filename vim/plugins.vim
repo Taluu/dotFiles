@@ -57,7 +57,7 @@ function! PackagerInit() abort
     call packager#add('pearofducks/ansible-vim')
     call packager#add('phpactor/phpactor',  {'do': 'composer install --no-dev --no-interaction', 'type': 'opt'})
 
-    # vim or nvim specifics
+    " vim or nvim specifics
     if has('nvim')
         call packager#add('nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' })
     endif
