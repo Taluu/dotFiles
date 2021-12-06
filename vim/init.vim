@@ -28,12 +28,12 @@
         "set spell
         syntax enable " wtf ?!
         set mouse= " remove mouse support
+        set signcolumn=number
 
         " vim specific settings
         if !has('nvim')
             set nocompatible
             set clipboard=unnamedplus
-            set signcolumn=number " @todo move this once nvim 0.5 has been released
         endif
 
         let &backupdir=path_to_config . '/backups'
@@ -129,7 +129,7 @@
         let g:vimspector_install_gadgets = [ 'vscode-go', 'CodeLLDB', 'vscode-php-debug' ]
     " }
 " } Plugin configuration {
-    source $HOME/dotfiles/vim/plugins.vim
+    lua require('plugins')
 
     " Solarized {
         let g:solarized_termtrans=1
@@ -139,11 +139,6 @@
         highlight clear SpecialKey
         highligh SpecialKey cterm=bold ctermfg=12
         set cursorline
-
-        " Remove this on nvim 0.5 (use signcolumn=number instead)
-        if has('nvim')
-            hi! link SignColumn LineNr
-        endif
     " } statusbar {
         set laststatus=2
         set noshowmode
@@ -207,7 +202,8 @@
         " With COC.nvim
         nmap <silent> <leader>gd <Plug>(coc-definition)
         nmap <silent> <leader>gi <Plug>(coc-implementation)
-        nmap <silent> <leader>gr <Plug>(coc-references)
+        nmap <silent> <leader>gfr <Plug>(coc-references)
+        nmap <silent> <leader>gr <Plug>(coc-rename)
         nmap <silent> <leader>h :call CocAction('doHover')<CR>
     " } Ale {
         let g:ale_echo_msg_format = '[%linter% : %severity%] %s'
