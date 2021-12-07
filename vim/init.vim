@@ -1,20 +1,11 @@
 "My vimrc config :)
 
 " General configuration {
-    " fish is not POSIX compatible, which is problematic for vim...
-    if &shell =~# 'fish$'
-        set shell=sh
-    endif
-
     let mapleader = ','
     let g:mapleader = ','
     let g:loaded_python_provider = 0
 
-    if has('nvim')
-        let path_to_config = expand('$HOME/.config/nvim')
-    else
-        let path_to_config = expand('$HOME/.vim')
-    endif
+    let path_to_config = expand('$HOME/.config/nvim')
 
     augroup mine
         autocmd!
@@ -29,12 +20,6 @@
         syntax enable " wtf ?!
         set mouse= " remove mouse support
         set signcolumn=number
-
-        " vim specific settings
-        if !has('nvim')
-            set nocompatible
-            set clipboard=unnamedplus
-        endif
 
         let &backupdir=path_to_config . '/backups'
         let &directory=path_to_config. '/backups'
@@ -168,12 +153,8 @@
     " } fzf {
         nnoremap <silent> <C-p> :FZF<CR>
 
-        " Because meta-keys are funky on vim... let's register these only on
-        " nvim
-        if has('nvim')
-            nnoremap <silent> <C-M-P> :Commands<CR>
-            inoremap <expr> <C-M-F> fzf#vim#complete#path('rg --files')
-        endif
+        nnoremap <silent> <C-M-P> :Commands<CR>
+        inoremap <expr> <C-M-F> fzf#vim#complete#path('rg --files')
     " } TagBar {
         nnoremap <silent> <leader>tt :TagbarToggle<CR>
     " } UndoTree {
@@ -234,18 +215,10 @@
 " } Map {
     " Moving in files and between tabs & buffers {
         " between buffers
-        " (differences between vim and nvim : meta fucking keys)
-        if has('nvim')
-            nmap <silent> <M-h> :bprev<CR>
-            nmap <silent> <M-l> :bnext<CR>
-            nnoremap <silent> <M-j> <NOP>
-            nnoremap <silent> <M-k> <NOP>
-        else
-            nmap <silent> h :bprev<CR>
-            nmap <silent> l :bnext<CR>
-            nnoremap <silent> j <NOP>
-            nnoremap <silent> k <NOP>
-        endif
+        nmap <silent> <M-h> :bprev<CR>
+        nmap <silent> <M-l> :bnext<CR>
+        nnoremap <silent> <M-j> <NOP>
+        nnoremap <silent> <M-k> <NOP>
 
         " between windows
         nnoremap <silent> <C-H> :wincmd h<CR>
