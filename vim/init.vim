@@ -213,36 +213,5 @@
         augroup END
     " }
 " } Map {
-    " Moving in files and between tabs & buffers {
-        " between buffers
-        nmap <silent> <M-h> :bprev<CR>
-        nmap <silent> <M-l> :bnext<CR>
-        nnoremap <silent> <M-j> <NOP>
-        nnoremap <silent> <M-k> <NOP>
-
-        " between windows
-        nnoremap <silent> <C-H> :wincmd h<CR>
-        nnoremap <silent> <C-J> :wincmd j<CR>
-        nnoremap <silent> <C-K> :wincmd k<CR>
-        nnoremap <silent> <C-L> :wincmd l<CR>
-
-        " between lines
-        nnoremap j gj
-        nnoremap k gk
-
-        " between tabs
-        nnoremap <S-H> gT
-        nnoremap <S-L> gt
-        nnoremap <S-J> <NOP>
-        nnoremap <S-K> <NOP>
-    " }
-
-    vnoremap < <gv
-    vnoremap > >gv
-
-    " map home / end keys
-    map [F $
-    map [H g0
-
-    nnoremap <Del> <NOP>
+    lua require('general/movement')
 " }
