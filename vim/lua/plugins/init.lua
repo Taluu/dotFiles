@@ -50,7 +50,16 @@ return require('packer').startup(function(use)
     use 'puremourning/vimspector'
     use 'preservim/nerdcommenter'
     use 'stephenmckinney/vim-autotag'
-    use { 'neoclide/coc.nvim', run = 'yarn install --lock-file' }
+
+    -- lsp
+    use 'neovim/nvim-lspconfig'
+    use {
+      'ojroques/nvim-lspfuzzy',
+      requires = {
+        {'junegunn/fzf'},
+        {'junegunn/fzf.vim'},
+      },
+    }
 
     -- cucumber
     use 'tpope/vim-cucumber'

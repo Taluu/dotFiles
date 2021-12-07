@@ -164,28 +164,8 @@
         let g:riv_disable_folding = 1
     " } Ack.vim {
         let g:ackprg = 'rg --vimgrep --smart-case --follow'
-    " } Coc.nvim {
-        let g:coc_global_extensions = [
-            \ 'coc-json',
-            \ 'coc-lists',
-            \ 'coc-yaml',
-            \ 'coc-rust-analyzer',
-            \ 'coc-snippets',
-            \ 'coc-xml',
-            \ 'coc-phpactor',
-            \ 'coc-go',
-            \ 'coc-tsserver',
-        \ ]
     " } completion {
-        set completeopt=noinsert,menuone,noselect,preview
-        set shortmess+=c
-
-        " With COC.nvim
-        nmap <silent> <leader>gd <Plug>(coc-definition)
-        nmap <silent> <leader>gi <Plug>(coc-implementation)
-        nmap <silent> <leader>gfr <Plug>(coc-references)
-        nmap <silent> <leader>gr <Plug>(coc-rename)
-        nmap <silent> <leader>h :call CocAction('doHover')<CR>
+        lua require('plugins/completion')
     " } Ale {
         let g:ale_echo_msg_format = '[%linter% : %severity%] %s'
         let g:ale_php_phpcs_standard = 'PSR12'
