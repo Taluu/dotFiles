@@ -17,7 +17,6 @@
         set history=1000
         set hidden
         "set spell
-        syntax enable " wtf ?!
         set mouse= " remove mouse support
         set signcolumn=number
 
@@ -115,6 +114,7 @@
     " }
 " } Plugin configuration {
     lua require('plugins')
+    lua require('plugins/treesitter')
 
     " Solarized {
         let g:solarized_termtrans=1
