@@ -66,7 +66,7 @@ return require('packer').startup(function(use)
     use { 'quentindecock/vim-cucumber-align-pipes', opt = true }
 
     -- Other Languages
-    use 'fatih/vim-go'
+    -- use 'fatih/vim-go'
     use 'Rykka/riv.vim'
     use 'fpob/nette.vim'
     use 'cespare/vim-toml'
