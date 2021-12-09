@@ -114,7 +114,7 @@
     " }
 " } Plugin configuration {
     lua require('plugins')
-    lua require('plugins/treesitter')
+    lua require('treesitter')
 
     " Solarized {
         let g:solarized_termtrans=1
@@ -165,7 +165,7 @@
     " } Ack.vim {
         let g:ackprg = 'rg --vimgrep --smart-case --follow'
     " } completion {
-        lua require('plugins/completion')
+        lua require('completion')
     " } Ale {
         let g:ale_echo_msg_format = '[%linter% : %severity%] %s'
         let g:ale_php_phpcs_standard = 'PSR12'
@@ -188,10 +188,8 @@
             au FileType php nmap <silent> <Leader>pt :PhpactorTransform<CR>
             au FileType php nmap <silent> <Leader>pce :PhpactorClassExpand<CR>
             au FileType php nmap <silent> <Leader>pcm :PhpactorContextMenu<CR>
-            au FileType php nmap <silent> <Leader>pgd :PhpactorGotoDefinition<CR>
-            au FileType php nmap <silent> <Leader>pfr :PhpactorFindReferences<CR>
         augroup END
     " }
 " } Map {
-    lua require('general/movement')
+    lua require('movement')
 " }

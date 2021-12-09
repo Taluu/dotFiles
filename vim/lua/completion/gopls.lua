@@ -1,5 +1,5 @@
 local lsp_config = require 'lspconfig'
-local custom_lsp_attach = require 'plugins/completion/custom_lsp_attach'
+local custom_lsp_attach = require 'completion/custom_lsp_attach'
 
 -- copied from gopls config : https://github.com/golang/tools/blob/master/gopls/doc/vim.md#neovim-install
 lsp_config.gopls.setup {
