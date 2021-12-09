@@ -12,7 +12,6 @@ zplug "plugins/dnf", from:oh-my-zsh
 zplug "plugins/fzf", from:oh-my-zsh
 zplug "plugins/direnv", from:oh-my-zsh
 
-zplug "plugins/asdf", from:oh-my-zsh
 zplug "plugins/composer", from:oh-my-zsh
 zplug "plugins/golang", from:oh-my-zsh
 
