@@ -171,7 +171,12 @@
         let g:ale_php_phpcs_standard = 'PSR12'
 
         let g:ale_fixers = {
-        \   '*': ['remove_trailing_lines', 'trim_whitespace', 'goimports'],
+        \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+        \   'go': ['goimports'],
+        \ }
+
+        let g:ale_linters = {
+        \   'go': ['govet', 'staticcheck']
         \ }
 
         let g:ale_fix_on_save = 1
