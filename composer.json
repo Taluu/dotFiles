@@ -1,6 +1,9 @@
 {
     "config": {
-        "bin-dir": "~/bin"
+        "bin-dir": "~/bin",
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true
+        }
     },
 
     "prefer-stable": true,
