@@ -12,4 +12,16 @@ lsp_config.tsserver.setup{
     on_attach = custom_lsp_attach
 }
 
-require 'completion/gopls'
+-- copied from gopls config : https://github.com/golang/tools/blob/master/gopls/doc/vim.md#neovim-install
+lsp_config.gopls.setup {
+    cmd = {"gopls", "serve"},
+    on_attach = custom_lsp_attach,
+    settings = {
+        gopls = {
+            analyses = {
+                unusedparams = true,
+            },
+            staticcheck = true,
+        },
+    },
+}
