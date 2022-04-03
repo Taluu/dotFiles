@@ -61,6 +61,28 @@ return require('packer').startup(function(use)
       },
     }
 
+    -- completion
+    use {
+        'hrsh7th/nvim-cmp',
+        requires = {
+            {'hrsh7th/cmp-nvim-lsp'},
+            {'hrsh7th/cmp-nvim-lsp-signature-help'},
+            {'hrsh7th/cmp-path'},
+            {
+                'hrsh7th/cmp-cmdline',
+                requires = {
+                    {'hrsh7th/cmp-buffer'},
+                },
+            },
+            {
+                'saadparwaiz1/cmp_luasnip',
+                requires = {
+                    {'L3MON4D3/LuaSnip'},
+                },
+            },
+        }
+    }
+
     -- cucumber
     use 'tpope/vim-cucumber'
     use { 'quentindecock/vim-cucumber-align-pipes', opt = true }
