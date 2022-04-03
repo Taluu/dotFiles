@@ -25,3 +25,5 @@ lsp_config.gopls.setup {
         },
     },
 }
+
+require('lspfuzzy').setup {}
