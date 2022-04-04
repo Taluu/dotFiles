@@ -5,33 +5,26 @@ sync:
 	@-[[ -f ~/.gitconfig ]] || ln -s `pwd`/.gitconfig ~/.gitconfig
 	@-[[ -d ~/.git-templates ]] || ln -s `pwd`/.git-templates ~/.git-templates
 	@-[[ -f ~/.tmux.conf ]] || ln -s `pwd`/.tmux.conf ~/.tmux.conf
-	@-[[ -f ~/.php-version ]] || ln -s `pwd`/.php-version ~/.php-version
-	@-[[ -f ~/.tool-versions ]] || ln -s `pwd`/.tool-versions ~/.tool-versions
-	@-[[ -d ~/.config/composer ]] || mkdir -p ~/.config/composer
-	@-[[ -f ~/.config/composer/composer.json ]] || ln -s `pwd`/composer.json ~/.config/composer/composer.json
+	@-[[ -d ~/.zsh_completions ]] || mkdir -p ~/.zsh_completions
 	@-[[ -f ~/.zshrc ]] || ln -s `pwd`/zsh/config.zsh ~/.zshrc
+	@-[[ -f ~/.git_personnal_config ]] || touch ~/.git_personnal_config
 	@-[[ -d ${BIN_DIR} ]] || mkdir ${BIN_DIR}
 	@-[[ -f ${BIN_DIR}/diff-highlight ]] || ln -s `pwd`/utils/diff-highlight ${BIN_DIR}/diff-highlight
 	@-[[ -f ${BIN_DIR}/git-repo-size ]] || ln -s `pwd`/utils/git-repo-size ${BIN_DIR}/git-repo-size
-# vim is still not xdg compliant, so...
 	@-[[ -d ~/.config/nvim ]] || mkdir -p ~/.config/nvim
 	@-[[ -f ~/.config/nvim/init.vim	]] || ln -s `pwd`/vim/init.vim ~/.config/nvim/init.vim
 	@-[[ -d ~/.config/nvim/lua	]] || ln -s `pwd`/vim/lua ~/.config/nvim/lua
-	@-[[ -f ~/.config/nvim/coc-settings.json ]] || ln -s `pwd`/vim/coc-settings.json ~/.config/nvim
-	@-[[ -d ~/.config/psalm ]] || mkdir -p ~/.config/psalm
-	@-[[ -f ~/.config/psalm/global.xml ]] || ln -s `pwd`/psalm/global.xml ~/.config/psalm/global.xml
 
 clean:
 	@rm ~/.gitignore
 	@rm ~/.gitconfig
 	@rm -r ~/.git-templates
+	@rm ~/.git_personnal_config
 	@rm ~/.tmux.conf
-	@rm ~/.php-version
-	@rm ~/.tool-versions
 	@rm -rf ${BIN_DIR}
+	@rm -rf ~/.zsh_completions
 	@rm ~/.config/nvim/*
-	@rm ~/.config/composer/composer.json ~/.config/composer/composer.lock
-	@rm ~/.config/psalm/global.xml
+	@rm ~/.zshrc
 
 install:
 	@echo 'TODO LOL ?'

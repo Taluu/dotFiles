@@ -1,4 +1,4 @@
-Talus' Mess
+Taluu' Mess
 ===========
 This is roughly the setup i'm using when i'm on an unit env…
 

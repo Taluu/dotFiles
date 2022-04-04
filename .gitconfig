@@ -27,21 +27,8 @@
     insteadOf     = "ghs:"
     pushInsteadOf = "ghs:"
 
-[url "https://github.com/"]
-    insteadOf = "gh:"
-
-[url "git@gist.github.com:"]
-    insteadOf     = "gists:"
-    pushInsteadOf = "gists:"
-
-[url "https://gist.github.com/"]
-    insteadOf = "gist:"
-
 [alias]
-    st   = status
-    co   = checkout
     oops = commit -a --amend --no-edit
-    push = push-wh
     yolo = push --force-with-lease
 
     diff-word    = diff --word-diff
@@ -78,6 +65,3 @@
 
 [pull]
     rebase = true
-
-[credential "https://github.com"]
-    helper = !gh auth git-credential
