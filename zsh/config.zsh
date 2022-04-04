@@ -20,8 +20,6 @@ setopt HIST_SAVE_NO_DUPS
 
 export TERM=xterm-256color
 
-[ -f ~/.fzf/shell/completion.zsh ] && source ~/.fzf/shell/completion.zsh
-
 alias git="LANGUAGE=en_US.UTF-8 \"git\""
 alias vim="LANGUAGE=en_US.UTF-8 \"nvim\""
 alias ls="LANGUAGE=en_US.UTF-8 \"ls\" --color"
@@ -57,5 +55,7 @@ export FZF_DEFAULT_COMMAND='rg --files --follow'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 export XDG_CONFIG_DIRS="$XDG_CONFIG_DIRS:$HOME/.config/xdg"
+
+export FPATH=$HOME/.zsh_completions:$FPATH
 
 [ -f ~/.zsh_custom.sh ] && source ~/.zsh_custom.sh
