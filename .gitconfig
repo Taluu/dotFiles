@@ -23,10 +23,6 @@
 [color "diff"]
     meta = cyan
 
-[url "git@github.com:"]
-    insteadOf     = "ghs:"
-    pushInsteadOf = "ghs:"
-
 [alias]
     oops = commit -a --amend --no-edit
     yolo = push --force-with-lease

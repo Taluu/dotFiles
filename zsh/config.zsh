@@ -16,8 +16,6 @@ setopt HIST_SAVE_NO_DUPS
 
 [ -f ~/dotfiles/zsh/zplug.zsh ] && source ~/dotfiles/zsh/zplug.zsh
 
-[ -f ~/dotFiles/env.sh ] && source ~/dotFiles/env.sh
-
 export TERM=xterm-256color
 
 alias git="LANGUAGE=en_US.UTF-8 \"git\""
@@ -57,5 +55,10 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export XDG_CONFIG_DIRS="$XDG_CONFIG_DIRS:$HOME/.config/xdg"
 
 export FPATH=$HOME/.zsh_completions:$FPATH
+
+# direnv
+if [[ -x /usr/bin/direnv ]]; then
+    eval "$(/usr/bin/direnv hook zsh)"
+fi
 
 [ -f ~/.zsh_custom.sh ] && source ~/.zsh_custom.sh
