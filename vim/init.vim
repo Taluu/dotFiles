@@ -157,6 +157,7 @@
         inoremap <expr> <C-M-F> fzf#vim#complete#path('rg --files')
     " } TagBar {
         nnoremap <silent> <leader>tt :TagbarToggle<CR>
+        let g:tagbar_position='rightbelow vertical'
     " } UndoTree {
         nnoremap <silent> <Leader>u :UndotreeToggle<CR>
         let g:undotree_SetFocusWhenToggle=1
