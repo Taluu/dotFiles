@@ -27,8 +27,13 @@ lsp_config.gopls.setup {
         gopls = {
             analyses = {
                 unusedparams = true,
+                useany = true,
             },
             staticcheck = true,
+            codelenses = {
+                generate = true,
+                test = true,
+            },
         },
     },
 }
