@@ -1,7 +1,6 @@
 "My vimrc config :)
 
 " General configuration {
-    let mapleader = ','
     let g:mapleader = ','
     let g:loaded_python_provider = 0
 
@@ -32,6 +31,9 @@
             autocmd InsertEnter * set timeoutlen=0
             autocmd InsertLeave * set timeoutlen=300
         augroup END
+    " } Filetypes {
+        let g:do_filetype_lua = 1
+        let g:did_load_filetypes = 0
     " } Encoding {
         set encoding=utf-8
         scriptencoding utf-8
