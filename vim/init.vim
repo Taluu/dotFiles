@@ -175,7 +175,6 @@
 
         let g:ale_fixers = {
         \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-        \   'go': ['goimports'],
         \ }
 
         let g:ale_linters = {
