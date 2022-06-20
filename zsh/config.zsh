@@ -1,6 +1,11 @@
 # Allow comments
 set -k
 
+# P10k instant prompt
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # history
 export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=10000
@@ -15,6 +20,9 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 
 [ -f ~/dotfiles/zsh/zplug.zsh ] && source ~/dotfiles/zsh/zplug.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/dotfiles/zsh/powerline10k.zsh ]] || source ~/dotfiles/zsh/powerline10k.zsh
 
 export TERM=xterm-256color
 
