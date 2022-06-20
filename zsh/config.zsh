@@ -56,6 +56,8 @@ export XDG_CONFIG_DIRS="$XDG_CONFIG_DIRS:$HOME/.config/xdg"
 
 export FPATH=$HOME/.zsh_completions:$FPATH
 
+zstyle ':completion:*' menu select
+
 # direnv
 if [[ -x /usr/bin/direnv ]]; then
     eval "$(/usr/bin/direnv hook zsh)"
