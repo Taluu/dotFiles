@@ -15,8 +15,9 @@ lsp_config.gopls.setup {
             },
             staticcheck = true,
             codelenses = {
-                generate = true,
                 test = true,
+                generate = true,
+                gc_details = true,
             },
         },
     },
