@@ -167,8 +167,8 @@
         let g:riv_disable_folding = 1
     " } Ack.vim {
         let g:ackprg = 'rg --vimgrep --smart-case --follow'
-    " } completion {
-        lua require('completion')
+    " } lsp {
+        lua require('lsp')
     " } Ale {
         let g:ale_echo_msg_format = '[%linter% : %severity%] %s'
         let g:ale_php_phpcs_standard = 'PSR12'

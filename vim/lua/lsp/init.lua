@@ -1,6 +1,22 @@
 local lsp_config = require 'lspconfig'
-local custom_lsp_attach = require 'completion/custom_lsp_attach'
-local capabilities = require 'completion/capabilities'
+local custom_lsp_attach = require 'lsp/custom_lsp_attach'
+local capabilities = require 'lsp/capabilities'
+require 'lsp/cmp'
+
+vim.opt.completeopt = 'noinsert,menuone,noselect,preview'
+vim.opt.shortmess:append({ c = true })
+
+-- lsp configuration
+
+lsp_config.phpactor.setup{
+    on_attach = custom_lsp_attach,
+    capabilities = capabilities,
+}
+
+lsp_config.tsserver.setup{
+    on_attach = custom_lsp_attach,
+    capabilities = capabilities,
+}
 
 -- copied from gopls config : https://github.com/golang/tools/blob/master/gopls/doc/vim.md#neovim-install
 lsp_config.gopls.setup {
@@ -23,13 +39,16 @@ lsp_config.gopls.setup {
     },
 }
 
-local goPLSGrp = vim.api.nvim_create_augroup("GoPLS", { clear = true })
+
+-- autocommands
+
+local LSPGrp = vim.api.nvim_create_augroup("LSPGrp", { clear = true })
 vim.api.nvim_create_autocmd(
     "BufWritePre",
     {
         desc = "Auto-format the code",
         pattern = {"*.go"},
-        group = goPLSGrp,
+        group = LSPGrp,
         callback = vim.lsp.buf.formatting,
     }
 )
@@ -38,7 +57,7 @@ vim.api.nvim_create_autocmd(
     {
         desc = "Organize go imports section",
         pattern = {"*.go"},
-        group = goPLSGrp,
+        group = LSPGrp,
         callback = function ()
             local clients = vim.lsp.buf_get_clients()
             for _, client in pairs(clients) do
@@ -59,3 +78,5 @@ vim.api.nvim_create_autocmd(
         end,
     }
 )
+
+require('lspfuzzy').setup {}
