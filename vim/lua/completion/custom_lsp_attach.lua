@@ -1,4 +1,4 @@
-return function(_, bufnr)
+return function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -29,4 +29,13 @@ return function(_, bufnr)
     -- Use LSP as the handler for omnifunc.
     --    See `:help omnifunc` and `:help ins-completion` for more information.
     buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+    -- add code lens support ?
+    if type(client.server_capabilities.codeLensProvider) == 'table' then
+        buf_set_keymap('n', '<leader>cl', '<cmd>lua vim.lsp.codelens.run()<CR>', opts)
+
+        vim.api.nvim_create_autocmd("CursorHold,CursorHoldI,InsertLeave", {
+            callback = vim.lsp.codelens.refresh,
+        })
+    end
 end
