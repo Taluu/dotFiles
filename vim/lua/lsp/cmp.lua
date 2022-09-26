@@ -1,3 +1,6 @@
+local cmp = require "cmp"
+local lspkind = require 'lspkind'
+
 -- from https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings#luasnip
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -7,8 +10,6 @@ end
 local feedkey = function(key, mode)
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
 end
-
-local cmp = require("cmp")
 
 cmp.setup({
     snippet = {
@@ -31,6 +32,9 @@ cmp.setup({
         { name = 'buffer' },
         { name = 'nvim_lsp' },
         { name = 'nvim_lsp_signature_help' },
+    },
+    formatting = {
+        format = lspkind.cmp_format(),
     },
 })
 
