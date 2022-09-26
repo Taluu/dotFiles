@@ -71,4 +71,9 @@ if [[ -x /usr/bin/direnv ]]; then
     eval "$(/usr/bin/direnv hook zsh)"
 fi
 
+# kubectl (for some reasons, it errors when placed into the zsh completion dir)
+if [[ -x /usr/local/bin/kubectl ]]; then
+    source <(kubectl completion zsh)
+fi
+
 [ -f ~/.zsh_custom.sh ] && source ~/.zsh_custom.sh
