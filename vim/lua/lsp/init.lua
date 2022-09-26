@@ -2,6 +2,7 @@ local lsp_config = require 'lspconfig'
 local custom_lsp_attach = require 'lsp/custom_lsp_attach'
 local capabilities = require 'lsp/capabilities'
 require 'lsp/cmp'
+require 'lsp/lines'
 
 vim.opt.completeopt = 'noinsert,menuone,noselect,preview'
 vim.opt.shortmess:append({ c = true })
