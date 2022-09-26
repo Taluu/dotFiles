@@ -49,7 +49,6 @@ return require('packer').startup(function(use)
     use 'Xuyuanp/nerdtree-git-plugin'
 
     -- Prog
-    use 'dense-analysis/ale'
     use 'preservim/tagbar'
     use 'mhinz/vim-signify'
     use 'puremourning/vimspector'
@@ -59,7 +58,10 @@ return require('packer').startup(function(use)
     -- lsp
     use 'neovim/nvim-lspconfig'
     use {
-        'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
+        'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
+        requires = {
+            {'neovim/nvim-lspconfig'},
+        },
     }
     use {
       'ojroques/nvim-lspfuzzy',
@@ -67,6 +69,12 @@ return require('packer').startup(function(use)
         {'junegunn/fzf'},
         {'junegunn/fzf.vim'},
       },
+    }
+    use {
+        'jose-elias-alvarez/null-ls.nvim',
+        requires = {
+            {'nvim-lua/plenary.nvim'},
+        },
     }
 
     -- completion

@@ -169,19 +169,6 @@
         let g:ackprg = 'rg --vimgrep --smart-case --follow'
     " } lsp {
         lua require('lsp')
-    " } Ale {
-        let g:ale_echo_msg_format = '[%linter% : %severity%] %s'
-        let g:ale_php_phpcs_standard = 'PSR12'
-
-        let g:ale_fixers = {
-        \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-        \ }
-
-        let g:ale_linters = {
-        \   'go': ['govet', 'staticcheck']
-        \ }
-
-        let g:ale_fix_on_save = 1
     " } Phpactor {
         let g:phpactorInputListStrategy = 'phpactor#input#list#fzf'
         let g:phpactorQuickfixStrategy = 'phpactor#quickfix#fzf'

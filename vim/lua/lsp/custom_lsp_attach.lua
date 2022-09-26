@@ -38,4 +38,8 @@ return function(client, bufnr)
             callback = vim.lsp.codelens.refresh,
         })
     end
+
+    -- let null-ls take over
+    client.resolved_capabilities.document_formatting = false
+    client.resolved_capabilities.document_range_formatting = false
 end
