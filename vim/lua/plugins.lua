@@ -20,7 +20,12 @@ return require('packer').startup(function(use)
     use 'mbbill/undotree'
     use 'tpope/vim-repeat'
     use 'tpope/vim-abolish'
-    use 'tpope/vim-fugitive'
+    use {
+        'shumphrey/fugitive-gitlab.vim',
+        requires = {
+            {'tpope/vim-fugitive'}
+        }
+    }
     use 'vim-airline/vim-airline'
     use 'editorconfig/editorconfig-vim'
     use 'altercation/vim-colors-solarized'
