@@ -10,6 +10,7 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup({
     sources = {
         code_actions.gitrebase,
+        code_actions.gitsigns,
 
         --diagnostics.buf,
         diagnostics.checkmake,
@@ -42,3 +43,5 @@ null_ls.setup({
         end
     end,
 })
+
+return null_ls

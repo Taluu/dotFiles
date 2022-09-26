@@ -5,6 +5,7 @@ require 'lsp/cmp'
 require 'lsp/lines'
 require 'lsp/null-ls'
 require 'lsp/fuzzy'
+require 'lsp/gitsigns'
 
 vim.opt.completeopt = 'noinsert,menuone,noselect,preview'
 vim.opt.shortmess:append({ c = true })

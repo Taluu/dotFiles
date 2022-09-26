@@ -50,7 +50,6 @@ return require('packer').startup(function(use)
 
     -- Prog
     use 'preservim/tagbar'
-    use 'mhinz/vim-signify'
     use 'puremourning/vimspector'
     use 'preservim/nerdcommenter'
     use 'stephenmckinney/vim-autotag'
@@ -74,6 +73,7 @@ return require('packer').startup(function(use)
         'jose-elias-alvarez/null-ls.nvim',
         requires = {
             {'nvim-lua/plenary.nvim'},
+            {'lewis6991/gitsigns.nvim'},
         },
     }
 
