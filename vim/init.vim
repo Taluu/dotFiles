@@ -17,7 +17,7 @@
         set hidden
         "set spell
         set mouse= " remove mouse support
-        set signcolumn=number
+        set signcolumn=auto
 
         let &backupdir=path_to_config . '/backups'
         let &directory=path_to_config. '/backups'
@@ -124,7 +124,8 @@
 
         colorscheme solarized
         highlight clear SpecialKey
-        highligh SpecialKey cterm=bold ctermfg=12
+        highlight SpecialKey cterm=bold ctermfg=12
+        highlight! link SignColumn LineNr
         set cursorline
     " } statusbar {
         set laststatus=2
