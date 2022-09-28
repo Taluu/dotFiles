@@ -11,3 +11,9 @@ tags
 
 .envrc
 .ripgreprc
+
+buf.yaml
+buf.work.yaml
+buf.gen.yaml
+
+.null-ls*
