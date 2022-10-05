@@ -31,7 +31,7 @@ return function(client, bufnr)
     buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
     -- add code lens support ?
-    if type(client.server_capabilities.codeLensProvider) == 'table' then
+    if client.supports_method("textDocument/codeLens") then
         buf_set_keymap('n', '<leader>cl', '<cmd>lua vim.lsp.codelens.run()<CR>', opts)
 
         vim.api.nvim_create_autocmd("CursorHold,CursorHoldI,InsertLeave", {
