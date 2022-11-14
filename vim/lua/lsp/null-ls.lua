@@ -36,12 +36,17 @@ null_ls.setup({
                 group = augroup,
                 buffer = bufnr,
                 callback = function()
-                    -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-                    vim.lsp.buf.formatting_sync()
+                    vim.lsp.buf.format({
+                        filter = function(client)
+                            -- apply whatever logic you want (in this example, we'll only use null-ls)
+                            return client.name == "null-ls"
+                        end,
+                        bufnr = bufnr,
+                    })
                 end,
             })
         end
-    end,
+    end
 })
 
 return null_ls

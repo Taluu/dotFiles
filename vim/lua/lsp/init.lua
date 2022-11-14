@@ -1,6 +1,6 @@
 local lsp_config = require 'lspconfig'
 local custom_lsp_attach = require 'lsp/custom_lsp_attach'
-local capabilities = require 'lsp/capabilities'
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require 'lsp/cmp'
 require 'lsp/lines'
 require 'lsp/null-ls'
@@ -24,7 +24,6 @@ lsp_config.gopls.setup {
             },
             staticcheck = true,
             codelenses = {
-                test = true,
                 generate = true,
                 gc_details = true,
             },
