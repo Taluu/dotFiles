@@ -13,7 +13,7 @@ vim.opt.shortmess:append({ c = true })
 -- lsp configuration
 -- copied from gopls config : https://github.com/golang/tools/blob/master/gopls/doc/vim.md#neovim-install
 lsp_config.gopls.setup {
-    cmd = {"gopls", "serve"},
+    cmd = {"gopls", "-remote=auto", "serve"},
     on_attach = custom_lsp_attach,
     capabilities = capabilities,
     settings = {

@@ -19,8 +19,8 @@ null_ls.setup({
         diagnostics.phpcs,
         diagnostics.phpstan,
         diagnostics.psalm,
-        diagnostics.staticcheck,
-        -- diagnostics.yamllint,
+        --diagnostics.staticcheck,
+        --diagnostics.yamllint,
         diagnostics.zsh,
 
         formatting.goimports,
