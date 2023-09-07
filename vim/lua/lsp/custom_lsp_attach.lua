@@ -19,7 +19,6 @@ return function(client, bufnr)
     buf_set_keymap('n', '<leader>fr', '<cmd>lua vim.lsp.buf.references()<CR>', noremap)
     buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', noremap)
     buf_set_keymap('n', '<leader>rf', '<cmd>lua vim.lsp.buf.refactor()<CR>', noremap)
-    buf_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', noremap)
     buf_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', noremap)
 
     -- diagnostics
@@ -29,15 +28,6 @@ return function(client, bufnr)
     -- Use LSP as the handler for omnifunc.
     --    See `:help omnifunc` and `:help ins-completion` for more information.
     buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-    -- add code lens support ?
-    if client.supports_method("textDocument/codeLens") then
-        buf_set_keymap('n', '<leader>cl', '<cmd>lua vim.lsp.codelens.run()<CR>', opts)
-
-        vim.api.nvim_create_autocmd("CursorHold,CursorHoldI,InsertLeave", {
-            callback = vim.lsp.codelens.refresh,
-        })
-    end
 
     -- let null-ls take over
     client.server_capabilities.documentFormattingProvider = false
