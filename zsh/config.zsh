@@ -1,6 +1,8 @@
 # Allow comments
 set -k
 
+(( ${+commands[direnv]} )) && emulate zsh -c "$(direnv export zsh)"
+
 # P10k instant prompt
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -66,8 +68,6 @@ export XDG_CONFIG_DIRS="$XDG_CONFIG_DIRS:$HOME/.config/xdg"
 export fpath=($fpath $HOME/.zsh_completions)
 
 zstyle ':completion:*' menu select
-
-(( ${+commands[direnv]} )) && emulate zsh -c "$(direnv export zsh)"
 
 # kubectl (for some reasons, it errors when placed into the zsh completion dir)
 if [[ -x /usr/local/bin/kubectl ]]; then
