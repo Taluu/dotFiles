@@ -18,6 +18,7 @@ setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
+setopt INC_APPEND_HISTORY
 
 [ -f ~/dotfiles/zsh/zplug.zsh ] && source ~/dotfiles/zsh/zplug.zsh
 
@@ -47,7 +48,7 @@ export COMPOSER_DISABLE_XDEBUG_WARN=1
 export PATH=$PATH:$HOME/bin:$HOME/.local/share/nvim/site/pack/packer/opt/phpactor/bin:$HOME/.local/bin:$HOME/go/bin:/usr/local/go/bin
 
 # vim is da tru editor
-export EDITOR="/usr/bin/vim"
+export EDITOR="/usr/local/bin/nvim"
 
 # let's keep "emacs" mode for now... Consider migrating to vim mode, cuz it's da tru editor
 bindkey -e
@@ -62,14 +63,11 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 export XDG_CONFIG_DIRS="$XDG_CONFIG_DIRS:$HOME/.config/xdg"
 
-export FPATH=$HOME/.zsh_completions:$FPATH
+export fpath=($fpath $HOME/.zsh_completions)
 
 zstyle ':completion:*' menu select
 
-# direnv
-if [[ -x /usr/bin/direnv ]]; then
-    eval "$(/usr/bin/direnv hook zsh)"
-fi
+(( ${+commands[direnv]} )) && emulate zsh -c "$(direnv export zsh)"
 
 # kubectl (for some reasons, it errors when placed into the zsh completion dir)
 if [[ -x /usr/local/bin/kubectl ]]; then
