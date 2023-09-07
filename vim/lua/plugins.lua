@@ -27,7 +27,6 @@ return require('packer').startup(function(use)
         }
     }
     use 'vim-airline/vim-airline'
-    use 'editorconfig/editorconfig-vim'
     use 'altercation/vim-colors-solarized'
     use 'https://bitbucket.org/cmthornton/vim-dist-ext.git'
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
@@ -113,7 +112,7 @@ return require('packer').startup(function(use)
     use 'rust-lang/rust.vim'
     use 'nelsyeung/twig.vim'
     use 'pearofducks/ansible-vim'
-    use { 'phpactor/phpactor',  run = 'composer install --no-dev --no-interaction', opt = true}
+    use { 'phpactor/phpactor',  run = 'composer install --no-dev --no-interaction --prefer-dist', opt = true}
 
     if packer_bootstrap then
       require('packer').sync()
