@@ -119,7 +119,7 @@
         let g:solarized_termtrans=1
         set background=dark
 
-        colorscheme solarized
+        colorscheme solarized8
         highlight clear SpecialKey
         highlight SpecialKey cterm=bold ctermfg=12
         highlight! link SignColumn LineNr

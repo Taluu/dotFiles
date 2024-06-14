@@ -27,7 +27,8 @@ return require('packer').startup(function(use)
         }
     }
     use 'vim-airline/vim-airline'
-    use 'altercation/vim-colors-solarized'
+    --use 'altercation/vim-colors-solarized'
+    use { 'lifepillar/vim-solarized8', branch = 'neovim' }
     use 'https://bitbucket.org/cmthornton/vim-dist-ext.git'
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
