@@ -36,6 +36,7 @@
 
 [init]
     templatedir = ~/.git-templates
+	defaultBranch = main
 
 [diff]
     compactionHeuristic = true
