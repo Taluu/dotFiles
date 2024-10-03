@@ -1,26 +1,20 @@
 -- shortcuts
-local null_ls = require 'null-ls'
-local builtins = null_ls.builtins
+local none_ls = require 'null-ls'
+local builtins = none_ls.builtins
 local code_actions = builtins.code_actions
 local formatting = builtins.formatting
 local diagnostics = builtins.diagnostics
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
-null_ls.setup({
+none_ls.setup({
     sources = {
         code_actions.gitrebase,
         code_actions.gitsigns,
 
-        --diagnostics.buf,
         diagnostics.checkmake,
-        --diagnostics.gitlint,
-        diagnostics.php,
         diagnostics.phpcs,
         diagnostics.phpstan,
-        diagnostics.psalm,
-        --diagnostics.staticcheck,
-        --diagnostics.yamllint,
         diagnostics.zsh,
 
         formatting.goimports,
@@ -49,4 +43,4 @@ null_ls.setup({
     end
 })
 
-return null_ls
+return none_ls

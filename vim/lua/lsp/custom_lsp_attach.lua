@@ -29,7 +29,7 @@ return function(client, bufnr)
     --    See `:help omnifunc` and `:help ins-completion` for more information.
     buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-    -- let null-ls take over
+    -- let none-ls take over
     client.server_capabilities.documentFormattingProvider = false
     client.server_capabilities.documentRangeFormattingProvider = false
 end

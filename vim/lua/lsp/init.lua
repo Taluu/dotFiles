@@ -3,7 +3,7 @@ local custom_lsp_attach = require 'lsp/custom_lsp_attach'
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require 'lsp/cmp'
 require 'lsp/lines'
-require 'lsp/null-ls'
+require 'lsp/none-ls'
 require 'lsp/fuzzy'
 require 'lsp/gitsigns'
 
