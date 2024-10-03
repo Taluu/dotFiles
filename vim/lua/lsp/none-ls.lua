@@ -20,6 +20,7 @@ none_ls.setup({
         formatting.goimports,
         formatting.gofmt,
         formatting.phpcsfixer,
+        formatting.prettierd,
     },
 
     -- you can reuse a shared lspconfig on_attach callback here
