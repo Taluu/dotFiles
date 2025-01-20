@@ -1,12 +1,14 @@
 # Allow comments
 set -k
 
-(( ${+commands[direnv]} )) && emulate zsh -c "$(direnv export zsh)"
-
 # P10k instant prompt
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
+[ -f ~/.custom.zsh ] && source ~/.custom.zsh
+
+(( ${+commands[direnv]} )) && emulate zsh -c "$(direnv export zsh)"
 
 # history
 export HISTFILE=$HOME/.zsh_history
@@ -74,4 +76,7 @@ if [[ -x /usr/local/bin/kubectl ]]; then
     source <(kubectl completion zsh)
 fi
 
-[ -f ~/.zsh_custom.sh ] && source ~/.zsh_custom.sh
+# reload some custom things that may have been modified since the last load
+# looking at you, EDITOR.
+# Thanks brew (yes that's sarcasm)
+[ -f ~/.custom.zsh ] && source ~/.custom.zsh

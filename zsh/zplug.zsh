@@ -1,10 +1,10 @@
-if [ ! -f ~/.zplug/init.zsh ]; then
+if [[ ! -f "${ZPLUG_HOME:-$HOME/.zplug}/init.zsh" ]]; then
     echo 'nope'
     echo
     return
 fi
 
-source ~/.zplug/init.zsh
+source "${ZPLUG_HOME:-$HOME/.zplug}/init.zsh"
 
 zplug zplug/zplug, hook-build:'zplug --self-manage'
 
