@@ -56,12 +56,7 @@ return require('packer').startup(function(use)
 
     -- lsp
     use 'neovim/nvim-lspconfig'
-    use {
-        'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
-        requires = {
-            {'neovim/nvim-lspconfig'},
-        },
-    }
+    use 'rachartier/tiny-inline-diagnostic.nvim'
     use {
       'ojroques/nvim-lspfuzzy',
       requires = {
