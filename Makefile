@@ -1,4 +1,4 @@
-BIN_DIR := ~/bin
+BIN_DIR := ~/.local/bin
 
 sync:
 	@dconf load /org/gnome/terminal/legacy/profiles:/ < `pwd`/gnome-terminal-profile.dconf
