@@ -7,10 +7,7 @@
 
 [core]
     excludesfile = ~/.gitignore
-
-[pager]
-    show = diff-highlight | less -r
-    diff = diff-highlight | less -r
+    pager = diff-highlight | less -r
 
 [push]
     default = simple
@@ -36,7 +33,7 @@
 
 [init]
     templatedir = ~/.git-templates
-	defaultBranch = main
+    defaultBranch = main
 
 [diff]
     compactionHeuristic = true
