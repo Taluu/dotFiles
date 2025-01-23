@@ -150,14 +150,11 @@
         map <silent> <C-f> :NERDTreeFind<CR>
     " } Ctags {
         set tags=./tags,$HOME/.vimtags,./.git/tags;$HOME
-    " } fzf {
-        nnoremap <silent> <C-p> :FZF<CR>
-
-        nnoremap <silent> <C-M-P> :Commands<CR>
-        inoremap <expr> <C-M-F> fzf#vim#complete#path('rg --files')
     " } TagBar {
         nnoremap <silent> <leader>tt :TagbarToggle<CR>
         let g:tagbar_position='rightbelow vertical'
+    " } fzf {
+        lua require('fzf')
     " } UndoTree {
         nnoremap <silent> <Leader>u :UndotreeToggle<CR>
         let g:undotree_SetFocusWhenToggle=1

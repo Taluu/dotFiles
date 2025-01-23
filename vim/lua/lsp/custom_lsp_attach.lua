@@ -2,11 +2,11 @@ return function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
-    local opts = { noremap = true, silent = true }
+    local silent_noremap = { noremap = true, silent = true }
     local noremap = { noremap = true }
 
     -- definitons navigation stuff
-    buf_set_keymap('n', '<leader>gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+    buf_set_keymap('n', '<leader>gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', silent_noremap)
     buf_set_keymap('n', '<leader>gd', '<cmd>lua vim.lsp.buf.definition()<CR>', noremap)
 
     -- workspace related stuff

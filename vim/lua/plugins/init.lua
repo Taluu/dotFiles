@@ -34,12 +34,9 @@ return require('packer').startup(function(use)
 
     -- fzf
     use {
-        'junegunn/fzf.vim',
+        'ibhagwan/fzf-lua',
         requires = {
-            {
-                'junegunn/fzf',
-                run = './install --bin && ln -sf $(pwd) ~/.fzf'
-            }
+            { "nvim-tree/nvim-web-devicons" }
         }
     }
 
