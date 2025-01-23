@@ -10,7 +10,6 @@ sync:
 	@-[[ -f ~/.zshrc ]] || ln -s `pwd`/zsh/config.zsh ~/.zshrc
 	@-[[ -f ~/.git_personnal_config ]] || touch ~/.git_personnal_config
 	@-[[ -d ${BIN_DIR} ]] || mkdir ${BIN_DIR}
-	@-[[ -f ${BIN_DIR}/diff-highlight ]] || ln -s `pwd`/utils/diff-highlight ${BIN_DIR}/diff-highlight
 	@-[[ -f ${BIN_DIR}/git-repo-size ]] || ln -s `pwd`/utils/git-repo-size ${BIN_DIR}/git-repo-size
 	@-[[ -d ~/.config/nvim ]] || mkdir -p ~/.config/nvim
 	@-[[ -f ~/.config/nvim/init.vim	]] || ln -s `pwd`/vim/init.vim ~/.config/nvim/init.vim
