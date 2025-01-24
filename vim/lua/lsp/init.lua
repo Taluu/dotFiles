@@ -40,3 +40,5 @@ lsp_config.ts_ls.setup {
     on_attach = custom_lsp_attach,
     capabilities = capabilities,
 }
+
+lsp_config.protols.setup {}

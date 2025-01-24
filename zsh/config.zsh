@@ -49,7 +49,7 @@ export LESSCHARSET=UTF-8
 export COMPOSER_HOME=$HOME/.config/composer #xdg base
 export COMPOSER_DISABLE_XDEBUG_WARN=1
 
-export PATH=$PATH:$HOME/bin:$HOME/.local/share/nvim/site/pack/packer/opt/phpactor/bin:$HOME/.local/bin:$HOME/go/bin:/usr/local/go/bin
+export PATH=$PATH:$HOME/bin:$HOME/.local/share/nvim/site/pack/packer/opt/phpactor/bin:$HOME/.local/bin:$HOME/go/bin:/usr/local/go/bin:$HOME/.cargo/bin
 
 # nvim is da tru editor
 export EDITOR="${TRU_EDITOR:-/usr/loca/bin/nvim}"
