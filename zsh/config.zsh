@@ -81,7 +81,8 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 export XDG_CONFIG_DIRS="$XDG_CONFIG_DIRS:$HOME/.config/xdg"
 
-export fpath=($fpath $HOME/.zsh_completions)
+fpath+=($HOME/.zsh_completions)
+typeset -U fpath
 
 zstyle ':completion:*' menu select
 
