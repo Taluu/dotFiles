@@ -36,10 +36,6 @@ alias vim="LANGUAGE=en_US.UTF-8 \"nvim\""
 alias ls="LANGUAGE=en_US.UTF-8 \"ls\" --color"
 alias ll="LANGUAGE=en_US.UTF-8 \"ls\" --color -al"
 
-if [[ -x ~/.local/bin/thefuck ]]; then
-    alias fuck='eval $(~/.local/bin/thefuck $(fc -ln -1 | tail -n 1)); fc -R'
-fi
-
 # fix tmux + zsh behaviour
 export DISABLE_AUTO_TITLE=true
 
@@ -87,11 +83,15 @@ typeset -U fpath
 zstyle ':completion:*' menu select
 
 # kubectl (for some reasons, it errors when placed into the zsh completion dir)
-if [[ -x /usr/local/bin/kubectl ]]; then
+if command -v kubectl &>/dev/null; then
     source <(kubectl completion zsh)
 fi
 
 # ngrok autocomplete
 if command -v ngrok &>/dev/null; then
     eval "$(ngrok completion)"
+fi
+
+if command -v thefuck &>/dev/null; then
+    eval $(thefuck --alias)
 fi
