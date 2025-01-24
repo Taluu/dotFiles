@@ -51,8 +51,8 @@ export COMPOSER_DISABLE_XDEBUG_WARN=1
 
 export PATH=$PATH:$HOME/bin:$HOME/.local/share/nvim/site/pack/packer/opt/phpactor/bin:$HOME/.local/bin:$HOME/go/bin:/usr/local/go/bin
 
-# vim is da tru editor
-export EDITOR="/usr/local/bin/nvim"
+# nvim is da tru editor
+export EDITOR="${TRU_EDITOR:-/usr/loca/bin/nvim}"
 
 # let's keep "emacs" mode for now... Consider migrating to vim mode, cuz it's da tru editor
 bindkey -e
@@ -75,8 +75,3 @@ zstyle ':completion:*' menu select
 if [[ -x /usr/local/bin/kubectl ]]; then
     source <(kubectl completion zsh)
 fi
-
-# reload some custom things that may have been modified since the last load
-# looking at you, EDITOR.
-# Thanks brew (yes that's sarcasm)
-[ -f ~/.custom.zsh ] && source ~/.custom.zsh
