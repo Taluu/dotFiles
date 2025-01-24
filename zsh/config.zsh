@@ -89,3 +89,8 @@ zstyle ':completion:*' menu select
 if [[ -x /usr/local/bin/kubectl ]]; then
     source <(kubectl completion zsh)
 fi
+
+# ngrok autocomplete
+if command -v ngrok &>/dev/null; then
+    eval "$(ngrok completion)"
+fi
