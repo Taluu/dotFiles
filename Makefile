@@ -2,7 +2,7 @@ BIN_DIR := ~/.local/bin
 
 sync:
 	@dconf load /org/gnome/terminal/legacy/profiles:/ < `pwd`/gnome-terminal-profile.dconf
-	@-[[ -f ~/.gitignore ]] || ln -s `pwd`/.gitignore ~/.gitignore
+	@-[[ -f ~/.gitignore ]] || ln -s `pwd`/.git_ignore ~/.gitignore
 	@-[[ -f ~/.gitconfig ]] || ln -s `pwd`/.gitconfig ~/.gitconfig
 	@-[[ -d ~/.git-templates ]] || ln -s `pwd`/.git-templates ~/.git-templates
 	@-[[ -f ~/.tmux.conf ]] || ln -s `pwd`/.tmux.conf ~/.tmux.conf
