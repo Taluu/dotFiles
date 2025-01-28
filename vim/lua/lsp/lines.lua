@@ -1,5 +1,8 @@
 tiny_inline_diagnostic = require 'tiny-inline-diagnostic'
-tiny_inline_diagnostic.setup()
+
+tiny_inline_diagnostic.setup({
+    preset = "powerline"
+})
 
 vim.diagnostic.config({
     virtual_text = false,
