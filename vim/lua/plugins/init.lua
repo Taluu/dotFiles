@@ -26,7 +26,6 @@ return require('packer').startup(function(use)
             {'tpope/vim-fugitive'}
         }
     }
-    use 'vim-airline/vim-airline'
     --use 'altercation/vim-colors-solarized'
     use { 'lifepillar/vim-solarized8', branch = 'neovim' }
     use 'https://bitbucket.org/cmthornton/vim-dist-ext.git'
@@ -36,7 +35,7 @@ return require('packer').startup(function(use)
     use {
         'ibhagwan/fzf-lua',
         requires = {
-            { "nvim-tree/nvim-web-devicons" }
+            { "nvim-tree/nvim-web-devicons" },
         }
     }
 
@@ -44,9 +43,25 @@ return require('packer').startup(function(use)
     use {
         'nvim-tree/nvim-tree.lua',
         requires = {
-            'nvim-tree/nvim-web-devicons',
-        },
-    } 
+            { 'nvim-tree/nvim-web-devicons' },
+        }
+    }
+
+    -- statusline
+    --use 'vim-airline/vim-airline'
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = {
+            { 'nvim-tree/nvim-web-devicons', opt = true },
+        }
+    }
+
+    use {
+        'akinsho/bufferline.nvim',
+        requires = {
+            { 'nvim-tree/nvim-web-devicons', opt = true },
+        }
+    }
 
     -- Prog
     use 'preservim/tagbar'
@@ -117,4 +132,6 @@ return require('packer').startup(function(use)
     require("plugins/tree")
     require("plugins/fzf")
     require("plugins/treesitter")
+    require("plugins/lualine")
+    require("plugins/bufferline")
 end)

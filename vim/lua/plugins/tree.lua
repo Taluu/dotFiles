@@ -59,14 +59,5 @@ nvimTree.setup({
     end,
 })
 
--- remove status line for nvimTree window
-nvimTreeApi.events.subscribe(nvimTreeApi.events.Event.TreeOpen, function()
-  local tree_winid = nvimTreeApi.tree.winid()
-
-  if tree_winid ~= nil then
-    vim.api.nvim_set_option_value('statusline', ' ', {win = tree_winid})
-  end
-end)
-
 vim.keymap.set('n', '<C-n>', nvimTreeFocusOrToggle, silent_noremap)
 vim.keymap.set('n', '<leader>ff', ':NvimTreeFindFileToggle<CR>', silent_noremap)

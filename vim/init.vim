@@ -127,15 +127,6 @@
         highlight SpecialKey cterm=bold ctermfg=12
         highlight! link SignColumn LineNr
         set cursorline
-    " } statusbar {
-        set laststatus=2
-        set noshowmode
-
-        let g:airline_powerline_fonts = 1
-        let g:airline#extensions#tabline#enabled = 1
-        let g:airline#extensions#tabline#show_splits = 1
-        let g:airline#extensions#tabline#show_buffers = 1
-        let g:airline#extensions#hunks#non_zero_only = 1
     " } Ctags {
         set tags=./tags,$HOME/.vimtags,./.git/tags;$HOME
     " } TagBar {
