@@ -113,7 +113,6 @@
     " }
 " } Plugin configuration {
     lua require('plugins')
-    lua require('treesitter')
 
     " Solarized {
         let g:solarized_termtrans=1
@@ -153,8 +152,6 @@
     " } TagBar {
         nnoremap <silent> <leader>tt :TagbarToggle<CR>
         let g:tagbar_position='rightbelow vertical'
-    " } fzf {
-        lua require('fzf')
     " } UndoTree {
         nnoremap <silent> <Leader>u :UndotreeToggle<CR>
         let g:undotree_SetFocusWhenToggle=1

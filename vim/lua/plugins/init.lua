@@ -110,4 +110,7 @@ return require('packer').startup(function(use)
     if packer_bootstrap then
       require('packer').sync()
     end
+
+    require("plugins/fzf")
+    require("plugins/treesitter")
 end)
