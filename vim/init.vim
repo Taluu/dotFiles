@@ -4,6 +4,10 @@
     let g:mapleader = ','
     let g:loaded_python_provider = 0
 
+    " needed for nvim-tree
+    let g:loaded_netrw = 1
+    let g:loaded_netrwPlugin = 1
+
     let path_to_config = expand('$HOME/.config/nvim')
 
     augroup mine
@@ -132,21 +136,6 @@
         let g:airline#extensions#tabline#show_splits = 1
         let g:airline#extensions#tabline#show_buffers = 1
         let g:airline#extensions#hunks#non_zero_only = 1
-    " } NerdTree {
-        nmap <silent> <C-n> :NERDTreeMirrorToggle<CR>
-        nmap <silent> <leader>nt :NERDTreeFind<CR>
-
-        let NERDTreeShowBookmarks=1
-        let NERDTreeIgnore=['\.pyc', '\~$', '\.git$', 'node_modules$', '\.tags$', '.null-ls']
-        let NERDTreeChDirMode=0
-        let NERDTreeQuitOnOpen=1
-        let NERDTreeShowLineNumbers=0
-        let NERDTreeShowHidden=1
-
-        " If more than one window and previous buffer was NERDTree, go back to it.
-        autocmd mine BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
-
-        map <silent> <C-f> :NERDTreeFind<CR>
     " } Ctags {
         set tags=./tags,$HOME/.vimtags,./.git/tags;$HOME
     " } TagBar {

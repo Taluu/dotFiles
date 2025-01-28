@@ -40,10 +40,13 @@ return require('packer').startup(function(use)
         }
     }
 
-    -- Nerdtree
-    use 'preservim/nerdtree'
-    use 'jistr/vim-nerdtree-tabs'
-    use 'Xuyuanp/nerdtree-git-plugin'
+    -- NvimTree
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons',
+        },
+    } 
 
     -- Prog
     use 'preservim/tagbar'
@@ -111,6 +114,7 @@ return require('packer').startup(function(use)
       require('packer').sync()
     end
 
+    require("plugins/tree")
     require("plugins/fzf")
     require("plugins/treesitter")
 end)
