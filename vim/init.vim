@@ -2,11 +2,8 @@
 
 " General configuration {
     let g:mapleader = ','
+    let g:maplocalleader = '\\'
     let g:loaded_python_provider = 0
-
-    " needed for nvim-tree
-    let g:loaded_netrw = 1
-    let g:loaded_netrwPlugin = 1
 
     let path_to_config = expand('$HOME/.config/nvim')
 
@@ -63,15 +60,6 @@
             set list
             set listchars=tab:│\ ,trail:.
 
-            " waiting for https://github.com/vim/vim/issues/5206 to be
-            " resolved (aka todo item about allowin listchars to be defined
-            " locally)
-            "
-            " Until then, when switching buffers... will need to do a `:e` or `:w`
-            " In order to retrigger the FileType event :/
-            "
-            " Meanwhile, neovim fixed that problem, so no need to "retrigger"
-            " the FileType event. Yeay !
             augroup local_listchars
                 autocmd!
                 autocmd FileType * setlocal listchars=tab:│\ ,trail:.
@@ -98,6 +86,7 @@
             autocmd FileType less       setlocal shiftwidth=2 tabstop=2 softtabstop=2
             autocmd FileType css        setlocal shiftwidth=2 tabstop=2 softtabstop=2
             autocmd FileType toml       setlocal shiftwidth=2 tabstop=2 softtabstop=2
+            autocmd Filetype lua        setlocal shiftwidth=2 tabstop=2 softtabstop=2
         augroup END
     " } Formating {
         set pastetoggle=<F12>
@@ -116,7 +105,7 @@
         let g:vimspector_install_gadgets = [ 'vscode-go', 'CodeLLDB', 'vscode-php-debug' ]
     " }
 " } Plugin configuration {
-    lua require('plugins')
+    lua require('config.lazy')
 
     " Solarized {
         let g:solarized_termtrans=1

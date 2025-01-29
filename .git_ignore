@@ -8,6 +8,7 @@ tags
 .tool-versions
 .phpactor/
 .vimspector.json
+.vim/
 
 .envrc
 .ripgreprc
