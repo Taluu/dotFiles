@@ -41,7 +41,32 @@ lsp_config.protols.setup {
   capabilities = capabilities,
 }
 
+-- from the lspconfig help
 lsp_config.lua_ls.setup {
   on_attach = custom_lsp_attach,
   capabilities = capabilities,
+  on_init = function(client)
+    if client.workspace_folders then
+      local path = client.workspace_folders[1].name
+      if vim.loop.fs_stat(path..'/.luarc.json') or vim.loop.fs_stat(path..'/.luarc.jsonc') then
+        return
+      end
+    end
+
+    client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+      runtime = {
+        version = 'LuaJIT'
+      },
+      -- Make the server aware of Neovim runtime files
+      workspace = {
+        checkThirdParty = false,
+        library = {
+          vim.env.VIMRUNTIME
+        },
+      },
+    })
+  end,
+  settings = {
+    Lua = {}
+  }
 }
