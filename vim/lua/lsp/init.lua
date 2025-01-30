@@ -1,6 +1,6 @@
 local lsp_config = require 'lspconfig'
 local custom_lsp_attach = require 'lsp/custom_lsp_attach'
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local capabilities = require('blink.cmp').get_lsp_capabilities()
 
 vim.opt.completeopt = 'noinsert,menuone,noselect,preview'
 vim.opt.shortmess:append({ c = true })
@@ -36,4 +36,12 @@ lsp_config.ts_ls.setup {
   capabilities = capabilities,
 }
 
-lsp_config.protols.setup {}
+lsp_config.protols.setup {
+  on_attach = custom_lsp_attach,
+  capabilities = capabilities,
+}
+
+lsp_config.lua_ls.setup {
+  on_attach = custom_lsp_attach,
+  capabilities = capabilities,
+}
