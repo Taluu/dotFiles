@@ -14,3 +14,4 @@ tags
 .ripgreprc
 
 .null-ls*
+.DS_Store
