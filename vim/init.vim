@@ -106,6 +106,7 @@
     " }
 " } Plugin configuration {
     lua require('config.lazy')
+    lua require('lsp')
 
     " Solarized {
         let g:solarized_termtrans=1
@@ -116,9 +117,8 @@
         highlight SpecialKey cterm=bold ctermfg=12
         highlight! link SignColumn LineNr
         set cursorline
-    " } Ctags {
-        set tags=./tags,$HOME/.vimtags,./.git/tags;$HOME
     " } TagBar {
+        set tags=./tags,$HOME/.vimtags,./.git/tags;$HOME
         nnoremap <silent> <leader>tt :TagbarToggle<CR>
         let g:tagbar_position='rightbelow vertical'
     " } UndoTree {
@@ -128,8 +128,6 @@
         let g:riv_disable_folding = 1
     " } Ack.vim {
         let g:ackprg = 'rg --vimgrep --smart-case --follow'
-    " } lsp {
-        lua require('lsp')
     " } Phpactor {
         let g:phpactorInputListStrategy = 'phpactor#input#list#fzf'
         let g:phpactorQuickfixStrategy = 'phpactor#quickfix#fzf'

@@ -14,6 +14,7 @@ return {
     },
   },
   { 'https://bitbucket.org/cmthornton/vim-dist-ext.git'},
+  {'lewis6991/gitsigns.nvim', config = function() require("gitsigns").setup() end},
 
   -- prog related stuff
   { 'preservim/tagbar' },
