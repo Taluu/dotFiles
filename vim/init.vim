@@ -98,6 +98,12 @@
             hi! def link phpDocParam phpType
         endfunction
 
+        augroup php
+            au!
+            au FileType php au BufNewFile,BufReadPre <buffer> call PhpSyntaxOverride()
+            au FileType php set iskeyword+=$
+        augroup END
+
         let g:PHP_noArrowMatching = 1
     " } debug+remote {
         let g:vimspector_enable_mappings = 'HUMAN'
@@ -114,24 +120,6 @@
     " } UndoTree {
         nnoremap <silent> <Leader>u :UndotreeToggle<CR>
         let g:undotree_SetFocusWhenToggle=1
-    " } Riv.vim {
-        let g:riv_disable_folding = 1
-    " } Ack.vim {
-        let g:ackprg = 'rg --vimgrep --smart-case --follow'
-    " } Phpactor {
-        let g:phpactorInputListStrategy = 'phpactor#input#list#fzf'
-        let g:phpactorQuickfixStrategy = 'phpactor#quickfix#fzf'
-
-        augroup php
-            au!
-            au FileType php au BufNewFile,BufReadPre <buffer> call PhpSyntaxOverride()
-            au FileType php set iskeyword+=$
-
-            au FileType php nmap <silent> <Leader>pu :PhpactorImportClass<CR>
-            au FileType php nmap <silent> <Leader>pt :PhpactorTransform<CR>
-            au FileType php nmap <silent> <Leader>pce :PhpactorClassExpand<CR>
-            au FileType php nmap <silent> <Leader>pcm :PhpactorContextMenu<CR>
-        augroup END
     " }
 " } Map {
     lua require('config.movement')

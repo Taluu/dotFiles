@@ -48,8 +48,8 @@ export COMPOSER_DISABLE_XDEBUG_WARN=1
 # path handling
 path+=(
     $HOME/bin
-    $HOME/.local/share/nvim/site/pack/packer/opt/phpactor/bin
     $HOME/.local/bin
+    $HOME/.config/composer/vendor/bin
     $HOME/go/bin
     /usr/local/go/bin
     $HOME/.cargo/bin
