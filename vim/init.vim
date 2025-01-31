@@ -105,22 +105,9 @@
         augroup END
 
         let g:PHP_noArrowMatching = 1
-    " } debug+remote {
-        let g:vimspector_enable_mappings = 'HUMAN'
-        let g:vimspector_base_dir = path_to_config . '/vimspector'
-        let g:vimspector_install_gadgets = [ 'vscode-go', 'CodeLLDB', 'vscode-php-debug' ]
     " }
-" } Plugin configuration {
-    lua require('config.lazy')
-
-    " } TagBar {
-        set tags=./tags,$HOME/.vimtags,./.git/tags;$HOME
-        nnoremap <silent> <leader>tt :TagbarToggle<CR>
-        let g:tagbar_position='rightbelow vertical'
-    " } UndoTree {
-        nnoremap <silent> <Leader>u :UndotreeToggle<CR>
-        let g:undotree_SetFocusWhenToggle=1
-    " }
-" } Map {
-    lua require('config.movement')
 " }
+
+" Lua stuff
+lua require('config.lazy')
+lua require('config.movement')
