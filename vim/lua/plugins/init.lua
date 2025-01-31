@@ -18,7 +18,6 @@ return {
   -- prog related stuff
   { 'preservim/tagbar' },
   { 'puremourning/vimspector' },
-  { 'preservim/nerdcommenter' },
   { 'stephenmckinney/vim-autotag' },
 
   -- cucumber
