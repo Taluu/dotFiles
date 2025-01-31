@@ -1,7 +1,6 @@
 -- plugins that do not require particular config
 return {
   -- everyday thingies
-  { 'lifepillar/vim-solarized8', branch = 'neovim', lazy = true },
   { 'wincent/ferret' },
   { 'tomtom/tlib_vim' },
   { 'mbbill/undotree' },
@@ -13,8 +12,8 @@ return {
         {'tpope/vim-fugitive'},
     },
   },
-  { 'https://bitbucket.org/cmthornton/vim-dist-ext.git'},
-  {'lewis6991/gitsigns.nvim', config = function() require("gitsigns").setup() end},
+  { 'https://bitbucket.org/cmthornton/vim-dist-ext.git' },
+  { 'lewis6991/gitsigns.nvim', config = function() require("gitsigns").setup() end },
 
   -- prog related stuff
   { 'preservim/tagbar' },
@@ -34,5 +33,5 @@ return {
   { 'rust-lang/rust.vim' },
   { 'nelsyeung/twig.vim' },
   { 'pearofducks/ansible-vim' },
-  { 'phpactor/phpactor',  build = 'composer install --no-dev --no-interaction --prefer-dist', lazy = true },
+  { 'phpactor/phpactor',  ft="php", build = 'composer install --no-dev --no-interaction --prefer-dist', lazy = true },
 }

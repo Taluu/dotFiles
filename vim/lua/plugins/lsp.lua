@@ -56,6 +56,7 @@ return {
           formatting.gofmt,
           formatting.phpcsfixer,
           formatting.prettierd,
+          formatting.stylua,
         },
 
         -- you can reuse a shared lspconfig on_attach callback here

@@ -107,15 +107,6 @@
 " } Plugin configuration {
     lua require('config.lazy')
 
-    " Solarized {
-        let g:solarized_termtrans=1
-        set background=dark
-
-        colorscheme solarized8
-        highlight clear SpecialKey
-        highlight SpecialKey cterm=bold ctermfg=12
-        highlight! link SignColumn LineNr
-        set cursorline
     " } TagBar {
         set tags=./tags,$HOME/.vimtags,./.git/tags;$HOME
         nnoremap <silent> <leader>tt :TagbarToggle<CR>
