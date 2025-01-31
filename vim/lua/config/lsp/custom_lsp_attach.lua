@@ -1,6 +1,5 @@
 return function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
   local silent_noremap = { noremap = true, silent = true }
   local noremap = { noremap = true }
@@ -27,7 +26,7 @@ return function(client, bufnr)
 
   -- Use LSP as the handler for omnifunc.
   --    See `:help omnifunc` and `:help ins-completion` for more information.
-  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+  vim.api.nvim_set_option_value('omnifunc', 'v:lua.vim.lsp.omnifunc', {buf=bufnr})
 
   -- let none-ls take over
   client.server_capabilities.documentFormattingProvider = false

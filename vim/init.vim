@@ -106,7 +106,6 @@
     " }
 " } Plugin configuration {
     lua require('config.lazy')
-    lua require('lsp')
 
     " Solarized {
         let g:solarized_termtrans=1

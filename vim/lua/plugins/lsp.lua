@@ -1,5 +1,10 @@
 return {
-  {'neovim/nvim-lspconfig'},
+  {
+    'neovim/nvim-lspconfig',
+    config = function()
+      require('config.lsp')
+    end,
+  },
   {
     "rachartier/tiny-inline-diagnostic.nvim",
     event = "VeryLazy", -- Or `LspAttach`
