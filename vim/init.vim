@@ -134,5 +134,5 @@
         augroup END
     " }
 " } Map {
-    lua require('movement')
+    lua require('config.movement')
 " }
