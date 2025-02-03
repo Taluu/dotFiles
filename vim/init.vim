@@ -5,19 +5,16 @@
     let g:maplocalleader = '\\'
     let g:loaded_python_provider = 0
 
-    let path_to_config = expand('$HOME/.config/nvim')
-
     " Misc {
         set virtualedit=onemore
         set whichwrap=<,>,[,]
         set history=1000
         set hidden
-        "set spell
         set mouse= " remove mouse support
         set signcolumn=auto
 
-        let &backupdir=path_to_config . '/backups'
-        let &directory=path_to_config. '/backups'
+        let &backupdir=stdpath("data") . '/backups'
+        let &directory=stdpath("data") . '/backups'
     " } Timeout presses for vim combinations
         set timeoutlen=300
         set ttimeoutlen=10
@@ -36,7 +33,7 @@
             set undofile
             set undolevels=1000
             set undoreload=10000
-            let &undodir=path_to_config . '/undo'
+            let &undodir=stdpath("data") . '/undo'
         endif
     " } searching {
         set incsearch
