@@ -14,6 +14,7 @@ sync:
 	@-[[ -d ~/.config/nvim ]] || mkdir -p ~/.config/nvim
 	@-[[ -f ~/.config/nvim/init.vim	]] || ln -s `pwd`/vim/init.vim ~/.config/nvim/init.vim
 	@-[[ -d ~/.config/nvim/lua	]] || ln -s `pwd`/vim/lua ~/.config/nvim/lua
+	@-[[ -d ~/.config/nvim/after ]] || ln -s `pwd`/vim/after ~/.config/nvim/after
 
 clean:
 	@rm ~/.gitignore

@@ -1,3 +1,4 @@
 /vim/*
 !/vim/init.vim
 !/vim/lua
+!/vim/after

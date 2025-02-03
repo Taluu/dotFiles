@@ -7,10 +7,6 @@
 
     let path_to_config = expand('$HOME/.config/nvim')
 
-    augroup mine
-        autocmd!
-    augroup END
-
     " Misc {
         set virtualedit=onemore
         set whichwrap=<,>,[,]
@@ -59,14 +55,6 @@
         " list blank characters {
             set list
             set listchars=tab:│\ ,trail:.
-
-            augroup local_listchars
-                autocmd!
-                autocmd FileType * setlocal listchars=tab:│\ ,trail:.
-                autocmd FileType dockerfile setlocal listchars=tab:\ \ ,trail:.
-                autocmd FileType make setlocal listchars=tab:\ \ ,trail:.
-                autocmd FileType go setlocal listchars=tab:\ \ ,trail:.
-            augroup END
        " }
     " } indent {
         set smartindent
@@ -74,37 +62,10 @@
         set tabstop=4
         set shiftwidth=4
         set softtabstop=4
-
-        augroup mine
-            autocmd FileType dockerfile setlocal noexpandtab
-            autocmd FileType make       setlocal noexpandtab
-            autocmd FileType build      setlocal noexpandtab
-            autocmd FileType go         setlocal noexpandtab
-            autocmd FileType neon       setlocal shiftwidth=2 tabstop=2 softtabstop=2
-            autocmd FileType cucumber   setlocal shiftwidth=2 tabstop=2 softtabstop=2
-            autocmd FileType ruby       setlocal shiftwidth=2 tabstop=2 softtabstop=2
-            autocmd FileType less       setlocal shiftwidth=2 tabstop=2 softtabstop=2
-            autocmd FileType css        setlocal shiftwidth=2 tabstop=2 softtabstop=2
-            autocmd FileType toml       setlocal shiftwidth=2 tabstop=2 softtabstop=2
-            autocmd Filetype lua        setlocal shiftwidth=2 tabstop=2 softtabstop=2
-        augroup END
     " } Formating {
         set pastetoggle=<F12>
         set nowrap
         set textwidth=0
-
-        function! PhpSyntaxOverride()
-            hi! def link phpDocTags phpDefine
-            hi! def link phpDocParam phpType
-        endfunction
-
-        augroup php
-            au!
-            au FileType php au BufNewFile,BufReadPre <buffer> call PhpSyntaxOverride()
-            au FileType php set iskeyword+=$
-        augroup END
-
-        let g:PHP_noArrowMatching = 1
     " }
 " }
 
