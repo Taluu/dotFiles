@@ -60,7 +60,6 @@
         set shiftwidth=4
         set softtabstop=4
     " } Formating {
-        set pastetoggle=<F12>
         set nowrap
         set textwidth=0
     " }
