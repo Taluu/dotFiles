@@ -62,7 +62,7 @@ done
 typeset -U path
 
 # nvim is da tru editor
-export EDITOR="${TRU_EDITOR:-/usr/loca/bin/nvim}"
+export EDITOR="${TRU_EDITOR:-/usr/local/bin/nvim}"
 
 # let's keep "emacs" mode for now... Consider migrating to vim mode, cuz it's da tru editor
 bindkey -e
