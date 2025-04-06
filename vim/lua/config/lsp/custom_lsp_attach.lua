@@ -1,23 +1,20 @@
 return function(client, bufnr)
-  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-
-  local silent_noremap = { noremap = true, silent = true }
-  local noremap = { noremap = true }
+  local noremap = { noremap = true, buffer = bufnr, }
+  local silent_noremap = vim.tbl_deep_extend('force', noremap, { silent = true })
 
   -- definitons navigation stuff
-  buf_set_keymap('n', '<leader>gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', silent_noremap)
-  buf_set_keymap('n', '<leader>gd', '<cmd>lua vim.lsp.buf.definition()<CR>', noremap)
+  vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation, silent_noremap)
+  vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, noremap)
 
   -- actions stuff
-  buf_set_keymap('n', '<leader>h', '<cmd>lua vim.lsp.buf.hover()<CR>', noremap)
-  buf_set_keymap('n', '<leader>fr', '<cmd>lua vim.lsp.buf.references()<CR>', noremap)
-  buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', noremap)
-  buf_set_keymap('n', '<leader>rf', '<cmd>lua vim.lsp.buf.refactor()<CR>', noremap)
-  buf_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', noremap)
+  vim.keymap.set('n', '<leader>h', vim.lsp.buf.hover, noremap)
+  vim.keymap.set('n', '<leader>fr', vim.lsp.buf.references, noremap)
+  vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, noremap)
+  vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, noremap)
 
   -- diagnostics
-  buf_set_keymap('n', '<leader>gp', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', noremap)
-  buf_set_keymap('n', '<leader>gn', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', noremap)
+  vim.keymap.set('n', '<leader>gp', function() vim.diagnostic.jump({count = -1}) end, noremap)
+  vim.keymap.set('n', '<leader>gn', function() vim.diagnostic.jump({count =1}) end, noremap)
 
   -- Use LSP as the handler for omnifunc.
   --    See `:help omnifunc` and `:help ins-completion` for more information.
