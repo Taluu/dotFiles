@@ -1,13 +1,11 @@
 local lsp_config = require 'lspconfig'
 local custom_lsp_attach = require 'config.lsp.custom_lsp_attach'
-local capabilities = require('blink.cmp').get_lsp_capabilities()
 
 vim.opt.completeopt = 'noinsert,menuone,noselect,preview'
 vim.opt.shortmess:append({ c = true })
 
 local defaults = {
   on_attach = custom_lsp_attach,
-  capabilities = capabilities,
 }
 
 local servers = {
@@ -63,6 +61,16 @@ local servers = {
   protols = {},
 }
 
-for lsp,config in pairs(servers) do
-  lsp_config[lsp].setup(vim.tbl_deep_extend('force', defaults, config))
+for server,config in pairs(servers) do
+  lsp_config[server].setup(vim.tbl_deep_extend('force', defaults, config))
 end
+
+-- completion from lsp
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(ev)
+    local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
+    if client:supports_method('textDocument/completion') then
+      vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+    end
+  end,
+})

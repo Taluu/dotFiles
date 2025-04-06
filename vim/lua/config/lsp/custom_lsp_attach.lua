@@ -8,11 +8,6 @@ return function(client, bufnr)
   buf_set_keymap('n', '<leader>gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', silent_noremap)
   buf_set_keymap('n', '<leader>gd', '<cmd>lua vim.lsp.buf.definition()<CR>', noremap)
 
-  -- workspace related stuff
-  buf_set_keymap('n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', noremap)
-  buf_set_keymap('n', '<leader>wa', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', noremap)
-  buf_set_keymap('n', '<leader>wl', '<cmd>lua vim.lsp.buf.list_workspace_folders()<CR>', noremap)
-
   -- actions stuff
   buf_set_keymap('n', '<leader>h', '<cmd>lua vim.lsp.buf.hover()<CR>', noremap)
   buf_set_keymap('n', '<leader>fr', '<cmd>lua vim.lsp.buf.references()<CR>', noremap)
