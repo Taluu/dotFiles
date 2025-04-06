@@ -8,6 +8,7 @@ return function(client, bufnr)
 
   -- actions stuff
   vim.keymap.set('n', '<leader>h', vim.lsp.buf.hover, noremap)
+  vim.keymap.set('i', '<C-s>', vim.lsp.buf.signature_help, noremap)
   vim.keymap.set('n', '<leader>fr', vim.lsp.buf.references, noremap)
   vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, noremap)
   vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, noremap)
