@@ -15,6 +15,7 @@ return {
   { 'tpope/vim-repeat' },
   { 'tpope/vim-abolish' },
   { 'tpope/vim-fugitive' },
+  { 'lbrayner/vim-rzip' },
   {
     'lewis6991/gitsigns.nvim',
     config = function()
