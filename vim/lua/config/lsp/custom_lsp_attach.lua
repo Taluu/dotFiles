@@ -24,4 +24,9 @@ return function(client, bufnr)
   -- let none-ls take over
   client.server_capabilities.documentFormattingProvider = false
   client.server_capabilities.documentRangeFormattingProvider = false
+
+  -- completion
+  if client:supports_method('textDocument/completion') then
+    vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
+  end
 end
