@@ -6,19 +6,6 @@ return {
     end,
   },
   {
-    "rachartier/tiny-inline-diagnostic.nvim",
-    event = "VeryLazy", -- Or `LspAttach`
-    priority = 1000, -- needs to be loaded in first
-    init = function()
-      vim.diagnostic.config({
-        virtual_text = false,
-      })
-    end,
-    opts = {
-      preset = "powerline",
-    },
-  },
-  {
     'ojroques/nvim-lspfuzzy',
     dependencies = {
       {'junegunn/fzf'},

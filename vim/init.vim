@@ -68,3 +68,4 @@
 " Lua stuff
 lua require('config.lazy')
 lua require('config.movement')
+lua require('config.diagnostics')
