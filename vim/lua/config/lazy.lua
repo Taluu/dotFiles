@@ -20,7 +20,6 @@ require("lazy").setup {
   spec = {
     {import = "plugins"},
   },
-  dev = { path = "~/dev/nvim-plugins" },
   install = { colorscheme = { "solarized" } },
-  checker = { enabled = true },
+  checker = { enabled = true, notify = false },
 }
