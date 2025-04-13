@@ -17,10 +17,6 @@ return function(client, bufnr)
   vim.keymap.set('n', '<leader>gp', function() vim.diagnostic.jump({count = -1}) end, noremap)
   vim.keymap.set('n', '<leader>gn', function() vim.diagnostic.jump({count =1}) end, noremap)
 
-  -- Use LSP as the handler for omnifunc.
-  --    See `:help omnifunc` and `:help ins-completion` for more information.
-  vim.api.nvim_set_option_value('omnifunc', 'v:lua.vim.lsp.omnifunc', {buf=bufnr})
-
   -- let none-ls take over
   client.server_capabilities.documentFormattingProvider = false
   client.server_capabilities.documentRangeFormattingProvider = false

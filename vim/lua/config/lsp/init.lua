@@ -1,12 +1,11 @@
-local lsp_config = require 'lspconfig'
 local custom_lsp_attach = require 'config.lsp.custom_lsp_attach'
 
 vim.opt.completeopt = 'noinsert,menuone,noselect,preview'
 vim.opt.shortmess:append({ c = true })
 
-local defaults = {
+vim.lsp.config('*', {
   on_attach = custom_lsp_attach,
-}
+})
 
 local servers = {
   -- copied from gopls config : https://github.com/golang/tools/blob/master/gopls/doc/vim.md#neovim-install
@@ -58,9 +57,13 @@ local servers = {
 
   phpactor = {},
   ts_ls = {},
-  protols = {},
 }
 
-for server,config in pairs(servers) do
-  lsp_config[server].setup(vim.tbl_deep_extend('force', defaults, config))
+for lsp,config in pairs(servers) do
+  local next = next
+  if next(config) ~= nil then
+    vim.lsp.config(lsp, config)
+  end
+
+  vim.lsp.enable(lsp)
 end
