@@ -12,7 +12,7 @@ sync:
 	@-[[ -d ${BIN_DIR} ]] || mkdir ${BIN_DIR}
 	@-[[ -f ${BIN_DIR}/git-repo-size ]] || ln -s `pwd`/utils/git-repo-size ${BIN_DIR}/git-repo-size
 	@-[[ -d ~/.config/nvim ]] || mkdir -p ~/.config/nvim
-	@-[[ -f ~/.config/nvim/init.vim	]] || ln -s `pwd`/vim/init.vim ~/.config/nvim/init.vim
+	@-[[ -f ~/.config/nvim/init.lua	]] || ln -s `pwd`/vim/init.vim ~/.config/nvim/init.lua
 	@-[[ -d ~/.config/nvim/lua	]] || ln -s `pwd`/vim/lua ~/.config/nvim/lua
 	@-[[ -d ~/.config/nvim/after ]] || ln -s `pwd`/vim/after ~/.config/nvim/after
 

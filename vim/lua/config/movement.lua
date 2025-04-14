@@ -31,3 +31,4 @@ vim.keymap.set('', '[F', '$', {})
 vim.keymap.set('', '[H', 'g0', {})
 
 vim.keymap.set('', '<Del>', '<NOP>', noremap)
+vim.keymap.set('n', '<esc><esc>', ':noh<cr>', silent_noremap);
