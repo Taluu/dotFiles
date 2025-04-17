@@ -7,6 +7,7 @@ vim.lsp.config('*', {
   on_attach = custom_lsp_attach,
 })
 
+---@type table<string,vim.lsp.Config>
 local servers = {
   -- copied from gopls config : https://github.com/golang/tools/blob/master/gopls/doc/vim.md#neovim-install
   gopls = {
@@ -36,7 +37,8 @@ local servers = {
         end
       end
 
-      client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+      ---@diagnostic disable-next-line: param-type-mismatch
+      client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua or {}, {
         runtime = {
           version = 'LuaJIT'
         },
@@ -51,7 +53,7 @@ local servers = {
       })
     end,
     settings = {
-      Lua = {}
+      Lua = {},
     },
   },
 
