@@ -6,9 +6,15 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-[ -f ~/.custom.zsh ] && source ~/.custom.zsh
+if [[ -f "$HOME/.custom.zsh" ]]; then
+    source "$HOME/.custom.zsh"
+fi
 
-(( ${+commands[direnv]} )) && emulate zsh -c "$(direnv export zsh)"
+export DOTFILES_PATH=${DOTFILES_PATH:-$HOME/dotfiles}
+
+if (( ${+commands[direnv]} )); then
+    emulate zsh -c "$(direnv export zsh)"
+fi
 
 # history
 export HISTFILE=$HOME/.zsh_history
@@ -24,10 +30,9 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 setopt INC_APPEND_HISTORY
 
-[ -f ~/dotfiles/zsh/zplug.zsh ] && source ~/dotfiles/zsh/zplug.zsh
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/dotfiles/zsh/powerline10k.zsh ]] || source ~/dotfiles/zsh/powerline10k.zsh
+if [[ -f "$DOTFILES_PATH/zsh/zplug.zsh" ]]; then
+    source "$DOTFILES_PATH/zsh/zplug.zsh"
+fi
 
 export TERM=xterm-256color
 
@@ -71,9 +76,13 @@ bindkey '^[[B' history-substring-search-down
 bindkey '\eOA' history-substring-search-up
 bindkey '\eOB' history-substring-search-down
 
-# fzf
-export FZF_DEFAULT_COMMAND='rg --files --follow'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+# ripgrep
+if (( ${+commands[rg]} )); then
+    export FZF_DEFAULT_COMMAND='rg --files --follow'
+    export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+    source "$DOTFILES_PATH/zsh/rg.zsh"
+fi
 
 export XDG_CONFIG_DIRS="$XDG_CONFIG_DIRS:$HOME/.config/xdg"
 
@@ -82,16 +91,11 @@ typeset -U fpath
 
 zstyle ':completion:*' menu select
 
-# kubectl (for some reasons, it errors when placed into the zsh completion dir)
-if command -v kubectl &>/dev/null; then
-    source <(kubectl completion zsh)
-fi
-
-# ngrok autocomplete
-if command -v ngrok &>/dev/null; then
-    eval "$(ngrok completion)"
-fi
-
-if command -v thefuck &>/dev/null; then
+if (( ${+commands[thefuck]} )); then
     eval $(thefuck --alias)
+fi
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+if [[ -f "$DOTFILES_PATH/zsh/powerline10k.zsh" ]]; then
+    source "$DOTFILES_PATH/zsh/powerline10k.zsh"
 fi
