@@ -6,6 +6,7 @@ sync:
 	@-[[ -f ~/.gitconfig ]] || ln -s `pwd`/.gitconfig ~/.gitconfig
 	@-[[ -d ~/.git-templates ]] || ln -s `pwd`/.git-templates ~/.git-templates
 	@-[[ -f ~/.tmux.conf ]] || ln -s `pwd`/.tmux.conf ~/.tmux.conf
+	@-[[ -f ~/.wezterm.lua ]] || ln -s `pwd`/.wezterm.lua ~/.wezterm.lua
 	@-[[ -d ~/.zsh_completions ]] || mkdir -p ~/.zsh_completions
 	@-[[ -f ~/.zshrc ]] || ln -s `pwd`/zsh/config.zsh ~/.zshrc
 	@-[[ -f ~/.git_personnal_config ]] || touch ~/.git_personnal_config
