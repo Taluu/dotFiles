@@ -1,20 +1,20 @@
 return {{
-  "nvim-treesitter/nvim-treesitter",
+  "neovim-treesitter/nvim-treesitter",
+  dependencies = {
+    "neovim-treesitter/treesitter-parser-registry",
+  },
   build = ":TSUpdate",
   config = function()
-    local configs = require "nvim-treesitter"
+    local ts = require "nvim-treesitter"
+    ts.install("all") -- may need to have multile `:TSInstall` calls
 
-    configs.setup {
-      ensure_installed = "all",
-      sync_install = false,
-      highlight = {
-        enable = true,
-        -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-        -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-        -- Using this option may slow down your editor, and you may see some duplicate highlights.
-        -- Instead of true it can also be a list of languages
-        additional_vim_regex_highlighting = {"php"},
-      },
-    }
+    vim.api.nvim_create_autocmd("FileType", {
+      callback = function()
+        local ok = pcall(vim.treesitter.start)
+        if ok and vim.bo.filetype == "php" then
+          vim.bo.syntax = "on"   -- use regex coloration _with_ treesitter
+        end
+      end,
+    })
   end,
 }}
