@@ -68,6 +68,9 @@ return {{
     sort_by = function(nodes)
       table.sort(nodes, natural_cmp)
     end,
+    git = {
+      ignore = false,
+    },
   },
   keys = {
     {'<C-n>', nvimTreeFocusOrToggle, silent_noremap},
