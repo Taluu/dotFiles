@@ -15,3 +15,5 @@ tags
 
 .null-ls*
 .DS_Store
+
+**/.claude/settings.local.json
